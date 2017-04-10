@@ -21,3 +21,7 @@ body,figure{position:relative}.bg-danger,.bg-info,.bg-success,.bg-warning,.mark,
     margin-top: 20px;
 }
 
+input[readonly]
+{
+    background-color:lightgrey !important;
+}

@@ -14,6 +14,9 @@
             <div class="panel panel-flat">
                 <div class="panel-heading">
                     <div class="panel-title">
+                        @if(session()->has('message'))
+                            <h1 align="center" class="alert alert-success">{{session()->get('message')}}</h1>
+                        @endif
                         <h1 align="center">Recruitment Procedure</h1>
                         <a class="btn btn-default pull-right" data-toggle="modal" data-target="#add_new_modal">Add New</a>
                     </div>

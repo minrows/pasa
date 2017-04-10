@@ -16,10 +16,7 @@
             /*overflow:hidden;*/
         /*}*/
 
-        input[readonly]
-        {
-            background-color:lightgrey !important;
-        }
+
 
     </style>
     <div class="row">

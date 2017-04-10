@@ -107,7 +107,8 @@ class AdminController extends Controller
 
     public function current_demand()
     {
-        return view('pasa_admin.current_demand');
+        $curr_demands=curr_demand::all();
+        return view('pasa_admin.current_demand',compact('curr_demands'));
     }
 
     public function add_current_demand(Request $request)
@@ -118,6 +119,31 @@ class AdminController extends Controller
         $pasa->quantity=$request->quantity;
         $pasa->country=$request->country;
         $pasa->save();
+        session()->flash('message', 'Data Added Successfully!');
+        return back();
+    }
+
+    public function update_current_demand(Request $request)
+    {
+        $pasa=curr_demand::find($request->id);
+
+        $pasa->title=$request->title;
+        $pasa->trade=$request->trade;
+        $pasa->quantity=$request->quantity;
+        $pasa->country=$request->country;
+        $pasa->state=$request->state;
+        $pasa->save();
+        session()->flash('message', 'Data Updated Successfully!');
+        return back();
+    }
+
+    public function delete_current_demand(Request $request)
+    {
+        $pasa=curr_demand::find($request->del_id);
+
+        //img file delete
+        $pasa->delete();
+        session()->flash('message', 'Data Deleted Successfully!');
         return back();
     }
 
@@ -128,6 +154,7 @@ class AdminController extends Controller
         // return array_keys(curr_demand_img:ldap_get_attributes(link_identifier, result_entry_identifier);
         return view('pasa_admin.current_demand_img');
     }
+
     public function add_current_demand_img(Request $request)
     {
         $pasa = new curr_demand_img;
@@ -138,6 +165,7 @@ class AdminController extends Controller
 
         $pasa->state=$request->state;
         $pasa->save();
+        session()->flash('message', 'Data Added Successfully!');
         return back();
     }
 
@@ -154,6 +182,7 @@ class AdminController extends Controller
         $pasa->description=$request->description;
         $pasa->state=$request->state;
         $pasa->save();
+        session()->flash('message', 'Data Added Successfully!');
         return back();
     }
 
@@ -169,6 +198,7 @@ class AdminController extends Controller
         $pasa->description=$request->description;
         $pasa->state=$request->state;
         $pasa->save();
+        session()->flash('message', 'Data Added Successfully!');
         return back();
     }
     public function contact()
@@ -183,6 +213,7 @@ class AdminController extends Controller
         $pasa->description=$request->description;
         $pasa->state=$request->state;
         $pasa->save();
+        session()->flash('message', 'Data Added Successfully!');
         return back();
     }
 
@@ -202,6 +233,7 @@ class AdminController extends Controller
 
         $pasa->state=$request->state;
         $pasa->save();
+        session()->flash('message', 'Data Added Successfully!');
         return back();
     }
 
