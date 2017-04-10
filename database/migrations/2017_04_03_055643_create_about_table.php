@@ -17,7 +17,7 @@ class CreateAboutTable extends Migration
             $table->increments('id');
             $table->string('title',50);
             $table->text('description');
-            $table->string('img',100);
+            $table->string('img',100)->nullable()->change();
             $table->enum('state',['on','off']);
             $table->timestamps();
         });

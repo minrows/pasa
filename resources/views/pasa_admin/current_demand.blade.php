@@ -51,7 +51,7 @@
                                         <a class="btn btn-primary" data-toggle="modal" data-target="#edit_modal_{{$curr_demand->id}}">Edit</a>
                                         &nbsp;
 
-                                        <a href="{{ '/pasa_admin/delete_carousel' }}"
+                                        <a href="{{ '/pasa_admin/delete_current_demand' }}"
                                            onclick="event.preventDefault();
                                                    document.getElementById('delete-form_{{$curr_demand->id}}').submit();"
                                            class="btn btn-primary">
@@ -153,19 +153,19 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="title" class="col-lg-2 control-label">Trade:</label>
+                                    <label for="trade" class="col-lg-2 control-label">Trade:</label>
                                     <div class="col-lg-10">
                                         <input type="text" class="form-control" id="trade" name="trade" value="{{$curr_demand->trade}}" placeholder="Enter Trade!">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="title" class="col-lg-2 control-label">Quantity:</label>
+                                    <label for="quantity" class="col-lg-2 control-label">Quantity:</label>
                                     <div class="col-lg-10">
                                         <input type="number" class="form-control" id="quantity" name="quantity" value="{{$curr_demand->quantity}}" placeholder="Enter Quantity!">
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label for="title" class="col-lg-2 control-label">Country:</label>
+                                    <label for="country" class="col-lg-2 control-label">Country:</label>
                                     <div class="col-lg-10">
                                         <input type="text" class="form-control" id="country" name="country" value="{{$curr_demand->country}}" placeholder="Enter Country!">
                                     </div>

@@ -33,6 +33,7 @@
     <!-- Core JS files -->
     <script type="text/javascript" src="{{ asset('js/admin_js/jquery.min.js') }}"></script>
     <script type="text/javascript" src="{{ asset('js/admin_js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('js/admin_js/ckeditor/ckeditor.js') }}"></script>
     <!-- /core JS files -->
 
 

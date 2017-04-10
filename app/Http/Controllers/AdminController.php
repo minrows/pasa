@@ -150,9 +150,8 @@ class AdminController extends Controller
 
     public function current_demand_img()
     {
-        // $pass=curr_demand_img::all();
-        // return array_keys(curr_demand_img:ldap_get_attributes(link_identifier, result_entry_identifier);
-        return view('pasa_admin.current_demand_img');
+        $curr_demand_imgs=curr_demand_img::all();
+        return view('pasa_admin.current_demand_img',compact('curr_demand_imgs'));
     }
 
     public function add_current_demand_img(Request $request)
@@ -169,10 +168,58 @@ class AdminController extends Controller
         return back();
     }
 
+    public function update_current_demand_img(Request $request)
+    {
+        $pasa=curr_demand_img::find($request->id);
+
+        if ($request->hasFile('img')) {
+
+            $del=$pasa->img_thumb;
+            $del=str_replace('/','\\',$del);
+            $del=public_path('image\\').$del;
+            File::delete($del);
+            $path = $request->file('img')->store('current_demand');
+            $pasa->img_thumb=$path;
+            $pasa->img_full=$path;
+
+//            $del=$pasa->img_full;
+//            $del=str_replace('/','\\',$del);
+//            $del=public_path('image\\').$del;
+//            File::delete($del);
+//            $path = $request->file('img')->store('current_demand');
+//            $pasa->img_thumb=$path;
+        }
+        $pasa->state=$request->state;
+        $pasa->save();
+        session()->flash('message', 'Data Updated Successfully!');
+        return back();
+    }
+
+    public function delete_current_demand_img(Request $request)
+    {
+        $pasa=curr_demand_img::find($request->del_id);
+
+        //img file delete
+        $del=$pasa->img_thumb;
+        $del=str_replace('/','\\',$del);
+        $del=public_path('image\\').$del;
+        File::delete($del);
+
+        $del=$pasa->img_full;
+        $del=str_replace('/','\\',$del);
+        $del=public_path('image\\').$del;
+        File::delete($del);
+
+        $pasa->delete();
+        session()->flash('message', 'Data Deleted Successfully!');
+        return back();
+    }
+
 
     public function about()
     {
-        return view('pasa_admin.about');
+        $abouts=about::all();
+        return view('pasa_admin.about',compact('abouts'));
     }
 
     public function add_about(Request $request)
@@ -186,9 +233,32 @@ class AdminController extends Controller
         return back();
     }
 
+    public function update_about(Request $request)
+    {
+        $pasa=about::find($request->id);
+
+        $pasa->title=$request->title;
+        $pasa->description=$request->input('description_'.$request->id);
+        $pasa->state=$request->state;
+        $pasa->save();
+        session()->flash('message', 'Data Updated Successfully!');
+        return back();
+    }
+
+    public function delete_about(Request $request)
+    {
+        $pasa=about::find($request->del_id);
+
+        //img file delete
+        $pasa->delete();
+        session()->flash('message', 'Data Deleted Successfully!');
+        return back();
+    }
+
     public function recruitment_procedure()
     {
-        return view('pasa_admin.recruitment_procedure');
+        $recruitment_procedures=recruitment_procedure::all();
+        return view('pasa_admin.recruitment_procedure', compact('recruitment_procedures'));
     }
 
     public function add_recruitment_procedure(Request $request)
@@ -201,9 +271,33 @@ class AdminController extends Controller
         session()->flash('message', 'Data Added Successfully!');
         return back();
     }
+
+    public function update_recruitment_procedure(Request $request)
+    {
+        $pasa=recruitment_procedure::find($request->id);
+
+        $pasa->title=$request->title;
+        $pasa->description=$request->input('description_'.$request->id);
+        $pasa->state=$request->state;
+        $pasa->save();
+        session()->flash('message', 'Data Updated Successfully!');
+        return back();
+    }
+
+    public function delete_recruitment_procedure(Request $request)
+    {
+        $pasa=recruitment_procedure::find($request->del_id);
+
+        //img file delete
+        $pasa->delete();
+        session()->flash('message', 'Data Deleted Successfully!');
+        return back();
+    }
+
     public function contact()
     {
-        return view('pasa_admin.contact');
+        $contacts=contact::all();
+        return view('pasa_admin.contact',compact('contacts'));
     }
 
     public function add_contact(Request $request)

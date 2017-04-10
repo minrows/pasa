@@ -40,7 +40,7 @@
                             </tbody>
                         </table>
                     </div>
-                            
+
                 </div>
             </div>
             <!-- /traffic sources -->
@@ -79,7 +79,7 @@
                                     </select>
                                 </div>
                             </div>
-                                                       
+
                             <div class="form-group">
                                 <div class="col-lg-10 col-lg-offset-2">
                                     <button type="submit" class="btn btn-default pull-right">Add</button>
