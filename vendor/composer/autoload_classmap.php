@@ -26,7 +26,7 @@ return array(
     'App\\Providers\\RouteServiceProvider' => $baseDir . '/app/Providers/RouteServiceProvider.php',
     'App\\User' => $baseDir . '/app/User.php',
     'App\\about' => $baseDir . '/app/about.php',
-    'App\\achiever' => $baseDir . '/app/achiever.php',
+    'App\\achiever' => $baseDir . '/app/achiever.blade.php',
     'App\\contact' => $baseDir . '/app/contact.php',
     'App\\corporate_field' => $baseDir . '/app/corporate_field.php',
     'App\\corporate_member' => $baseDir . '/app/corporate_member.php',

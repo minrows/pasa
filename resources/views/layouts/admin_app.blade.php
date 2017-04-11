@@ -146,6 +146,9 @@
                             <li class="@if ($select === 'overseas_client') {{'active'}} @endif">
                                 <a href="{{'/pasa_admin/overseas_client'}}"><i class="icon-stack2"></i> <span>Overseas Client</span></a>
                             </li>
+                            <li class="@if ($select === 'achiever') {{'active'}} @endif">
+                                <a href="{{'/pasa_admin/achiever'}}"><i class="icon-stack2"></i> <span>Achiever</span></a>
+                            </li>
 
                             {{--<li>--}}
                             {{--<a href="#"><i class="icon-stack2"></i> <span>Page layouts</span></a>--}}

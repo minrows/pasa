@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\achiever;
 use App\overseas_client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -433,5 +434,60 @@ class AdminController extends Controller
         session()->flash('message', 'Data Deleted Successfully!');
         return back();
     }
+
+    public function achiever()
+    {
+        $achievers=achiever::all();
+        return view('pasa_admin.achiever',compact('achievers'));
+    }
+
+    public function add_achiever(Request $request)
+    {
+        $pasa=new achiever;
+
+        $path = $request->file('img')->store('achiever');
+        $pasa->img=$path;
+
+        $pasa->title=$request->title;
+        $pasa->state=$request->state;
+        $pasa->save();
+        session()->flash('message', 'Data Added Successfully!');
+        return back();
+    }
+
+    public function update_achiever(Request $request)
+    {
+        $pasa=achiever::find($request->id);
+
+        if ($request->hasFile('img')) {
+            $del=$pasa->img;
+            $del=str_replace('/','\\',$del);
+            $del=public_path('image\\').$del;
+            File::delete($del);
+            $path = $request->file('img')->store('achiever');
+            $pasa->img=$path;
+        }
+        $pasa->title=$request->title;
+        $pasa->state=$request->state;
+        $pasa->save();
+        session()->flash('message', 'Data Updated Successfully!');
+        return back();
+    }
+
+    public function delete_achiever(Request $request)
+    {
+        $pasa=achiever::find($request->del_id);
+
+        //img file delete
+        $del=$pasa->img;
+        $del=str_replace('/','\\',$del);
+        $del=public_path('image\\').$del;
+        File::delete($del);
+
+        $pasa->delete();
+        session()->flash('message', 'Data Deleted Successfully!');
+        return back();
+    }
+
 
 }

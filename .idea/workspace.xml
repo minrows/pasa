@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfd28579-89ee-44c9-b0e4-7e81f50ba738" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/pasa_admin/overseas_client.blade.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/resources/views/pasa_admin/achiever.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/database/migrations/2017_04_03_055847_create_overseas_client_table.php" afterPath="$PROJECT_DIR$/database/migrations/2017_04_03_055847_create_overseas_client_table.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/layouts/admin_app.blade.php" afterPath="$PROJECT_DIR$/resources/views/layouts/admin_app.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pasa_admin/about.blade.php" afterPath="$PROJECT_DIR$/resources/views/pasa_admin/about.blade.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pasa_admin/contact.blade.php" afterPath="$PROJECT_DIR$/resources/views/pasa_admin/contact.blade.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/routes/web.php" afterPath="$PROJECT_DIR$/routes/web.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" afterPath="$PROJECT_DIR$/vendor/composer/autoload_classmap.php" />
     </list>
@@ -26,12 +23,37 @@
       <file leaf-file-name="AdminController.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="412" column="40" lean-forward="false" selection-start-line="412" selection-start-column="40" selection-end-line="412" selection-end-column="40" />
-              <caret line="412" column="22" lean-forward="false" selection-start-line="412" selection-start-column="22" selection-end-line="412" selection-end-column="22" />
+            <state relative-caret-position="215">
+              <caret line="466" column="58" lean-forward="false" selection-start-line="466" selection-start-column="58" selection-end-line="466" selection-end-column="58" />
               <folding>
-                <element signature="e#40#64#0#PHP" expanded="true" />
+                <element signature="e#40#57#0#PHP" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="admin_app.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin_app.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="480">
+              <caret line="149" column="111" lean-forward="false" selection-start-line="149" selection-start-column="111" selection-end-line="149" selection-end-column="111" />
+              <folding>
+                <marker date="1491893369542" expanded="true" signature="508:575" ph="..." />
+                <marker date="1491893369542" expanded="true" signature="521:573" ph="..." />
+                <marker date="1491893369542" expanded="true" signature="522:572" ph="..." />
+                <marker date="1491893369542" expanded="false" signature="8173:8178" ph="&amp;" />
+                <marker date="1491893369542" expanded="false" signature="8514:8519" ph="&amp;" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="achiever.blade.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/resources/views/pasa_admin/achiever.blade.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="136">
+              <caret line="167" column="144" lean-forward="false" selection-start-line="167" selection-start-column="144" selection-end-line="167" selection-end-column="144" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -52,9 +74,8 @@
       <file leaf-file-name="web.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/routes/web.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="408">
-              <caret line="46" column="73" lean-forward="false" selection-start-line="46" selection-start-column="73" selection-end-line="46" selection-end-column="73" />
-              <caret line="46" column="39" lean-forward="false" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
+            <state relative-caret-position="493">
+              <caret line="47" column="59" lean-forward="false" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
               <folding />
             </state>
           </provider>
@@ -113,8 +134,8 @@
       <find>$about</find>
       <find>200</find>
       <find>img</find>
-      <find>300</find>
       <find>carou</find>
+      <find>300</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -163,13 +184,14 @@
         <option value="$PROJECT_DIR$/database/migrations/2017_04_03_055643_create_about_table.php" />
         <option value="$PROJECT_DIR$/app/Http/Kernel.php" />
         <option value="$PROJECT_DIR$/resources/views/pasa_admin/recruitment_procedure.blade.php" />
-        <option value="$PROJECT_DIR$/resources/views/layouts/admin_app.blade.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_04_03_055847_create_overseas_client_table.php" />
-        <option value="$PROJECT_DIR$/routes/web.php" />
         <option value="$PROJECT_DIR$/resources/views/pasa_admin/contact.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pasa_admin/about.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pasa_admin/overseas_client.php" />
         <option value="$PROJECT_DIR$/resources/views/pasa_admin/overseas_client.blade.php" />
+        <option value="$PROJECT_DIR$/resources/views/layouts/admin_app.blade.php" />
+        <option value="$PROJECT_DIR$/routes/web.php" />
+        <option value="$PROJECT_DIR$/resources/views/pasa_admin/achiever.blade.php" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
       </list>
     </option>
@@ -594,15 +616,15 @@
       <workItem from="1491541388816" duration="4257000" />
       <workItem from="1491801210809" duration="1371000" />
       <workItem from="1491804131664" duration="11888000" />
-      <workItem from="1491885460358" duration="7213000" />
+      <workItem from="1491885460358" duration="8467000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="67708000" />
+    <option name="totallyTimeSpent" value="68962000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22692889" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -656,13 +678,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/database/migrations/2017_04_03_064745_create_gallery_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="20" column="12" lean-forward="false" selection-start-line="20" selection-start-column="12" selection-end-line="20" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/database/migrations/2017_04_03_064210_create_contact_table.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
@@ -941,29 +956,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/routes/web.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="46" column="73" lean-forward="false" selection-start-line="46" selection-start-column="73" selection-end-line="46" selection-end-column="73" />
-          <caret line="46" column="39" lean-forward="false" selection-start-line="46" selection-start-column="39" selection-end-line="46" selection-end-column="39" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin_app.blade.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="438">
-          <caret line="146" column="125" lean-forward="false" selection-start-line="146" selection-start-column="125" selection-end-line="146" selection-end-column="125" />
-          <folding>
-            <marker date="1491887104390" expanded="true" signature="508:575" ph="..." />
-            <marker date="1491887104390" expanded="true" signature="521:573" ph="..." />
-            <marker date="1491887104390" expanded="true" signature="522:572" ph="..." />
-            <marker date="1491887104390" expanded="false" signature="7926:7931" ph="&amp;" />
-            <marker date="1491887104390" expanded="false" signature="8267:8272" ph="&amp;" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pasa_admin/contact.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="476">
@@ -1019,13 +1011,42 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/layouts/admin_app.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="149" column="111" lean-forward="false" selection-start-line="149" selection-start-column="111" selection-end-line="149" selection-end-column="111" />
+          <folding>
+            <marker date="1491893369542" expanded="true" signature="508:575" ph="..." />
+            <marker date="1491893369542" expanded="true" signature="521:573" ph="..." />
+            <marker date="1491893369542" expanded="true" signature="522:572" ph="..." />
+            <marker date="1491893369542" expanded="false" signature="8173:8178" ph="&amp;" />
+            <marker date="1491893369542" expanded="false" signature="8514:8519" ph="&amp;" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/routes/web.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="493">
+          <caret line="47" column="59" lean-forward="false" selection-start-line="47" selection-start-column="59" selection-end-line="47" selection-end-column="59" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/resources/views/pasa_admin/achiever.blade.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="167" column="144" lean-forward="false" selection-start-line="167" selection-start-column="144" selection-end-line="167" selection-end-column="144" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="412" column="40" lean-forward="false" selection-start-line="412" selection-start-column="40" selection-end-line="412" selection-end-column="40" />
-          <caret line="412" column="22" lean-forward="false" selection-start-line="412" selection-start-column="22" selection-end-line="412" selection-end-column="22" />
+        <state relative-caret-position="215">
+          <caret line="466" column="58" lean-forward="false" selection-start-line="466" selection-start-column="58" selection-end-line="466" selection-end-column="58" />
           <folding>
-            <element signature="e#40#64#0#PHP" expanded="true" />
+            <element signature="e#40#57#0#PHP" expanded="true" />
           </folding>
         </state>
       </provider>
