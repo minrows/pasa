@@ -44,6 +44,7 @@ Route::get('/pasa_admin/about','AdminController@about');
 Route::get('/pasa_admin/recruitment_procedure','AdminController@recruitment_procedure');
 Route::get('/pasa_admin/contact','AdminController@contact');
 Route::get('/pasa_admin/gallery','AdminController@gallery');
+Route::get('/pasa_admin/overseas_client','AdminController@overseas_client');
 
 //admin background process
 Route::post('/pasa_admin/add_carousel','AdminController@add_carousel');
@@ -73,3 +74,7 @@ Route::post('/pasa_admin/delete_contact','AdminController@delete_contact');
 Route::post('/pasa_admin/add_gallery','AdminController@add_gallery');
 Route::post('/pasa_admin/update_gallery','AdminController@update_gallery');
 Route::post('/pasa_admin/delete_gallery','AdminController@delete_gallery');
+
+Route::post('/pasa_admin/add_overseas_client','AdminController@add_overseas_client');
+Route::post('/pasa_admin/update_overseas_client','AdminController@update_overseas_client');
+Route::post('/pasa_admin/delete_overseas_client','AdminController@delete_overseas_client');

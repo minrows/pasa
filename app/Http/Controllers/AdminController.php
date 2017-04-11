@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\overseas_client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -350,6 +351,86 @@ class AdminController extends Controller
         $pasa->state=$request->state;
         $pasa->save();
         session()->flash('message', 'Data Added Successfully!');
+        return back();
+    }
+
+    public function overseas_client()
+    {
+//        $overseas_clients=overseas_client::all();
+        $overseas_clients=overseas_client::orderBy('country')
+            ->groupBy('country')
+            ->groupBy('id')
+            ->groupBy('title')
+            ->groupBy('img')
+            ->groupBy('state')
+            ->groupBy('created_at')
+            ->groupBy('updated_at')
+            ->get();
+//        return $overseas_clients;
+        return view('pasa_admin.overseas_client',compact('overseas_clients'));
+    }
+
+    public function add_overseas_client(Request $request)
+    {
+        $pasa=new overseas_client();
+
+        if($request->hasFile('img'))
+        {
+            $path = $request->file('img')->store('overseas_client');
+            $pasa->img=$path;
+        }
+        //$filename  = time() . '.' . $image->getClientOriginalExtension();
+
+//        echo $path = public_path('image/carousel' . $filename);
+//        echo '<br />';
+//        echo $save_path='carousel/'.$filename;
+//
+//        Image::make($image->getRealPath())->resize(1200, 600)->save($path);
+
+//        $user->save();
+
+        $pasa->title=$request->title;
+        $pasa->country=$request->country;
+        $pasa->state=$request->state;
+        $pasa->save();
+        session()->flash('message', 'Data Added Successfully!');
+        return back();
+    }
+
+    public function update_overseas_client(Request $request)
+    {
+        $pasa=overseas_client::find($request->id);
+
+        if ($request->hasFile('img')) {
+            $del=$pasa->img;
+            $del=str_replace('/','\\',$del);
+            $del=public_path('image\\').$del;
+            File::delete($del);
+            $path = $request->file('img')->store('overseas_client');
+            $pasa->img=$path;
+        }
+        $pasa->title=$request->title;
+        $pasa->country=$request->country;
+        $pasa->state=$request->state;
+        $pasa->save();
+        session()->flash('message', 'Data Updated Successfully!');
+        return back();
+    }
+
+    public function delete_overseas_client(Request $request)
+    {
+        $pasa=overseas_client::find($request->del_id);
+
+        //img file delete
+        if($pasa->img!=null && $pasa->img!="") {
+            $del = $pasa->img;
+            $del = str_replace('/', '\\', $del);
+            $del = public_path('image\\') . $del;
+            File::delete($del);
+        }
+
+        $pasa->delete();
+        session()->flash('message', 'Data Deleted Successfully!');
         return back();
     }
 

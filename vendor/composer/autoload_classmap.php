@@ -34,7 +34,7 @@ return array(
     'App\\curr_demand_img' => $baseDir . '/app/curr_demand_img.php',
     'App\\feedback' => $baseDir . '/app/feedback.php',
     'App\\gallery' => $baseDir . '/app/gallery.php',
-    'App\\overseas_client' => $baseDir . '/app/overseas_client.php',
+    'App\\overseas_client' => $baseDir . '/app/overseas_client.blade.php',
     'App\\pasa_carousel' => $baseDir . '/app/pasa_carousel.php',
     'App\\recruitment_procedure' => $baseDir . '/app/recruitment_procedure.php',
     'Carbon\\Carbon' => $vendorDir . '/nesbot/carbon/src/Carbon/Carbon.php',

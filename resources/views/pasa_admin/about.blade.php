@@ -147,7 +147,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="description_{{$about->id}}" class="col-lg-2 control-label">Quantity:</label>
+                                    <label for="description_{{$about->id}}" class="col-lg-2 control-label">Description:</label>
                                     <div class="col-lg-10">
                                         <textarea class="form-control" id="description_{{$about->id}}" name="description_{{$about->id}}" placeholder="Enter Description!">{{$about->description}}</textarea>
                                     </div>

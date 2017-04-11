@@ -16,7 +16,7 @@ class CreateOverseasClientTable extends Migration
         Schema::create('overseas_clients', function (Blueprint $table) {
             $table->increments('id');
             $table->string('title',50);
-            $table->text('description');
+            $table->string('country',50);
             $table->string('img',100);
             $table->enum('state',['on','off']);
             $table->timestamps();
