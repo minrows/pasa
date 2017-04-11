@@ -17,6 +17,7 @@ class CreateCorporateMemberTable extends Migration
             $table->integer('corporate_field_id');
             $table->integer('id');
             $table->string('title',50);
+            $table->string('location',50);
             $table->string('img',100);
             $table->enum('state',['on','off']);
             $table->primary(['corporate_field_id', 'id']);

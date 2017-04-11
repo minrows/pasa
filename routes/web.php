@@ -47,6 +47,7 @@ Route::get('/pasa_admin/gallery','AdminController@gallery');
 Route::get('/pasa_admin/overseas_client','AdminController@overseas_client');
 Route::get('/pasa_admin/achiever','AdminController@achiever');
 Route::get('/pasa_admin/corporate_field','AdminController@corporate_field');
+Route::get('/pasa_admin/corporate_member','AdminController@corporate_member');
 
 //admin background process
 Route::post('/pasa_admin/add_carousel','AdminController@add_carousel');
@@ -85,8 +86,10 @@ Route::post('/pasa_admin/add_achiever','AdminController@add_achiever');
 Route::post('/pasa_admin/update_achiever','AdminController@update_achiever');
 Route::post('/pasa_admin/delete_achiever','AdminController@delete_achiever');
 
-
-
 Route::post('/pasa_admin/add_corporate_field','AdminController@add_corporate_field');
 Route::post('/pasa_admin/update_corporate_field','AdminController@update_corporate_field');
 Route::post('/pasa_admin/delete_corporate_field','AdminController@delete_corporate_field');
+
+Route::post('/pasa_admin/add_corporate_member','AdminController@add_corporate_member');
+Route::post('/pasa_admin/update_corporate_member','AdminController@update_corporate_member');
+Route::post('/pasa_admin/delete_corporate_member','AdminController@delete_corporate_member');

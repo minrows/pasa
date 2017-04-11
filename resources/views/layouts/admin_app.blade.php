@@ -152,6 +152,9 @@
                             <li class="@if ($select === 'corporate_field') {{'active'}} @endif">
                                 <a href="{{'/pasa_admin/corporate_field'}}"><i class="icon-stack2"></i> <span>Corporate Field</span></a>
                             </li>
+                            <li class="@if ($select === 'corporate_member') {{'active'}} @endif">
+                                <a href="{{'/pasa_admin/corporate_member'}}"><i class="icon-stack2"></i> <span>Corporate Member</span></a>
+                            </li>
 
                             {{--<li>--}}
                             {{--<a href="#"><i class="icon-stack2"></i> <span>Page layouts</span></a>--}}

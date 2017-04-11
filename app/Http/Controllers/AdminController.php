@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\achiever;
 use App\corporate_field;
+use App\corporate_member;
 use App\overseas_client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -361,8 +362,8 @@ class AdminController extends Controller
 //        $overseas_clients=overseas_client::all();
         $overseas_clients=overseas_client::orderBy('country')
             ->groupBy('country')
-            ->groupBy('id')
             ->groupBy('title')
+            ->groupBy('id')
             ->groupBy('img')
             ->groupBy('state')
             ->groupBy('created_at')
@@ -521,10 +522,95 @@ class AdminController extends Controller
 
     public function delete_corporate_field(Request $request)
     {
-        $pasa=corporate_field::find($request->del_id);
+        $pasa = corporate_field::find($request->del_id);
 
         //img file delete
         $pasa->delete();
+        session()->flash('message', 'Data Deleted Successfully!');
+        return back();
+    }
+
+    public function corporate_member()
+    {
+        $corporate_fields=corporate_field::select('id','title')->orderBy('id')->get();
+        $corporate_members=corporate_member::orderBy('corporate_field_id')
+            ->groupBy('corporate_field_id')
+            ->groupBy('title')
+            ->groupBy('id')
+            ->groupBy('location')
+            ->groupBy('img')
+            ->groupBy('state')
+            ->groupBy('created_at')
+            ->groupBy('updated_at')
+            ->get();
+
+//        return $corporate_fields;
+        return view('pasa_admin.corporate_member',compact('corporate_fields'),compact('corporate_members'));
+    }
+
+    public function add_corporate_member(Request $request)
+    {
+        $pasa=new corporate_member;
+        $id=0;
+        $check=corporate_member::where('corporate_field_id',$request->corporate_field_id)->get()->count();
+        if($check<1)
+        {
+            $id=1;
+        }
+        else
+        {
+            $id=$check+1;
+        }
+
+        if($request->hasFile('img'))
+        {
+            $path = $request->file('img')->store('corporate_member');
+            $pasa->img=$path;
+        }
+
+        $pasa->corporate_field_id=$request->corporate_field_id;
+        $pasa->id=$id;
+        $pasa->title=$request->title;
+        $pasa->location=$request->location;
+        $pasa->state=$request->state;
+        $pasa->save();
+        session()->flash('message', 'Data Added Successfully!');
+        return back();
+    }
+
+    public function update_corporate_member(Request $request)
+    {
+        $pasa=overseas_client::find($request->id);
+
+        if ($request->hasFile('img')) {
+            $del=$pasa->img;
+            $del=str_replace('/','\\',$del);
+            $del=public_path('image\\').$del;
+            File::delete($del);
+            $path = $request->file('img')->store('overseas_client');
+            $pasa->img=$path;
+        }
+        $pasa->title=$request->title;
+        $pasa->country=$request->country;
+        $pasa->state=$request->state;
+        $pasa->save();
+        session()->flash('message', 'Data Updated Successfully!');
+        return back();
+    }
+
+    public function delete_corporate_member(Request $request)
+    {
+        $pasa=corporate_member::where(['corporate_field_id'=>$request->del_id1,'id'=>$request->del_id])->first();
+
+//        img file delete
+        if($pasa->img!=null && $pasa->img!="") {
+            $del = $pasa->img;
+            $del = str_replace('/', '\\', $del);
+            $del = public_path('image\\') . $del;
+            File::delete($del);
+        }
+
+        corporate_member::where(['corporate_field_id'=>$request->del_id1,'id'=>$request->del_id])->first()->delete();
         session()->flash('message', 'Data Deleted Successfully!');
         return back();
     }
