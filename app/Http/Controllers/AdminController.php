@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\achiever;
+use App\corporate_field;
 use App\overseas_client;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
@@ -484,6 +485,45 @@ class AdminController extends Controller
         $del=public_path('image\\').$del;
         File::delete($del);
 
+        $pasa->delete();
+        session()->flash('message', 'Data Deleted Successfully!');
+        return back();
+    }
+
+    public function corporate_field()
+    {
+        $corporate_fields=corporate_field::all();
+        return view('pasa_admin.corporate_field',compact('corporate_fields'));
+    }
+
+    public function add_corporate_field(Request $request)
+    {
+        $pasa = new corporate_field;
+        $pasa->title=$request->title;
+        $pasa->description=$request->description;
+        $pasa->state=$request->state;
+        $pasa->save();
+        session()->flash('message', 'Data Added Successfully!');
+        return back();
+    }
+
+    public function update_corporate_field(Request $request)
+    {
+        $pasa=corporate_field::find($request->id);
+
+        $pasa->title=$request->title;
+        $pasa->description=$request->input('description_'.$request->id);
+        $pasa->state=$request->state;
+        $pasa->save();
+        session()->flash('message', 'Data Updated Successfully!');
+        return back();
+    }
+
+    public function delete_corporate_field(Request $request)
+    {
+        $pasa=corporate_field::find($request->del_id);
+
+        //img file delete
         $pasa->delete();
         session()->flash('message', 'Data Deleted Successfully!');
         return back();

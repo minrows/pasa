@@ -149,6 +149,9 @@
                             <li class="@if ($select === 'achiever') {{'active'}} @endif">
                                 <a href="{{'/pasa_admin/achiever'}}"><i class="icon-stack2"></i> <span>Achiever</span></a>
                             </li>
+                            <li class="@if ($select === 'corporate_field') {{'active'}} @endif">
+                                <a href="{{'/pasa_admin/corporate_field'}}"><i class="icon-stack2"></i> <span>Corporate Field</span></a>
+                            </li>
 
                             {{--<li>--}}
                             {{--<a href="#"><i class="icon-stack2"></i> <span>Page layouts</span></a>--}}
