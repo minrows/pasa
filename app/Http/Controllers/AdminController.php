@@ -311,6 +311,28 @@ class AdminController extends Controller
         return back();
     }
 
+    public function update_contact(Request $request)
+    {
+        $pasa=contact::find($request->id);
+
+        $pasa->title=$request->title;
+        $pasa->description=$request->input('description_'.$request->id);
+        $pasa->state=$request->state;
+        $pasa->save();
+        session()->flash('message', 'Data Updated Successfully!');
+        return back();
+    }
+
+    public function delete_contact(Request $request)
+    {
+        $pasa=contact::find($request->del_id);
+
+        //img file delete
+        $pasa->delete();
+        session()->flash('message', 'Data Deleted Successfully!');
+        return back();
+    }
+
     public function gallery()
     {
         // $pass=curr_demand_img::all();
