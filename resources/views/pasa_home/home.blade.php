@@ -118,10 +118,10 @@
 					<ul class="menu">
 						<li class="current-menu-item"><a href="#home">Home</a></li>
 							<li class="menu-item-has-children"><a href="#intro">About Us</a>
-								<ul class="sub-menu">
+								{{-- <ul class="sub-menu">
 									<li><a href="#message">Message</a></li>
 									<li><a href="#gallery">Gallery</a></li>
-								</ul>
+								</ul> --}}
 							</li>
 						<li><a href="#industries">Recruit Procedures</a></li>
 						<li><a href="#gallery">Gallery</a></li>
