@@ -15,7 +15,7 @@
  * home routes
  */
 
-Route::get('/', 'home_controller@index');
+Route::get('/', 'HomeController@index');
 Route::get('/home', 'HomeController@index');
 
 //Route::get('add_carousel', 'home_controller@add_carousel');
