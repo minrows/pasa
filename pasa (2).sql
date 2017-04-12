@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 12, 2017 at 08:55 AM
+-- Generation Time: Apr 12, 2017 at 10:56 AM
 -- Server version: 5.5.39
 -- PHP Version: 7.1.1
 
@@ -41,7 +41,7 @@ CREATE TABLE `abouts` (
 --
 
 INSERT INTO `abouts` (`id`, `title`, `description`, `img`, `state`, `created_at`, `updated_at`) VALUES
-(2, 'section 1 edit', '<p><strong>Bold</strong></p>\r\n\r\n<p><em>Italic</em></p>\r\n\r\n<p><s>Strikeout</s></p>\r\n\r\n<h1><strong><em><s>edit</s></em></strong></h1>\r\n\r\n<p>&nbsp;</p>', NULL, 'on', '2017-04-10 04:09:00', '2017-04-10 04:16:50');
+(2, 'Company Profile', '<p>We started our journey in this business from the year 1998; we are one of the Nepal&#39;s best Recruiting Agencies. The number of years of experience and knowledge gives us the confident to say that, &quot;we outsource the best human resources&quot;. We have been providing expert and unparalleled value added recruitment services to our clients across the world who are looking for professional and smart candidates to excel in their business. We are happy to have satisfied clients with us from a long time and we feel proud and honored to give the best to our precious clients.</p>\r\n\r\n<hr />\r\n<pre>\r\n<strong>Name :</strong> Pasa International Pvt. Ltd.\r\n<strong>Address :</strong> Kupondole, Lalitpur, Nepal\r\n<strong>Established :</strong> 1998 September 24\r\n<strong>Govt, License No. :</strong> 116/055/056\r\n<strong>Registered No. :</strong> 9222/055/056\r\n<strong>Tel :</strong> +977-1-5554499, 55539331, 5553380, 5553342\r\n<strong>Fax :</strong> +977-1-5538440\r\n<strong>Email :</strong> <a href=\"mailto:pimt@pasainternational.com.np\" target=\"_blank\">pimt@pasainternational.com.np</a>\r\n      : <a href=\"mailto:pimt@pasa.wlink.com.np\" target=\"_blank\">pimt@pasa.wlink.com.np</a>\r\n<strong>Website :</strong> <a href=\"http://www.pasainternational.com.np/\" target=\"_blank\">http://www.pasainternational.com.np</a>\r\n\r\n</pre>', NULL, 'on', '2017-04-10 04:09:00', '2017-04-12 02:55:43');
 
 -- --------------------------------------------------------
 
@@ -350,7 +350,8 @@ CREATE TABLE `pasa_carousels` (
 --
 
 INSERT INTO `pasa_carousels` (`id`, `title`, `img`, `state`, `created_at`, `updated_at`) VALUES
-(9, 'a', 'carousel/vrxRST0RyuFbB88Va4ZuvBkolcicqwEE7cgRrRum.jpeg', 'on', '2017-04-10 01:38:06', '2017-04-10 01:38:06');
+(10, 'Pasa Team', 'carousel/kwfhoOMibSrbHJoqfYwbxC1Gu74AanJxVrhCLWst.jpeg', 'on', '2017-04-12 02:09:41', '2017-04-12 02:33:59'),
+(11, 'Construction Work', 'carousel/l3oLY7eMGJYIpc0oMA45mOvOs0UmumrwOPFihvUY.jpeg', 'on', '2017-04-12 02:10:21', '2017-04-12 02:34:07');
 
 -- --------------------------------------------------------
 
@@ -531,7 +532,7 @@ ALTER TABLE `overseas_clients`
 -- AUTO_INCREMENT for table `pasa_carousels`
 --
 ALTER TABLE `pasa_carousels`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `recruitment_procedures`
 --

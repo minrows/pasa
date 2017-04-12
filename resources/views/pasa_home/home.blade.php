@@ -2,12 +2,6 @@
 <html lang="en-US">
 
 <style type="text/css">
-    .slide1 {
-            background-image:url({{asset('image/check/slider_01.jpg')}});
-    }
-    .slide2 {
-        background-image:url({{asset('image/check/slider_02.jpg')}});
-    }
     .service-box.box1 {
         background: url({{asset('image/check/servicebox1.jpg')}});
         background-size: cover;
@@ -28,7 +22,7 @@
 <!-- Mirrored from syed.tinymy.com/consultant/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Mar 2017 05:02:47 GMT -->
 <head>
 
-		<title>PASA INTERNATIONAL utsav</title>
+		<title>PASA INTERNATIONAL</title>
 
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- FAVICON
@@ -137,7 +131,9 @@
 				========================================================================= -->
 			<section id="slider-main" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner">
-					<div class="item active slide1" id="particles-js">
+                    @php $i=1;@endphp
+                    @foreach($carousels as $carousel)
+					<div class="item @if($i==1) {{' active'}} @endif" id="particles-js" style="background-image:url({{asset('/image/'.$carousel->img)}}); ">
 						<div class="carousel-caption slider-item-center slider-item-v-center fx">
 							<h2 class="fx-start" data-animation="fadeInDown">
 								<span>Welcome to Pasa International</span>
@@ -150,19 +146,9 @@
 							<!-- <a class="button-big button-dark fx-start black" href="#" data-animation="fadeInDown"><i class="fa fa-file-text-o"></i>Contact Us</a> -->
 						</div>
 					</div>
-					<div class="item slide2">
-						<div class="carousel-caption slider-item-center slider-item-v-center fx">
-							<h2 class="fx-start" data-animation="fadeInDown">
-								<span>Welcome to Pasa International</span>
-							</h2>
-							<p class="fx-start" data-animation="fadeInUp">
-								<span>We started our journey in this business from the year 1998. We are one of the Nepal's best Recruiting Agencies. The number of years of experience and knowledge gives us the confident to say that, "We outsource the best Human Resources".</span>
-							</p>
-							<a class="button-big button-main fx-start" href="#" data-animation="fadeInDown"><i class="fa fa-download"></i>Application Form</a>
-							<a class="button-big button-main fx-start" href="#" data-animation="fadeInDown"><i class="fa fa-download"></i>Recruitment Process</a>
-						</div>
-					</div>
-				</div>
+                        @php $i++;@endphp
+                    @endforeach
+
 				<a class="slider-main-prev slider-prev" href="#slider-main" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
 				<a class="slider-main-next slider-next" href="#slider-main" data-slide="next"><i class="fa fa-chevron-right"></i></a>
 			</section>
@@ -507,9 +493,8 @@
 							<div class="col-md-12">
 								<h1 class="header h1" id="about-us">Introduction</h1>	
 								<div class="banner-center">
-									<div class="banner-inner">
-										<h2 >We started our journey in this business from the year 1998; we are one of the Nepal's best Recruiting Agencies. The number of years of experience and knowledge gives us the confident to say that, "we outsource the best human resources". We have been providing expert and unparalleled value added recruitment services to our clients across the world who are looking for professional and smart candidates to excel in their business. We are happy to have satisfied clients with us from a long time and we feel proud and honored to give the best to our precious clients.
-</h2>
+									<div class="banner-inner" style="text-align: justify;">
+                                        {!!html_entity_decode($abouts[0]->description)!!}
 									</div>
 								</div>
 							</div>
