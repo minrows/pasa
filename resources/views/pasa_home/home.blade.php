@@ -492,9 +492,8 @@
 							<div class="col-md-12">
 								<h1 class="header h1" id="about-us">Introduction</h1>	
 								<div class="banner-center">
-									<div class="banner-inner">
-										<h2 >We started our journey in this business from the year 1998; we are one of the Nepal's best Recruiting Agencies. The number of years of experience and knowledge gives us the confident to say that, "we outsource the best human resources". We have been providing expert and unparalleled value added recruitment services to our clients across the world who are looking for professional and smart candidates to excel in their business. We are happy to have satisfied clients with us from a long time and we feel proud and honored to give the best to our precious clients.
-</h2>
+									<div class="banner-inner" style="text-align: justify;">
+                                        {!!html_entity_decode($abouts[0]->description)!!}
 									</div>
 								</div>
 							</div>
