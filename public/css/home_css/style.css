@@ -1294,9 +1294,9 @@ blockquote cite i {
 	font-size: 20px;
 	padding: 10px;
 }
-.btn.white: active {
-	color: #002DAD !important;
-}
+/*.btn.white: {*/
+	/*color: #002DAD !important;*/
+/*}*/
 /* CONTACT-US ENDS
 ========================================================================= */
 /* 7. FOOTER STARTS
