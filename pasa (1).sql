@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 10, 2017 at 01:20 PM
+-- Generation Time: Apr 12, 2017 at 08:55 AM
 -- Server version: 5.5.39
 -- PHP Version: 7.1.1
 
@@ -58,6 +58,13 @@ CREATE TABLE `achievers` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `achievers`
+--
+
+INSERT INTO `achievers` (`id`, `title`, `img`, `state`, `created_at`, `updated_at`) VALUES
+(1, 'a', 'achiever/Q8jcZTNULzZYPsLZA2n0wuuSAsTRP7emR9SDnXGc.jpeg', 'on', '2017-04-11 01:12:08', '2017-04-11 01:12:08');
+
 -- --------------------------------------------------------
 
 --
@@ -101,7 +108,7 @@ CREATE TABLE `contacts` (
 --
 
 INSERT INTO `contacts` (`id`, `title`, `description`, `state`, `created_at`, `updated_at`) VALUES
-(1, ' ', ' ', 'on', NULL, NULL);
+(3, 'a', 'aa', 'on', '2017-04-10 23:07:20', '2017-04-10 23:07:20');
 
 -- --------------------------------------------------------
 
@@ -113,9 +120,20 @@ CREATE TABLE `corporate_fields` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` varchar(255) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` enum('on','off') COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `corporate_fields`
+--
+
+INSERT INTO `corporate_fields` (`id`, `title`, `description`, `state`, `created_at`, `updated_at`) VALUES
+(1, 'a', '<p>a</p>', 'on', '2017-04-11 01:32:59', '2017-04-11 01:32:59'),
+(3, 'b', '<p>c</p>', 'on', '2017-04-11 01:33:33', '2017-04-11 01:33:49'),
+(4, 'c', '<p>c</p>', 'on', '2017-04-11 01:33:57', '2017-04-11 01:33:57'),
+(5, 'Technical institutes', '<p>a</p>', 'on', '2017-04-11 03:02:29', '2017-04-11 03:02:29');
 
 -- --------------------------------------------------------
 
@@ -127,7 +145,8 @@ CREATE TABLE `corporate_members` (
   `corporate_field_id` int(11) NOT NULL,
   `id` int(11) NOT NULL,
   `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `location` varchar(50) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `img` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `state` enum('on','off') COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
@@ -295,12 +314,21 @@ CREATE TABLE `online_forms` (
 CREATE TABLE `overseas_clients` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `country` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `img` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `state` enum('on','off') COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `overseas_clients`
+--
+
+INSERT INTO `overseas_clients` (`id`, `title`, `country`, `img`, `state`, `created_at`, `updated_at`) VALUES
+(3, 'a', 'a', 'overseas_client/Y234NO15iJPoB38KvHla0fFdt0DXYt0f3ErFatmd.jpeg', 'on', '2017-04-11 00:48:36', '2017-04-11 00:53:30'),
+(5, 'b', 'b', NULL, 'on', '2017-04-11 00:54:00', '2017-04-11 00:54:00'),
+(6, 'c', 'a', NULL, 'on', '2017-04-11 00:54:11', '2017-04-11 00:54:11');
 
 -- --------------------------------------------------------
 
@@ -443,12 +471,12 @@ ALTER TABLE `recruitment_procedures`
 -- AUTO_INCREMENT for table `abouts`
 --
 ALTER TABLE `abouts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `achievers`
 --
 ALTER TABLE `achievers`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `admins`
 --
@@ -458,12 +486,12 @@ ALTER TABLE `admins`
 -- AUTO_INCREMENT for table `contacts`
 --
 ALTER TABLE `contacts`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `corporate_fields`
 --
 ALTER TABLE `corporate_fields`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `curr_demands`
 --
@@ -498,7 +526,7 @@ ALTER TABLE `online_forms`
 -- AUTO_INCREMENT for table `overseas_clients`
 --
 ALTER TABLE `overseas_clients`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `pasa_carousels`
 --
@@ -508,7 +536,7 @@ ALTER TABLE `pasa_carousels`
 -- AUTO_INCREMENT for table `recruitment_procedures`
 --
 ALTER TABLE `recruitment_procedures`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
