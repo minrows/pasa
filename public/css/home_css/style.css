@@ -602,6 +602,7 @@ a {
 #primary-menu  li a:hover {
 	text-decoration: none;
 }
+#primary-menu  li::selection { color: green; }
 #primary-menu .sub-menu {
 	font-size: 14px;
 	position: absolute;
@@ -3349,6 +3350,7 @@ a.label-main:hover,
 	background-color: #001A64;
 	color: #464646;
 }
+
 #branding {
 	/*background-image:url('../img/footer.html');*/
 }
