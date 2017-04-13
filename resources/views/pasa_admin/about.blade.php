@@ -1,5 +1,8 @@
 @extends('layouts.admin_app',['select' => 'about'])
 
+@section('title')
+    {{'ABOUT US'}}
+@endsection
 
 @section('content')
     <style>

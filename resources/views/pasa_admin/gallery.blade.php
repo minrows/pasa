@@ -1,5 +1,8 @@
 @extends('layouts.admin_app',['select' => 'gallery'])
 
+@section('title')
+    {{'GALLERY'}}
+@endsection
 
 @section('content')
     <style>
