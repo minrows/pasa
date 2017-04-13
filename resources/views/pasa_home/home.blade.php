@@ -502,45 +502,18 @@
 						</div>
 					</div>
 				</div>
-				<div class="container spadding">
-					<div class="row row-equal fx">
-						<div class="feature-list col-sm-6 col-md-4 fx-start" data-animation="fadeInUp">
-							<div class="service-box box1">
-								<div class="feature-head">
-									<h3><i class="fa fa-university"></i>Capital Global Investment</h3>
-								</div>
-								<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis elit sed do eiusmod minim veniam quis. Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis elit sed do eiusmod minim veniam quis.<span><a class="button-medium button-main btn small" href="#">Contact Us</a></span></p>
-							</div>
-						</div>
-						<div class="feature-list col-sm-6 col-md-4 fx-start" data-animation="fadeInUp">
-							<div class="service-box box2 grn">
-								<div class="feature-head">
-									<h3><i class="fa fa-bar-chart"></i>Global Industry</h3>
-								</div>
-								<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis elit sed do eiusmod minim veniam quis. Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis elit sed do eiusmod minim veniam quis.<span><a class="button-medium button-main btn small" href="#">Contact Us</a></span></p>
-							</div>
-						</div>
-						<div class="feature-list col-sm-6 col-md-4 fx-start" data-animation="fadeInUp">
-							<div class="service-box box3 org">
-								<div class="feature-head">
-									<h3><i class="fa fa-calendar"></i>Environmental Care</h3>
-								</div>
-								<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis elit sed do eiusmod minim veniam quis. Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis elit sed do eiusmod minim veniam quis.<span><a class="button-medium button-main btn small" href="#">Contact Us</a></span></p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- INTRO ENDS
-					========================================================================= -->
+
 				<!-- CTA STARTS
 					========================================================================= -->
 				<div class="container-fluid spadding cta">
 					<div class="row">
 						<div class="container">
-							<div class="col-md-9" data-animation="fadeInDown">
+							<div class="col-md-7" data-animation="fadeInDown">
 								<h2>PASA: A Friend at Your Service</h2>
 							</div>
-							<div class="col-md-3 right">
+							<div class="col-md-5 right">
+                                <a href="/about" class="button-big button-main"><i class="fa fa-book"></i>Read More</a>
+                                &nbsp;&nbsp;
 								<a href="#" class="button-big button-main"><i class="fa fa-envelope"></i>Apply Online</a>
 							</div>
 						</div>

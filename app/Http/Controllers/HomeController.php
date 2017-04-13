@@ -16,4 +16,9 @@ class HomeController extends Controller
         $abouts=about::all();
         return view('pasa_home/home',compact('carousels','abouts'));
     }
+
+    public function about()
+    {
+        return view('pasa_home/about');
+    }
 }
