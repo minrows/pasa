@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 13, 2017 at 08:42 AM
+-- Generation Time: Apr 13, 2017 at 11:37 AM
 -- Server version: 5.5.39
 -- PHP Version: 7.1.1
 
@@ -47,8 +47,7 @@ INSERT INTO `abouts` (`id`, `title`, `description`, `img`, `state`, `created_at`
 (5, 'Message from CEO', '<p>I am honored to introduce myself as the CEO of&nbsp;PASA International Pvt Ltd.&nbsp;We have walked a long way to reach the success with our efficient, dedicated, hardworking and responsible team with us.</p>\r\n\r\n<p>We always believe in client satisfaction, we don&rsquo;t just supply workforce but we believe in providing the best of the candidates with required filtration process. So that our valuable clients business shall run profitable and successful for a long run.</p>\r\n\r\n<p>Our joint efforts and sense of responsibility has given us an opportunity to be in this business successfully since a long period. We have friendly, professional and healthy working environment which give us zeal and boosts us to excel in providing the best of all.</p>\r\n\r\n<p>Our aim is to be the Nepal&#39;s No. 1 foreign recruitment agency in terms of quality services along with long term relationship with our valued clients.</p>\r\n\r\n<p>Thank you for your valuable time.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Binod Purush Neupane</strong><br />\r\nCEO&nbsp;</p>', NULL, 'on', '2017-04-13 00:51:44', '2017-04-13 00:56:55'),
 (6, 'Why Pasa International?', '<p>In the current era of business, due to the increasing competition as well as globalizations, only those organizations can stand and sustain in front of such business race which is backed with the elevating spirit of knowledge and skill. In fact, it is a result by the optimal use of required human expertise in the respective areas of today&#39;s organizations.&nbsp;Pasa International&nbsp;acts as a connecting bridge to tie between the knots of desired human skills and the organizations like those which are seeking for such manpower.<br />\r\n<br />\r\nOur aim is directed by the value driven culture of our organization that adds the unique value in our each service deliverables. That is why we don&#39;t do different things, however our focused approaches comes as different. This is justified by our standard recruitment system where the logical &amp; systematic approaches have been taken on, the identification of clients&#39; requirements and finding the best possible way out from wide range of selections. The countless rigorous activities where we had put our maximum efforts have made this organization successful in terms of both reliability and dependability. Adding to that, we intend to introduce and integrate the newer technological luxury to our organizations&rsquo; trait in order to successfully drive its day-to-day operation making a right step to move forward.<br />\r\n<br />\r\nWith the bricks of acknowledged faith in our potential and services, we have laid down the foundation for uncompromising quality in everything we deliver and have built a corporation where there is a committed dazzling prospects to everyone concerned.</p>', NULL, 'on', '2017-04-13 00:52:17', '2017-04-13 00:52:17'),
 (7, 'Corporate Members', '<p><strong>Pasa International</strong>&nbsp;believes in the approach of corporate solutions. Therefore, each deliverables of Pasa is comprised of total corporate efforts from different wings as partner organizations. The following are the list of corporate team of Pasa. (Testimonials are available upon request)</p>', NULL, 'on', '2017-04-13 00:53:05', '2017-04-13 00:53:05'),
-(8, 'Overseas Clients', '<p>...</p>', NULL, 'on', '2017-04-13 00:53:57', '2017-04-13 00:53:57'),
-(9, 'Our Achievers', '<p>...</p>', NULL, 'on', '2017-04-13 00:54:33', '2017-04-13 00:54:33');
+(8, 'Overseas Clients', '<p>&amp;nbsp;</p>', NULL, 'on', '2017-04-13 00:53:57', '2017-04-13 03:35:51');
 
 -- --------------------------------------------------------
 
@@ -64,13 +63,6 @@ CREATE TABLE `achievers` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
-
---
--- Dumping data for table `achievers`
---
-
-INSERT INTO `achievers` (`id`, `title`, `img`, `state`, `created_at`, `updated_at`) VALUES
-(1, 'a', 'achiever/Q8jcZTNULzZYPsLZA2n0wuuSAsTRP7emR9SDnXGc.jpeg', 'on', '2017-04-11 01:12:08', '2017-04-11 01:12:08');
 
 -- --------------------------------------------------------
 
@@ -333,9 +325,19 @@ CREATE TABLE `overseas_clients` (
 --
 
 INSERT INTO `overseas_clients` (`id`, `title`, `country`, `img`, `state`, `created_at`, `updated_at`) VALUES
-(3, 'a', 'a', 'overseas_client/Y234NO15iJPoB38KvHla0fFdt0DXYt0f3ErFatmd.jpeg', 'on', '2017-04-11 00:48:36', '2017-04-11 00:53:30'),
-(5, 'b', 'b', NULL, 'on', '2017-04-11 00:54:00', '2017-04-11 00:54:00'),
-(6, 'c', 'a', NULL, 'on', '2017-04-11 00:54:11', '2017-04-11 00:54:11');
+(7, 'Ansar Gallery', 'Baharain', 'overseas_client/17EkJEfcxZ8viuGrpZVwkhuzekLNHn0eyqsfmjdT.gif', 'on', '2017-04-13 03:22:46', '2017-04-13 03:22:46'),
+(8, 'Power Point Electrical & Mechanical Works L.L.C.', 'UAE', 'overseas_client/DagFu8qcLSuGoWGbkXTRyHr5dCoCocGsO4PD2a2V.gif', 'on', '2017-04-13 03:23:42', '2017-04-13 03:23:42'),
+(9, 'Abu Dhabi Coating Enterprises W.L.L.', 'UAE', NULL, 'on', '2017-04-13 03:24:14', '2017-04-13 03:24:14'),
+(10, 'Al Mukadam Building Cleaning & Security LLC', 'UAE', NULL, 'on', '2017-04-13 03:24:38', '2017-04-13 03:24:38'),
+(11, 'Can Gulf Technologies LLC', 'UAE', NULL, 'on', '2017-04-13 03:24:59', '2017-04-13 03:24:59'),
+(12, 'Emirates Leisure Retail', 'UAE', NULL, 'on', '2017-04-13 03:25:23', '2017-04-13 03:25:23'),
+(13, 'Gyathi Construction LLC', 'UAE', NULL, 'on', '2017-04-13 03:25:38', '2017-04-13 03:25:38'),
+(14, 'International Market Group (For General Services)', 'UAE', NULL, 'on', '2017-04-13 03:25:57', '2017-04-13 03:25:57'),
+(15, 'Lu Lu Hypermarket', 'UAE', NULL, 'on', '2017-04-13 03:26:14', '2017-04-13 03:26:14'),
+(16, 'Marhaba Services', 'UAE', NULL, 'on', '2017-04-13 03:26:29', '2017-04-13 03:26:29'),
+(17, 'National Catering Company L.L.C.', 'UAE', NULL, 'on', '2017-04-13 03:26:42', '2017-04-13 03:26:42'),
+(18, 'Taisei Corporation', 'UAE', NULL, 'on', '2017-04-13 03:26:57', '2017-04-13 03:26:57'),
+(19, 'Tarfana Services L.L.C.', 'UAE', NULL, 'on', '2017-04-13 03:27:14', '2017-04-13 03:27:14');
 
 -- --------------------------------------------------------
 
@@ -536,7 +538,7 @@ ALTER TABLE `online_forms`
 -- AUTO_INCREMENT for table `overseas_clients`
 --
 ALTER TABLE `overseas_clients`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
 --
 -- AUTO_INCREMENT for table `pasa_carousels`
 --
