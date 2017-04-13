@@ -5,6 +5,14 @@
 @endsection
 
 @section('content')
+    <style>
+        h3{
+            color:lightcyan;
+        }
+        h4{
+            margin:0;
+        }
+    </style>
     <div class="container-fluid spadding">
         <div class="container">
             <div class="row">
@@ -31,6 +39,33 @@
                                         <div class="tab-pane @if($i==1) {{'active'}} @endif" id="tab_{{$about->id}}">
                                             <h2>{{$about->title}}</h2>
                                             <div class="JustifyLeft">{!!html_entity_decode($about->description)!!}</div>
+
+                                            @if($about->title==="Overseas Clients")
+                                                @foreach($oc_countries as $oc_country)
+                                                    <div class="oc_country">
+                                                        <h3>{{$oc_country->country}}</h3>
+                                                        <div class="row">
+                                                            @php $j=1; @endphp
+                                                        @foreach($overseas_clients as $overseas_client)
+                                                            @if($overseas_client->country===$oc_country->country)
+                                                                <div class="oc col-lg-4">
+                                                                    @if($overseas_client->img!=null && $overseas_client->img!="")
+                                                                        <div class="center-block"><img src="{{asset('/image/'.$overseas_client->img)}}" height="100px" width="100px" /></div>
+                                                                    @endif
+                                                                    <br>
+                                                                    <h4 align="center">{{$overseas_client->title}}</h4>
+                                                                </div>
+                                                                @if($j%3==0)
+                                                                    <div class="clearfix"></div>
+                                                                @endif
+                                                                @php $j++; @endphp
+                                                            @endif
+                                                        @endforeach
+                                                        </div>
+                                                    </div>
+                                                @endforeach
+                                            @endif
+
                                         </div>
                                         @php $i++;@endphp
                                     @endforeach

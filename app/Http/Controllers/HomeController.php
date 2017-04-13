@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\overseas_client;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -20,6 +21,19 @@ class HomeController extends Controller
     public function about()
     {
         $abouts=about::where('state','on')->get();
-        return view('pasa_home/about',compact('abouts'));
+
+        $oc_countries=overseas_client::select('country')->where('state','on')->distinct()->get();
+
+        $overseas_clients=$overseas_clients=overseas_client::orderBy('country')
+            ->groupBy('country')
+            ->groupBy('title')
+            ->groupBy('id')
+            ->groupBy('img')
+            ->groupBy('state')
+            ->groupBy('created_at')
+            ->groupBy('updated_at')
+            ->get();
+
+        return view('pasa_home/about',compact('abouts','oc_countries','overseas_clients'));
     }
 }
