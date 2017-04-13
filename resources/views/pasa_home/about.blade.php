@@ -31,6 +31,26 @@
                                         <div class="tab-pane @if($i==1) {{'active'}} @endif" id="tab_{{$about->id}}">
                                             <h2>{{$about->title}}</h2>
                                             <div class="JustifyLeft">{!!html_entity_decode($about->description)!!}</div>
+
+                                            @if($about->title==="Overseas Client")
+                                                @foreach($oc_countries as $oc_country)
+                                                    <div class="oc_country">
+                                                        <h3>{{$oc_country->country}}</h3>
+                                                        @foreach($overseas_clients as $overseas_client)
+                                                            <div class="row">
+                                                            @if($overseas_client->country===$oc_country->country)
+                                                                <div class="oc">
+                                                                    @if($overseas_client->img!=null && $overseas_client->img!="")
+                                                                        <img src="{{asset('/image/'.$overseas_client->img)}}" height="100px" width="100px" />
+                                                                    @endif
+                                                                </div>
+                                                            @endif
+                                                            </div>
+                                                        @endforeach
+                                                    </div>
+                                                @endforeach
+                                            @endif
+
                                         </div>
                                         @php $i++;@endphp
                                     @endforeach
