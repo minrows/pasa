@@ -18,13 +18,14 @@
 .tabs-right>li {
     margin-left: -1px;
 }
-.tabs-left>li.active>a,
+/*.tabs-left>li.active>a,
 .tabs-left>li.active>a:hover,
 .tabs-left>li.active>a:focus {
     border-bottom-color: #ddd;
     border-right-color: transparent;
+    color: #000000;
 }
-
+*/
 .tabs-right>li.active>a,
 .tabs-right>li.active>a:hover,
 .tabs-right>li.active>a:focus {
@@ -91,4 +92,26 @@
 .tab-content>.active{
     display:block;
     background-color: transparent !important;
+    margin-top: -50px;
+    color: #ffffff;
 }
+.tab-content>.tab-pane>.JustifyLeft{
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.tab-content>.active h2{
+    color: #ffffff;
+    margin-top: -15px;
+}
+#about-title{
+    color: #ffffff;
+}
+#about-title:hover{
+    color: #000000;
+}
+.active #about-title{
+    color: #000000;
+}
+
+

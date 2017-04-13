@@ -17,7 +17,7 @@
                                 <ul class="nav nav-tabs tabs-left"><!-- 'tabs-right' for right tabs -->
                                     @php $i=1;@endphp
                                     @foreach($abouts as $about)
-                                        <li class="@if($i==1) {{'active'}} @endif"><a href="#tab_{{$about->id}}" data-toggle="tab">{{$about->title}}</a></li>
+                                        <li class="@if($i==1) {{'active'}} @endif"><a id="about-title" href="#tab_{{$about->id}}" data-toggle="tab">{{$about->title}}</a></li>
                                         @php $i++;@endphp
                                     @endforeach
 
