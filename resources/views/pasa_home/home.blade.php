@@ -95,7 +95,7 @@
 						<nav id="site-navigation" class="main-navigation" role="navigation">
 							<ul id="primary-menu" class="light">
 								<li><a href="#home">Home</a></li>
-								<li><a href="#intro">About Us</a>
+								<li><a href="#about-us">About Us</a>
 									{{--<ul class="sub-menu">--}}
 										{{--<li><a href="#message">Message</a></li>--}}
 										{{--<li><a href="#gallery">Gallery</a></li>--}}
@@ -488,59 +488,33 @@
 			<div id="content" class="site-content">
 				<!-- INTRO STARTS
 					========================================================================= -->
-				<div class="container-fluid spadding">
+				<div class="container-fluid spadding" id="about-us">
+				<div class="container-fluid spadding" id="about-us">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
-								<h1 class="header h1" id="about-us">{{$abouts[0]->title}}</h1>	
+								<h1 class="header h1">{{$about->title}}</h1>
 								<div class="banner-center">
 									<div class="banner-inner" id="introduction">
-                                        {!!html_entity_decode($abouts[0]->description)!!}
+                                        {!!html_entity_decode($about->description)!!}
 									</div>
 								</div>
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="container spadding">
-					<div class="row row-equal fx">
-						<div class="feature-list col-sm-6 col-md-4 fx-start" data-animation="fadeInUp">
-							<div class="service-box box1">
-								<div class="feature-head">
-									<h3><i class="fa fa-university"></i>Capital Global Investment</h3>
-								</div>
-								<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis elit sed do eiusmod minim veniam quis. Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis elit sed do eiusmod minim veniam quis.<span><a class="button-medium button-main btn small" href="#">Contact Us</a></span></p>
-							</div>
-						</div>
-						<div class="feature-list col-sm-6 col-md-4 fx-start" data-animation="fadeInUp">
-							<div class="service-box box2 grn">
-								<div class="feature-head">
-									<h3><i class="fa fa-bar-chart"></i>Global Industry</h3>
-								</div>
-								<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis elit sed do eiusmod minim veniam quis. Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis elit sed do eiusmod minim veniam quis.<span><a class="button-medium button-main btn small" href="#">Contact Us</a></span></p>
-							</div>
-						</div>
-						<div class="feature-list col-sm-6 col-md-4 fx-start" data-animation="fadeInUp">
-							<div class="service-box box3 org">
-								<div class="feature-head">
-									<h3><i class="fa fa-calendar"></i>Environmental Care</h3>
-								</div>
-								<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis elit sed do eiusmod minim veniam quis. Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis elit sed do eiusmod minim veniam quis.<span><a class="button-medium button-main btn small" href="#">Contact Us</a></span></p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- INTRO ENDS
-					========================================================================= -->
+
 				<!-- CTA STARTS
 					========================================================================= -->
 				<div class="container-fluid spadding cta">
 					<div class="row">
 						<div class="container">
-							<div class="col-md-9" data-animation="fadeInDown">
+							<div class="col-md-7" data-animation="fadeInDown">
 								<h2>PASA: A Friend at Your Service</h2>
 							</div>
-							<div class="col-md-3 right">
+							<div class="col-md-5 right">
+                                <a href="/about" class="button-big button-main"><i class="fa fa-book"></i>Read More</a>
+                                &nbsp;&nbsp;
 								<a href="#" class="button-big button-main"><i class="fa fa-envelope"></i>Apply Online</a>
 							</div>
 						</div>

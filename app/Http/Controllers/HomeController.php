@@ -13,7 +13,13 @@ class HomeController extends Controller
     public function index()
     {
         $carousels=pasa_carousel::where('state','on')->get();
-        $abouts=about::all();
-        return view('pasa_home/home',compact('carousels','abouts'));
+        $about=about::where(['state'=>'on','title'=>'Company Profile'])->first();
+        return view('pasa_home/home',compact('carousels','about'));
+    }
+
+    public function about()
+    {
+        $abouts=about::where('state','on')->get();
+        return view('pasa_home/about',compact('abouts'));
     }
 }
