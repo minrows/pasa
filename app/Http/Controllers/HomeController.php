@@ -19,6 +19,7 @@ class HomeController extends Controller
 
     public function about()
     {
-        return view('pasa_home/about');
+        $abouts=about::where('state','on')->get();
+        return view('pasa_home/about',compact('abouts'));
     }
 }

@@ -489,6 +489,7 @@
 				<!-- INTRO STARTS
 					========================================================================= -->
 				<div class="container-fluid spadding" id="about-us">
+				<div class="container-fluid spadding" id="about-us">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">

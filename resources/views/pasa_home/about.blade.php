@@ -15,19 +15,26 @@
                             <div class="col-xs-3"> <!-- required for floating -->
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs tabs-left"><!-- 'tabs-right' for right tabs -->
-                                    <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-                                    <li><a href="#profile" data-toggle="tab">Profile</a></li>
-                                    <li><a href="#messages" data-toggle="tab">Messages</a></li>
-                                    <li><a href="#settings" data-toggle="tab">Settings</a></li>
+                                    @php $i=1;@endphp
+                                    @foreach($abouts as $about)
+                                        <li class="@if($i==1) {{'active'}} @endif"><a href="#tab_{{$about->id}}" data-toggle="tab">{{$about->title}}</a></li>
+                                        @php $i++;@endphp
+                                    @endforeach
+
                                 </ul>
                             </div>
                             <div class="col-xs-9">
                                 <!-- Tab panes -->
                                 <div class="tab-content">
-                                    <div class="tab-pane active" id="home">Home Tab.</div>
-                                    <div class="tab-pane" id="profile">Profile Tab.</div>
-                                    <div class="tab-pane" id="messages">Messages Tab.</div>
-                                    <div class="tab-pane" id="settings">Settings Tab.</div>
+                                    @php $i=1;@endphp
+                                    @foreach($abouts as $about)
+                                        <div class="tab-pane @if($i==1) {{'active'}} @endif" id="tab_{{$about->id}}">
+                                            <h2>{{$about->title}}</h2>
+                                            <div class="JustifyLeft">{!!html_entity_decode($about->description)!!}</div>
+                                        </div>
+                                        @php $i++;@endphp
+                                    @endforeach
+                                    
                                 </div>
                             </div>
                         </div>
