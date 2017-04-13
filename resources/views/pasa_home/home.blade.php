@@ -148,9 +148,10 @@
                         @php $i++;@endphp
                     @endforeach
 
-				<a class="slider-main-prev slider-prev" href="#slider-main" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-				<a class="slider-main-next slider-next" href="#slider-main" data-slide="next"><i class="fa fa-chevron-right"></i></a>
-			</section>
+				    <a class="slider-main-prev slider-prev" href="#slider-main" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
+				    <a class="slider-main-next slider-next" href="#slider-main" data-slide="next"><i class="fa fa-chevron-right"></i></a>
+                </div>
+            </section>
 			<!-- SLIDER ENDS
 				========================================================================= -->
 			<!-- ICONS STARTS
