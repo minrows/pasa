@@ -76,7 +76,7 @@
 						<nav id="site-navigation" class="main-navigation" role="navigation">
 							<ul id="primary-menu" class="light">
 								<li><a href="/#home">Home</a></li>
-								<li><a href="/#intro">About Us</a>
+								<li><a href="/#about-us">About Us</a>
 									{{--<ul class="sub-menu">--}}
 										{{--<li><a href="#message">Message</a></li>--}}
 										{{--<li><a href="#gallery">Gallery</a></li>--}}

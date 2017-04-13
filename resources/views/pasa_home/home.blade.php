@@ -95,7 +95,7 @@
 						<nav id="site-navigation" class="main-navigation" role="navigation">
 							<ul id="primary-menu" class="light">
 								<li><a href="#home">Home</a></li>
-								<li><a href="#intro">About Us</a>
+								<li><a href="#about-us">About Us</a>
 									{{--<ul class="sub-menu">--}}
 										{{--<li><a href="#message">Message</a></li>--}}
 										{{--<li><a href="#gallery">Gallery</a></li>--}}
@@ -488,14 +488,14 @@
 			<div id="content" class="site-content">
 				<!-- INTRO STARTS
 					========================================================================= -->
-				<div class="container-fluid spadding">
+				<div class="container-fluid spadding" id="about-us">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
-								<h1 class="header h1" id="about-us">{{$abouts[0]->title}}</h1>	
+								<h1 class="header h1">{{$about->title}}</h1>
 								<div class="banner-center">
 									<div class="banner-inner" id="introduction">
-                                        {!!html_entity_decode($abouts[0]->description)!!}
+                                        {!!html_entity_decode($about->description)!!}
 									</div>
 								</div>
 							</div>
