@@ -112,12 +112,12 @@
 				<nav id="mobile-navigation" role="navigation">
 					<ul class="menu">
 						<li class="current-menu-item"><a href="#home">Home</a></li>
-							<li class="menu-item-has-children"><a href="#intro">About Us</a>
+						<li class="menu-item-has-children"><a href="#intro">About Us</a>
 								{{-- <ul class="sub-menu">
 									<li><a href="#message">Message</a></li>
 									<li><a href="#gallery">Gallery</a></li>
 								</ul> --}}
-							</li>
+						</li>
 						<li><a href="#industries">Recruit Procedures</a></li>
 						<li><a href="#gallery">Gallery</a></li>
 						<li><a href="#testimonials">Current Demands</a></li>
@@ -930,8 +930,10 @@
 				========================================================================= -->
 			<a href="#page" class="button-go scroll-to"><i class="fa fa-chevron-up"></i></a>
 		</div>
+		
 		<!-- SCRIPTS
 			========================================================================= -->
+			
 		<script type='text/javascript' src="{{asset('js/home_js/jquery-3.1.1.min.js')}}"></script>
 		<script type='text/javascript' src="{{asset('js/home_js/bootstrap.js')}}"></script>
 		<script type='text/javascript' src="{{asset('js/home_js/owl.carousel.js')}}"></script>
