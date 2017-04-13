@@ -896,9 +896,7 @@ a {
 	color: #000000;
 	margin-left: 10px;
 }
-.aactive {
-  background-color: #0000FF
-}
+
 #introduction{
 	text-align: justify;
 	color: #ffffff;
@@ -3357,7 +3355,11 @@ a.label-main:hover,
 	background-color: #001A64;
 	color: #464646;
 }
-
+.active {
+  color: #3C1450 !important;
+    background-color: #dddddd !important;
+	text-decoration: none !important;
+}
 #branding {
 	/*background-image:url('../img/footer.html');*/
 }

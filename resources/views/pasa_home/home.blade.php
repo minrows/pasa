@@ -17,6 +17,7 @@
     .panel-widget-style.img {
         background-image: url({{asset('image/check/blog_03.jpg')}});
     }
+
 </style>
 	
 <!-- Mirrored from syed.tinymy.com/consultant/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Mar 2017 05:02:47 GMT -->
@@ -95,12 +96,7 @@
 						<nav id="site-navigation" class="main-navigation" role="navigation">
 							<ul id="primary-menu" class="light">
 								<li><a href="#home">Home</a></li>
-								<li><a href="#about-us">About Us</a>
-									{{--<ul class="sub-menu">--}}
-										{{--<li><a href="#message">Message</a></li>--}}
-										{{--<li><a href="#gallery">Gallery</a></li>--}}
-									{{--</ul>--}}
-								</li>
+								<li><a href="#about-us">About Us</a></li>
 								<li ><a href="#industries">Recruit Procedures</a></li>
 								<li ><a href="#gallery">Gallery</a></li>
 								<li><a href="#testimonials">Current Demands</a></li>
@@ -907,7 +903,16 @@
 		
 		<!-- SCRIPTS
 			========================================================================= -->
-			
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+		{{-- Menu Onclick function  --}}
+		<script type="text/javascript">
+		    $(function() {
+		        $("#primary-menu li a").click(function() {
+		            $("#primary-menu li a").removeClass("active");
+		            $(this).addClass("active");
+		        });
+		    });
+		</script>
 		<script type='text/javascript' src="{{asset('js/home_js/jquery-3.1.1.min.js')}}"></script>
 		<script type='text/javascript' src="{{asset('js/home_js/bootstrap.js')}}"></script>
 		<script type='text/javascript' src="{{asset('js/home_js/owl.carousel.js')}}"></script>
