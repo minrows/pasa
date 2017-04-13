@@ -1,5 +1,8 @@
 @extends('layouts.admin_app',['select' => 'carousel'])
 
+@section('title')
+    {{'CAROUSEL'}}
+@endsection
 
 @section('content')
     <style>

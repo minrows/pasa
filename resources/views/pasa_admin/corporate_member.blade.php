@@ -1,5 +1,8 @@
 @extends('layouts.admin_app',['select' => 'corporate_member'])
 
+@section('title')
+    {{'CORPORATE MEMBER'}}
+@endsection
 
 @section('content')
     <style>

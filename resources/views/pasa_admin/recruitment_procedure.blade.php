@@ -1,5 +1,8 @@
 @extends('layouts.admin_app',['select' => 'recruitment_procedure'])
 
+@section('title')
+    {{'RECRUITMENT PROCEDURE'}}
+@endsection
 
 @section('content')
     <style>

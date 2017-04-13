@@ -1,5 +1,8 @@
 @extends('layouts.admin_app',['select' => 'current_demand'])
 
+@section('title')
+    {{'CURRENT DEMAND'}}
+@endsection
 
 @section('content')
     <style>

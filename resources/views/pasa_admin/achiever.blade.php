@@ -1,5 +1,8 @@
 @extends('layouts.admin_app',['select' => 'achiever'])
 
+@section('title')
+    {{'ACHIEVER'}}
+@endsection
 
 @section('content')
     <style>

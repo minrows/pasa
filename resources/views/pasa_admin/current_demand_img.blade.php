@@ -1,5 +1,8 @@
 @extends('layouts.admin_app',['select' => 'current_demand_img'])
 
+@section('title')
+    {{'CURRENT DEMAND IMG'}}
+@endsection
 
 @section('content')
     <style>

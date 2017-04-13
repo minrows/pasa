@@ -1,5 +1,8 @@
 @extends('layouts.admin_app',['select' => 'overseas_client'])
 
+@section('title')
+    {{'OVERSEAS CLIENT'}}
+@endsection
 
 @section('content')
     <style>
