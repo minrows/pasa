@@ -491,9 +491,9 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
-								<h1 class="header h1" id="about-us">Introduction</h1>	
+								<h1 class="header h1" id="about-us">{{$abouts[0]->title}}</h1>	
 								<div class="banner-center">
-									<div class="banner-inner" style="text-align: justify;">
+									<div class="banner-inner" id="introduction">
                                         {!!html_entity_decode($abouts[0]->description)!!}
 									</div>
 								</div>
