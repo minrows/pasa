@@ -78,6 +78,7 @@
 						</div>
 					</div>
 				</div>
+				
 				<div id="menu" class="clearfix dark menu-class">
 					<div class="container">
 						<div id="logo">
@@ -93,15 +94,15 @@
 						</div>
 						<nav id="site-navigation" class="main-navigation" role="navigation">
 							<ul id="primary-menu" class="light">
-								<li ><a href="#home">Home</a></li>
-								<li class="menu-item-has-children"><a href="#intro">About Us</a>
+								<li><a href="#home">Home</a></li>
+								<li><a href="#intro">About Us</a>
 									{{--<ul class="sub-menu">--}}
 										{{--<li><a href="#message">Message</a></li>--}}
 										{{--<li><a href="#gallery">Gallery</a></li>--}}
 									{{--</ul>--}}
 								</li>
-								<li><a href="#industries">Recruit Procedures</a></li>
-								<li class="active"><a href="#gallery">Gallery</a></li>
+								<li ><a href="#industries">Recruit Procedures</a></li>
+								<li ><a href="#gallery">Gallery</a></li>
 								<li><a href="#testimonials">Current Demands</a></li>
 								<li><a href="#contact-us">Contact Us</a></li>
 							</ul>
@@ -491,9 +492,9 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
-								<h1 class="header h1" id="about-us">Introduction</h1>	
+								<h1 class="header h1" id="about-us">{{$abouts[0]->title}}</h1>	
 								<div class="banner-center">
-									<div class="banner-inner" style="text-align: justify;">
+									<div class="banner-inner" id="introduction">
                                         {!!html_entity_decode($abouts[0]->description)!!}
 									</div>
 								</div>
@@ -941,6 +942,7 @@
 		<script type='text/javascript' src="{{asset('js/home_js/jquery.mmenu.js')}}"></script>
 		<script type='text/javascript' src="{{asset('js/home_js/app.js')}}"></script>
 		<script type='text/javascript' src="{{asset('js/home_js/scripts.js')}}"></script>
+		
 	</body>
 
 
