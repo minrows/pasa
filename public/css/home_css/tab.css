@@ -84,3 +84,11 @@
     -o-transform: rotate(-90deg);
     transform: rotate(-90deg);
 }
+
+.tab-pane{
+    display:none;
+}
+.tab-content>.active{
+    display:block;
+    background-color: transparent !important;
+}

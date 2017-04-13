@@ -34,7 +34,7 @@
                                         </div>
                                         @php $i++;@endphp
                                     @endforeach
-                                    
+
                                 </div>
                             </div>
                         </div>
