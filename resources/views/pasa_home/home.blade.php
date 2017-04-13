@@ -21,7 +21,7 @@
 </style>
 	
 <!-- Mirrored from syed.tinymy.com/consultant/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Mar 2017 05:02:47 GMT -->
-<head>
+    <head>
 
 		<title>PASA INTERNATIONAL</title>
 
@@ -900,6 +900,7 @@
 				========================================================================= -->
 			<a href="#page" class="button-go scroll-to"><i class="fa fa-chevron-up"></i></a>
 		</div>
+    </div>
 		
 		<!-- SCRIPTS
 			========================================================================= -->
@@ -925,6 +926,4 @@
 		<script type='text/javascript' src="{{asset('js/home_js/scripts.js')}}"></script>
 		
 	</body>
-
-
 </html>

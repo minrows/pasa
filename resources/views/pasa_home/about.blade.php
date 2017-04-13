@@ -12,7 +12,7 @@
                     <h1 class="header h1" id="about-us">About Us</h1>
                     <div class="banner-center">
                         <div class="banner-inner" id="introduction">
-                            <div class="col-xs-3"> <!-- required for floating -->
+                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"> <!-- required for floating -->
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs tabs-left"><!-- 'tabs-right' for right tabs -->
                                     @php $i=1;@endphp
@@ -23,7 +23,7 @@
 
                                 </ul>
                             </div>
-                            <div class="col-xs-9">
+                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     @php $i=1;@endphp
