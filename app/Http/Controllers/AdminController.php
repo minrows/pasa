@@ -98,13 +98,11 @@ class AdminController extends Controller
     public function delete_carousel(Request $request)
     {
         $pasa=pasa_carousel::find($request->del_id);
-
         //img file delete
         $del=$pasa->img;
         $del=str_replace('/','\\',$del);
         $del=public_path('image\\').$del;
         File::delete($del);
-
         $pasa->delete();
         session()->flash('message', 'Data Deleted Successfully!');
         return back();
@@ -241,10 +239,19 @@ class AdminController extends Controller
     public function update_about(Request $request)
     {
         $pasa=about::find($request->id);
-
         $pasa->title=$request->title;
         $pasa->description=$request->input('description_'.$request->id);
         $pasa->state=$request->state;
+        if($pasa->title=="Message from Chairman" || $pasa->title=="Message from CEO"){
+            if ($request->hasFile('myFile')) {
+            $del=$pasa->img;
+            $del=str_replace('/','\\',$del);
+            $del=public_path('image\\').$del;
+            File::delete($del);
+            $path = $request->file('myFile')->store('about');
+            $pasa->img=$path;
+            }            
+        }
         $pasa->save();
         session()->flash('message', 'Data Updated Successfully!');
         return back();
@@ -253,11 +260,17 @@ class AdminController extends Controller
     public function delete_about(Request $request)
     {
         $pasa=about::find($request->del_id);
-
+        if($pasa->img!=null && $pasa->img!="") {
+            $del = $pasa->img;
+            $del = str_replace('/', '\\', $del);
+            $del = public_path('image\\') . $del;
+            File::delete($del);
+        }
         //img file delete
         $pasa->delete();
         session()->flash('message', 'Data Deleted Successfully!');
         return back();
+
     }
 
     public function recruitment_procedure()

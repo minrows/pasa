@@ -15,16 +15,12 @@
         background-size: cover;
     }
     .panel-widget-style.img {
-        background-image: url({{asset('image/check/blog_03.jpg')}});
+        background-image: url({{asset('image/'.$chairman->img)}});
     }
 
 </style>
-	
-<!-- Mirrored from syed.tinymy.com/consultant/ by HTTrack Website Copier/3.x [XR&CO'2014], Wed, 29 Mar 2017 05:02:47 GMT -->
     <head>
-
 		<title>PASA INTERNATIONAL</title>
-
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- FAVICON
 			========================================================================= -->
@@ -44,7 +40,6 @@
 		<link rel='stylesheet' href="{{asset('css/home_css/style.css')}}" type='text/css' />
 	</head>
 	<body id="home">
-	
 			<!-- PRELOADER STARTS
 			========================================================================= -->
 		<div class="preloader"></div>
@@ -485,11 +480,10 @@
 				<!-- INTRO STARTS
 					========================================================================= -->
 				<div class="container-fluid spadding" id="about-us">
-				<div class="container-fluid spadding" id="about-us">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
-								<h1 class="header h1">{{$about->title}}</h1>
+								<h1 class="header h1 white" >{{$about->title}}</h1>
 								<div class="banner-center">
 									<div class="banner-inner" id="introduction">
                                         {!!html_entity_decode($about->description)!!}
@@ -525,13 +519,12 @@
 						<div class="container">
 							<div class="row">
 								<div class="col-md-7">
-									<h1 class="header h1">CEO Message</h1>
+									<h1 class="header h1 purple">{{$chairman->title}}</h1>
 									<div class="quote-big clearfix">
 										<blockquote>
-											<p><i class="fa fa-quote-left"></i>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod tempor ncididunt labore dolore magna aliqua minim aqula verana eiusmod tempor ncididunt labore dolore magna aliqua minim aqula verana eiusmod tempor ncididunt labore dolore magna aliqua minim aqula verana eiusmod tempor ncididunt labore dolore magna aliqua minim aqula verana eiusmod tempor ncididunt labore dolore magna aliqua minim Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod tempor ncididunt labore dolore magna aliqua minim aqula<i class="fa fa-quote-right"></i></p>
+											<p>{{-- <i class="fa fa-quote-left"></i> --}}{!!html_entity_decode($chairman->description)!!}{{-- <i class="fa fa-quote-right"> --}}</i></p>
 										</blockquote>
 									</div>
-									<a href="#" class="button-medium button-main">Contact Us</a>
 								</div>
 								<div class="col-md-5">
 									<div class="panel-widget-style img">
@@ -900,7 +893,7 @@
 				========================================================================= -->
 			<a href="#page" class="button-go scroll-to"><i class="fa fa-chevron-up"></i></a>
 		</div>
-    </div>
+   
 		
 		<!-- SCRIPTS
 			========================================================================= -->

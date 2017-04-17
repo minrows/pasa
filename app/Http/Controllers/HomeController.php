@@ -15,7 +15,9 @@ class HomeController extends Controller
     {
         $carousels=pasa_carousel::where('state','on')->get();
         $about=about::where(['state'=>'on','title'=>'Company Profile'])->first();
-        return view('pasa_home/home',compact('carousels','about'));
+        $chairman=about::where(['state'=>'on','title'=>'Message from Chairman'])->first();
+
+        return view('pasa_home/home',compact('carousels','about','chairman'));
     }
 
     public function about()

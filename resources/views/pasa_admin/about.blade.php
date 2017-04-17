@@ -165,6 +165,14 @@
                                         </select>
                                     </div>
                                 </div>
+                                @if($about->title=="Message from Chairman" || $about->title=="Message from CEO")
+                                    <div class="form-group">
+                                    <input class="center-block btn btn-default" type="file" name="myFile" onchange="readURL(this,'#blah')" />
+                                    </div>
+                                    <div class="_img text-center"><img id="blah" height="250px" width="500px" src="{{asset('image/'.$about->img)}}"/>
+                                    <p><strong><center>Image Preview</center></strong></p><br><br>
+                                     </div>
+                                @endif
 
                                 <div class="form-group">
                                     <div class="col-lg-10 col-lg-offset-2">
@@ -189,5 +197,19 @@
             CKEDITOR.replace( "description_{{$about->id}}" );
         </script>
     @endforeach
-   
+    <script>
+        function readURL(input, temp) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $(temp)
+                        .attr('src', e.target.result)
+                        .width(500)
+                        .height(250);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
+    </script>   
 @endsection
