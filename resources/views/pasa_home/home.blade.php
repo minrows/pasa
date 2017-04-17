@@ -892,9 +892,9 @@
 			<!-- FOOTER ENDS
 				========================================================================= -->
 			<a href="#page" class="button-go scroll-to"><i class="fa fa-chevron-up"></i></a>
+
 		</div>
-   
-		
+
 		<!-- SCRIPTS
 			========================================================================= -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
