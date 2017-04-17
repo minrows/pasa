@@ -91,7 +91,7 @@
 						<nav id="site-navigation" class="main-navigation" role="navigation">
 							<ul id="primary-menu" class="light">
 								<li><a href="#home">Home</a></li>
-								<li><a href="#about-us">About Us</a></li>
+								<li><a href="#aa">About Us</a></li>
 								<li ><a href="#industries">Recruit Procedures</a></li>
 								<li ><a href="#gallery">Gallery</a></li>
 								<li><a href="#testimonials">Current Demands</a></li>
