@@ -549,48 +549,21 @@
 					</div>
 					<div class="row">
 						<div class="container">
-							<div class="col-md-4">
+                            @php $i=1; @endphp
+							@foreach($rps as $rp)
+                            <div class="col-md-4">
 								<div class="box">
 									<i class="fa fa-calendar"></i>
-									<h3>Investment</h3>
-									<p>Company that offers design and build services for you from initial sketches to the final production.</p>
+									<h3>{{$rp->title}}</h3>
+                                    <br />
+                                    <p align="center"><a class="btn btn-link pull-right">Read More</a></p>
 								</div>
 							</div>
-							<div class="col-md-4">
-								<div class="box">
-									<i class="fa fa-bar-chart"></i>
-									<h3>Global Industry</h3>
-									<p>Company that offers design and build services for you from initial sketches to the final production.</p>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="box">
-									<i class="fa fa-clock-o"></i>
-									<h3>Industries</h3>
-									<p>Company that offers design and build services for you from initial sketches to the final production.</p>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="box">
-									<i class="fa fa-line-chart"></i>
-									<h3>Staff</h3>
-									<p>Company that offers design and build services for you from initial sketches to the final production.</p>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="box">
-									<i class="fa fa-university"></i>
-									<h3>Support</h3>
-									<p>Company that offers design and build services for you from initial sketches to the final production.</p>
-								</div>
-							</div>
-							<div class="col-md-4">
-								<div class="box">
-									<i class="fa fa-tachometer"></i>
-									<h3>Issue Tracker</h3>
-									<p>Company that offers design and build services for you from initial sketches to the final production.</p>
-								</div>
-							</div>
+                                @if($i%3==0) <div class="clearfix"></div> @endif
+                                @php $i++; @endphp
+                            @endforeach
+
+							
 						</div>
 					</div>
 				</div>

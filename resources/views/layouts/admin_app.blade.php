@@ -140,9 +140,6 @@
                             <li class="@if ($select === 'gallery') {{'active'}} @endif">
                                 <a href="{{'/pasa_admin/gallery'}}"><i class="icon-stack2"></i> <span>Gallery</span></a>
                             </li>
-                            <li class="@if ($select === 'recruitment_procedure') {{'active'}} @endif">
-                                <a href="{{'/pasa_admin/recruitment_procedure'}}"><i class="icon-stack2"></i> <span>Recruitment Procedure</span></a>
-                            </li>
                             <li class="@if ($select === 'overseas_client') {{'active'}} @endif">
                                 <a href="{{'/pasa_admin/overseas_client'}}"><i class="icon-stack2"></i> <span>Overseas Client</span></a>
                             </li>

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\overseas_client;
+use App\recruitment_procedure;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
@@ -16,8 +17,9 @@ class HomeController extends Controller
         $carousels=pasa_carousel::where('state','on')->get();
         $about=about::where(['state'=>'on','title'=>'Company Profile'])->first();
         $chairman=about::where(['state'=>'on','title'=>'Message from Chairman'])->first();
+        $rps=recruitment_procedure::where('state','on')->get();
 
-        return view('pasa_home/home',compact('carousels','about','chairman'));
+        return view('pasa_home/home',compact('carousels','about','chairman','rps'));
     }
 
     public function about()
