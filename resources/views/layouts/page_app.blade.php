@@ -82,7 +82,7 @@
 										{{--<li><a href="#gallery">Gallery</a></li>--}}
 									{{--</ul>--}}
 								</li>
-								<li ><a href="/#industries">Recruit Procedures</a></li>
+								<li ><a href="/#rp">Recruit Procedures</a></li>
 								<li ><a href="/#gallery">Gallery</a></li>
 								<li><a href="/#testimonials">Current Demands</a></li>
 								<li><a href="/#contact-us">Contact Us</a></li>
@@ -99,7 +99,7 @@
 									<li><a href="#gallery">Gallery</a></li>
 								</ul> --}}
 							</li>
-						<li><a href="#industries">Recruit Procedures</a></li>
+						<li><a href="#rp">Recruit Procedures</a></li>
 						<li><a href="#gallery">Gallery</a></li>
 						<li><a href="#testimonials">Current Demands</a></li>
 						<li><a href="#contact-us">Contact Us</a></li>

@@ -1051,6 +1051,7 @@ blockquote cite i {
 	border-right: 3px solid #000000;
 	background: #FFFFFF;
     width:100%;
+	min-height:195px;
 }
 .box .fa {
 	float: left;
@@ -1103,23 +1104,23 @@ blockquote cite i {
 	margin:10px;
 }
 .box:hover {
-	background: #FFFFFF;
-	box-shadow: 0px 0px 3px #AAA;
-	border-left: 3px solid #002796;
-	border-right: 3px solid #002796;
+	/*background: #FFFFFF;*/
+	/*box-shadow: 0px 0px 3px #AAA;*/
+	/*border-left: 3px solid #002796;*/
+	/*border-right: 3px solid #002796;*/
 }
 .box:hover h3 {
-	position: relative;
-	margin-top: -26px;
-	margin-left: -30px;
-	margin-bottom: 26px;
-	color: #002796;
+	/*position: relative;*/
+	/*margin-top: -26px;*/
+	/*margin-left: -30px;*/
+	/*margin-bottom: 26px;*/
+	/*color: #002796;*/
 }
 .box:hover .fa {
-    position: relative;
-    margin-top: -26px;
-    margin-right: 20px;
-	color: #002796;
+    /*position: relative;*/
+    /*margin-top: -26px;*/
+    /*margin-right: 20px;*/
+	/*color: #002796;*/
 }
 /* TESTIMONIALS ENDS
 ========================================================================= */

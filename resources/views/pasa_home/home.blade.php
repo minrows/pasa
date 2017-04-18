@@ -92,7 +92,7 @@
 							<ul id="primary-menu" class="light">
 								<li><a href="#home">Home</a></li>
 								<li><a href="#intro">About Us</a></li>
-								<li ><a href="#industries">Recruit Procedures</a></li>
+								<li ><a href="#rp">Recruit Procedures</a></li>
 								<li ><a href="#gallery">Gallery</a></li>
 								<li><a href="#testimonials">Current Demands</a></li>
 								<li><a href="#contact-us">Contact Us</a></li>
@@ -109,7 +109,7 @@
 									<li><a href="#gallery">Gallery</a></li>
 								</ul> --}}
 						</li>
-						<li><a href="#industries">Recruit Procedures</a></li>
+						<li><a href="#rp">Recruit Procedures</a></li>
 						<li><a href="#gallery">Gallery</a></li>
 						<li><a href="#testimonials">Current Demands</a></li>
 						<li><a href="#contact-us">Contact Us</a></li>
@@ -522,7 +522,7 @@
 									<h1 class="header h1 purple">{{$chairman->title}}</h1>
 									<div class="quote-big clearfix">
 										<blockquote>
-											<p>{{-- <i class="fa fa-quote-left"></i> --}}{!!html_entity_decode($chairman->description)!!}{{-- <i class="fa fa-quote-right"> --}}</i></p>
+											<p>{!!html_entity_decode($chairman->description)!!}</p>
 										</blockquote>
 									</div>
 								</div>
@@ -539,11 +539,11 @@
 					========================================================================= -->
 				<!-- INDUSTRIES STARTS
 					========================================================================= -->
-				<div class="container-fluid spadding boxes" id="industries">
+				<div class="container-fluid spadding boxes" id="rp">
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
-								<h1 class="header h1">Industries</h1>
+								<h1 class="header h1">Recruitment Procedure</h1>
 							</div>
 						</div>
 					</div>
@@ -556,14 +556,26 @@
 									<i class="fa fa-calendar"></i>
 									<h3>{{$rp->title}}</h3>
                                     <br />
-                                    <p align="center"><a class="btn btn-link pull-right">Read More</a></p>
+
+									<a href="{{ '/rp' }}"
+									   class="btn btn-link pull-right"
+									   onclick="event.preventDefault();
+											   document.getElementById('pass_{{$rp->id}}').submit();">
+										Read More
+									</a>
+
+									<form id="pass_{{$rp->id}}" action="{{'/rp'}}" method="POST" style="display: none;">
+										{{ csrf_field() }}
+										<input type="hidden" value="{{$rp->title}}" id="sel" name="sel" />
+									</form>
+
 								</div>
 							</div>
                                 @if($i%3==0) <div class="clearfix"></div> @endif
                                 @php $i++; @endphp
                             @endforeach
 
-							
+
 						</div>
 					</div>
 				</div>

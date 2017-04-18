@@ -40,4 +40,11 @@ class HomeController extends Controller
 
         return view('pasa_home/about',compact('abouts','oc_countries','overseas_clients'));
     }
+
+    public function recruitment(Request $request)
+    {
+        $rps=recruitment_procedure::where('state','on')->get();
+        $sel=$request->sel;
+        return view('pasa_home/recruitment',compact('rps','sel'));
+    }
 }
