@@ -3923,5 +3923,63 @@ form {
 		min-height: 230px;
 	}
 }
+
+/*Recruitment Procedures*/
+
+.service-list{
+	width:100%;
+	float:left;
+	height:auto;
+	margin:0 0 30px;
+	padding:20px 20px 15px;
+	background:#faf9f9;
+	/*background: #f3c633;*/
+	-webkit-border-radius:5px;
+	-moz-border-radius:5px;
+	border-radius:5px;
+	-webkit-transition:all 0.4s ease-in-out;
+	-moz-transition:all 0.4s ease-in-out;
+	-ms-transition:all 0.4s ease-in-out;
+	-o-transition:all 0.4s ease-in-out;
+	transition:all 0.4s ease-in-out;
+}
+.service-list:hover{
+	-webkit-box-shadow:0 0 10px rgba(0,0,0,0.1);
+	-ms-box-shadow:0 0 10px rgba(0,0,0,0.1);
+	-moz-box-shadow:0 0 10px rgba(0,0,0,0.1);
+	box-shadow:0 0 10px rgba(0,0,0,0.1);
+}
+.service-list .fa {
+    border: none;
+    font-size: 30px;
+    height: auto;
+    line-height: 80px;
+    margin: 0 0 10px;
+    vertical-align: middle;
+    width: 80px;
+	/*color:#42c0d9;*/
+	color: #71447d;
+	background:#fff;
+	-webkit-border-radius: 50%;
+	-moz-border-radius: 50%;
+	border-radius: 50%;
+	-webkit-transition:all 0.4s ease-in-out;
+	-moz-transition:all 0.4s ease-in-out;
+	-ms-transition:all 0.4s ease-in-out;
+	-o-transition:all 0.4s ease-in-out;
+	transition:all 0.4s ease-in-out;
+}
+.service-list:hover .fa{
+	/*background:#42c0d9;*/
+	background: #71447d;
+	color:#fff;
+}
+
+
+#rp h1{
+	margin-bottom: 50px;
+}
+
+
 /* RESPONSIVE ENDS
 ========================================================================= */

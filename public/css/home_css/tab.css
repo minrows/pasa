@@ -106,6 +106,7 @@
 }
 #about-title{
     color: #ffffff;
+    text-align: left;
 }
 #about-title:hover{
     color: #000000;

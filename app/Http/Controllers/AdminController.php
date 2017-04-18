@@ -284,6 +284,7 @@ class AdminController extends Controller
         $pasa = new recruitment_procedure;
         $pasa->title=$request->title;
         $pasa->description=$request->description;
+        $pasa->img=$request->icon;
         $pasa->state=$request->state;
         $pasa->save();
         session()->flash('message', 'Data Added Successfully!');
@@ -293,9 +294,9 @@ class AdminController extends Controller
     public function update_recruitment_procedure(Request $request)
     {
         $pasa=recruitment_procedure::find($request->id);
-
         $pasa->title=$request->title;
         $pasa->description=$request->input('description_'.$request->id);
+        $pasa->img=$request->icon;
         $pasa->state=$request->state;
         $pasa->save();
         session()->flash('message', 'Data Updated Successfully!');

@@ -91,10 +91,17 @@
                                     <input type="text" class="form-control" id="title" name="title" placeholder="Enter Page Title!">
                                 </div>
                             </div>
+
                             <div class="form-group">
                                 <label for="description" class="col-lg-2 control-label">Description</label>
                                 <div class="col-lg-10">
                                     <textarea class="form-control" id="description" name="description" placeholder="Enter Page Description!"></textarea>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="icon" class="col-lg-2 control-label">Icon:</label>
+                                <div class="col-lg-10">
+                                    <input type="text" class="form-control" id="icon" name="icon" placeholder="Enter Bootstrap Icon code">
                                 </div>
                             </div>
                             <div class="form-group">
@@ -151,7 +158,12 @@
                                         <textarea class="form-control" id="description_{{$recruitment_procedure->id}}" name="description_{{$recruitment_procedure->id}}" placeholder="Enter Description!">{{$recruitment_procedure->description}}</textarea>
                                     </div>
                                 </div>
-
+                                <div class="form-group">
+                                    <label for="icon" class="col-lg-2 control-label">Icon:</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" id="icon" name="icon" value="{{$recruitment_procedure->img}}" placeholder="Enter Bootstrao Icon Code!">
+                                    </div>
+                                </div>
                                 <div class="form-group">
                                     <label for="state" class="col-lg-2 control-label">State:</label>
                                     <div class="col-lg-10">

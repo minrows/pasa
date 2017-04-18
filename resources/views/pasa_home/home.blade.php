@@ -549,11 +549,11 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
-								<h1 class="header h1">Recruitment Procedure</h1>
+								<h1 class="header h1 purple">Recruitment Procedure</h1>
 							</div>
 						</div>
 					</div>
-					<div class="row">
+					{{-- <div class="row">
 						<div class="container">
                             @php $i=1; @endphp
 							@foreach($rps as $rp)
@@ -583,7 +583,41 @@
 
 
 						</div>
+					</div> --}}
+
+					{{-- lets try --}}
+					<div class="row">
+						<div class="container">
+		                    @php $i=1; @endphp
+							@foreach($rps as $rp)
+		                    <div class="col-xs-6 col-md-4">
+								<div class="service-list text-center wow fadeInUp" style="visibility: visible; animation-name: fadeInUp;">
+									<a href="{{ '/rp' }}"
+									   class="btn btn-link center-block"
+									   onclick="event.preventDefault();
+											   document.getElementById('pass_{{$rp->id}}').submit();"><i class="{{$rp->img}}"></i></a>
+									</br>
+									<h3 style="font-size: 16px;"><strong>{{$rp->title}}</strong></h3>
+									<p><a href="{{ '/rp' }}"
+									   class="btn btn-link center-block"
+									   onclick="event.preventDefault();
+											   document.getElementById('pass_{{$rp->id}}').submit();">
+										READ MORE
+									</a></p>
+
+									<form id="pass_{{$rp->id}}" action="{{'/rp'}}" method="POST" style="display: none;">
+										{{ csrf_field() }}
+										<input type="hidden" value="{{$rp->title}}" id="sel" name="sel" />
+									</form>
+
+								</div>
+							</div>
+		                        @if($i%3==0) <div class="clearfix"></div> @endif
+		                        @php $i++; @endphp
+		                    @endforeach
+						</div>
 					</div>
+
 				</div>
 				<!-- INDUSTRIES ENDS
 					========================================================================= -->
@@ -593,7 +627,7 @@
 					<div class="container">
 						<div class="row">
 							<div class="col-md-12">
-								<h1 class="header h1">Gallery</h1>
+								<h1 class="header h1 purple">Gallery</h1>
 								<div class="container">
 									<div class="gallery-full column-equal col-sm-6 col-md-3 fx-start" data-animation="bounceIn">
 										<div class="thumbnail fx-hover">
@@ -818,56 +852,27 @@
 				<section id="footer-widget" class="widget-area" role="complementary">
 					<div class="container">
 						<div class="row">
-							<aside class="widget aio-widget-text col-sm-6 col-md-3 ">
+							<aside class="widget aio-widget-text col-sm-6 col-md-4 ">
 								<div class="text clearfix">
 									<img src="{{asset('image/check/logo-footer.png')}}" width="160" height="48" />
 									<p class="footer-text">lorem ipsum dolor sit amet consec labore et dolore magna aliqua elit seddo eiusmod tempor lorem ipsum dolor sit amet consec labore et dolore magna aliqua elit seddo eiusmod tempor lorem ipsum dolor sit amet</p>
 								</div>
 							</aside>
-							<aside class="widget aio-widget-blogs col-sm-6 col-md-3 ">
-								<h3 class="header h1 white">Latest Updates</h3>		
-								<div class="blog-widget">
-									<div class="thumbnail">
-										<img src="{{asset('image/check/blog1.jpg')}}" width="400" height="400" alt="Board Of Director" />
-									</div>
-									<h3><a href="#">Announcement</a></h3>
-									<p>May 31, 2016</p>
-								</div>
-								<div class="blog-widget">
-									<div class="thumbnail">
-										<img src="{{asset('image/check/blog2.jpg')}}" width="400" height="400" alt="New Office Lobby" />
-									</div>
-									<h3><a href="#">Monthly Report</a></h3>
-									<p>Dec 30, 2016</p>
-								</div>
-							</aside>
-							<aside class="widget aio-widget-testimonials col-sm-6 col-md-3 ">
-								<h3 class="header h1 white">Feedback</h3>
-								<div class="testimonial-grid column-equal">
-									<div class="testimonial-body">
-										<blockquote><i class="fa fa-quote-left"></i>veniam quis nostrud exercitation ullamco laboris nisi aliquip exea marvel<i class="fa fa-quote-right"></i></blockquote>
-									</div>
-									<div class="testimonial-foot clearfix">
-										<div class="thumbnail">
-											<img src="{{asset('image/check/review1.jpg')}}" width="100" height="100" alt="Miranda Hazard Footer" />
-										</div>
-										<cite>Jane Doe /<small class="label-main">Hazard &amp; Co.</small></cite>
-									</div>
-								</div>
-							</aside>
-							<aside class="widget aio-widget-testimonials col-sm-6 col-md-3 ">
-								<h3 class="header h1 white">Testimonial</h3>
-								<div class="testimonial-grid column-equal">
-									<div class="testimonial-body">
-										<blockquote><i class="fa fa-quote-left"></i>veniam quis nostrud exercitation ullamco laboris nisi aliquip exea marvel<i class="fa fa-quote-right"></i></blockquote>
-									</div>
-									<div class="testimonial-foot clearfix">
-										<div class="thumbnail">
-											<img src="{{asset('image/check/review2.jpg')}}" width="100" height="100" alt="Miranda Hazard Footer" />
-										</div>
-										<cite>Richard Hazard /<small class="label-main">Jane &amp; Co.</small></cite>
-									</div>
-								</div>
+							<aside class="widget aio-widget-blogs col-sm-6 col-md-4 ">
+								<h3 class="header h1 white">&nbsp;Keep In touch</h3>		
+								  <ul style="list-style: none;">
+								    <li class="footer-contact" style="padding: 7px;"><i class="fa fa-map-marker"></i><span>&nbsp;P.O. Box No.: 20330 Samakhushi, Kathmandu, Nepal</span></li>
+								   
+								    <li class="footer-contact"><i class="fa fa-phone"></i><span>&nbsp;+977-1-4387207 ( 6 Lines) </span></li>
+                                    
+                                      <li class="footer-contact"><i class="fa fa-fax"></i><span>&nbsp;+977-1-4387208</span></li>
+                                    
+                                     <li class="footer-contact"><i class="fa fa-envelope"></i><span><a href="mailto:info@pasainternational.com.np">&nbsp;info@pasainternational.com.np</a></span></li>
+                                     
+                                     <li class="footer-contact"><i class="fa fa-globe"></i><span><a href="http://www.pasainternational.com.np">&nbsp;www.pasainternational.com.np</a></span></li>
+                                     
+															    </ul>
+
 							</aside>
 						</div>
 					</div>
