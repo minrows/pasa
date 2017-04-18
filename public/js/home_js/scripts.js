@@ -118,7 +118,7 @@ $(window).scroll(function() {
 	}
 	$('.scroll-to').on('click', function(){
 	"use strict";
-	$('html, body').animate({scrollTop : 0},800);
+	$('html, body').animate({scrollTop : 0},500);
 	return false;
 });
 });

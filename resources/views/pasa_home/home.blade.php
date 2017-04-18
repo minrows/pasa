@@ -20,8 +20,10 @@
 
 </style>
     <head>
+    	
 		<title>PASA INTERNATIONAL</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
+
 		<!-- FAVICON
 			========================================================================= -->
 		<link rel="icon" href="{{asset('image/favicon.png')}}" />
@@ -120,6 +122,7 @@
 				========================================================================= -->
 			<!-- SLIDER STARTS
 				========================================================================= -->
+
 			<section id="slider-main" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner">
                     @php $i=1;@endphp
@@ -144,11 +147,49 @@
 				    <a class="slider-main-next slider-next" href="#slider-main" data-slide="next"><i class="fa fa-chevron-right"></i></a>
                 </div>
             </section>
-			<!-- SLIDER ENDS
+			{{-- SLIDER ENDS
+				========================================================================= --}}
+		{{-- 	ICONS STARTS
+				========================================================================= --}}
+			{{-- CTA STARTS
+					========================================================================= --}}
+				<div class="container-fluid spadding cta">
+					<div class="row">
+						<div class="container">
+							<div class="col-md-7" data-animation="fadeInDown">
+								<h2>PASA: A Friend at Your Service</h2>
+							</div>
+							<div class="col-md-5 right">
+                                <a href="/about" class="button-big button-main"><i class="fa fa-book"></i>Read More</a>
+                                &nbsp;&nbsp;
+								<a href="#" class="button-big button-main"><i class="fa fa-envelope"></i>Apply Online</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- CTA ENDS
+			<!-- ICONS ENDS
 				========================================================================= -->
-			<!-- ICONS STARTS
-				========================================================================= -->
-			<div class="icon-wrapper" id="intro">
+			<div id="content" class="site-content">
+				<!-- INTRO STARTS
+					========================================================================= -->
+				<div class="container-fluid spadding" id="about-us">
+					<div class="container">
+						<div class="row">
+							<div class="col-md-12">
+								<h1 class="header h1 white" >{{$about->title}}</h1>
+								<div class="banner-center">
+									<div class="banner-inner" id="introduction">
+                                        {!!html_entity_decode($about->description)!!}
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{{-- yeta rakhera heram --}}
+				<div class="icon-wrapper" id="intro">
 				<div class="container">
 					<div class="row">
 						<div class="icon triggerone col-xs-6 col-sm-4 col-lg-2">
@@ -474,44 +515,9 @@
 					</div>
 				</div>
 			</div>
-			<!-- ICONS ENDS
-				========================================================================= -->
-			<div id="content" class="site-content">
-				<!-- INTRO STARTS
-					========================================================================= -->
-				<div class="container-fluid spadding" id="about-us">
-					<div class="container">
-						<div class="row">
-							<div class="col-md-12">
-								<h1 class="header h1 white" >{{$about->title}}</h1>
-								<div class="banner-center">
-									<div class="banner-inner" id="introduction">
-                                        {!!html_entity_decode($about->description)!!}
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
 
-				<!-- CTA STARTS
-					========================================================================= -->
-				<div class="container-fluid spadding cta">
-					<div class="row">
-						<div class="container">
-							<div class="col-md-7" data-animation="fadeInDown">
-								<h2>PASA: A Friend at Your Service</h2>
-							</div>
-							<div class="col-md-5 right">
-                                <a href="/about" class="button-big button-main"><i class="fa fa-book"></i>Read More</a>
-                                &nbsp;&nbsp;
-								<a href="#" class="button-big button-main"><i class="fa fa-envelope"></i>Apply Online</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- CTA ENDS
-					========================================================================= -->
+				
+					
 				<!-- MESSAGE STARTS
 					========================================================================= -->
 				<div class="container-fluid spadding message" id="message">

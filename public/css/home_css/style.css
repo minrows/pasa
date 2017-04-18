@@ -529,6 +529,7 @@ a {
 #menu .container {
 	min-height: 80px;
 }
+
 .stuck #menu .container {
 	min-height: 70px;
 }
@@ -687,6 +688,7 @@ a {
 	padding-bottom: 15px;
 }
 .menu-class.stickytop {
+	
     position:fixed !important;
     top:0px !important;
 	z-index: 9999999999999;
@@ -3403,9 +3405,12 @@ a.label-main:hover,
 	margin: 0px;
 }
 .cta {
-	/*background: #151515;*/
-	background-color: rgba(0,0,0,0.6);
-    color: #FFF;
+	position: relative;
+	display: block;
+	/*background-color: #270c35;*/
+	background-color: rgba(0,0,0,0.5);
+    /*color: #FFF;*/
+    height: 90px;
 }
 .cta h2 {
 	text-align: left;
