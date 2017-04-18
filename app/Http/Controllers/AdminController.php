@@ -359,14 +359,16 @@ class AdminController extends Controller
     }
     public function add_gallery(Request $request)
     {
-        $pasa = new gallery;
-        $path = $request->file('myFile')->store('gallery');
-        $pasa->title=$request->title;
-        $pasa->img_thumb=$path;
-        $pasa->img_full=$path;
-
-        $pasa->state=$request->state;
-        $pasa->save();
+        $pasa=new gallery;
+        foreach($request->file('myFiles') as $file)
+        {
+            $path = $file->store('gallery');
+            $pasa->title=" ";
+            $pasa->img_thumb=$path;
+            $pasa->img_full=$path;
+            $pasa->state="on";
+            $pasa->save();
+        }
         session()->flash('message', 'Data Added Successfully!');
         return back();
     }
