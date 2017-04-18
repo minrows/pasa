@@ -9,6 +9,49 @@
         .modal-dialog {
             width: 60%;
         }
+        body{
+            font-family: 'Segoe UI';
+            font-size: 12pt;
+        }
+
+        header h1{
+            font-size:12pt;
+            color: #fff;
+            background-color: #1BA1E2;
+            padding: 20px;
+
+        }
+        article
+        {
+            width: 80%;
+            margin:auto;
+            margin-top:10px;
+        }
+
+
+        .thumbnail{
+            height: 100px;
+            margin: 10px;
+            /*float: left;*/
+        }
+        #clear{
+            display:none;
+        }
+        #result {
+            border: 4px dotted #cccccc;
+            display: none;
+            /*float: right;*/
+            margin:0 auto;
+            width: 511px;
+            text-align: center;
+        }
+
+        #result img{
+            margin-left:auto;
+            margin-right:auto;
+        }
+
+
     </style>
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
@@ -51,41 +94,26 @@
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 align="center" class="modal-title">Add New Carousel</h4>
+                    <h4 align="center" class="modal-title">Add Gallery Items</h4>
                 </div>
                 <div class="modal-body">
                     <form class="form-horizontal" name="add_new" id="add_new" action="{{'/pasa_admin/add_gallery'}}" method="post" enctype="multipart/form-data">
                     {{ csrf_field() }}
-                        <fieldset>
+                        <article>
                             <div class="form-group">
-                                <label for="title" class="col-lg-2 control-label">Title:</label>
-                                <div class="col-lg-10">
-                                    <input type="text" class="form-control" id="title" name="title" placeholder="Enter carousel title!">
-                                </div>
+                                <label for="myFiles">Select multiple files: </label>
+                                <input class="form-control" name="myFiles[]" id="files" type="file" multiple required/>
                             </div>
-                            <div class="form-group">
-                                <label for="state" class="col-lg-2 control-label">State:</label>
-                                <div class="col-lg-10">
-                                    <select name="state" id="state" class="form-control">
-                                        <option selected>on</option>
-                                        <option>off</option>
-                                    </select>
-                                </div>
-                            </div>
+                            <div class="form-group"><div id="result"></div></div>
 
-                            <div class="form-group">
-                                <input class="center-block btn btn-default" type="file" name="myFile" onchange="readURL(this,'#blah')" />
+                            <div class="form-group pull-right">
+                                <input class='btn btn-default' type="submit" value="Add" />
+                                <button class='btn btn-default' type="button" id="clear">Clear</button>
                             </div>
-                            <div class="_img text-center"><img id="blah" height="250px" width="500px" src=""/>
-                                <p><strong><center>Image Preview ( Preferred height>600px, width>1200px )</center></strong></p><br><br>
-                            </div>
+                            <br>
+                            <br>
 
-                            <div class="form-group">
-                                <div class="col-lg-10 col-lg-offset-2">
-                                    <button type="submit" class="btn btn-default pull-right">Add</button>
-                                </div>
-                            </div>
-                        </fieldset>
+                        </article>
                     </form>
                 </div>
             </div>
@@ -93,18 +121,63 @@
     </div>
 
     <script>
-        function readURL(input, temp) {
-            if (input.files && input.files[0]) {
-                var reader = new FileReader();
+        window.onload = function(){
+            //Check File API support
+            if(window.File && window.FileList && window.FileReader)
+            {
+                $('#files').on("change", function(event) {
+                    var files = event.target.files; //FileList object
+                    var output = document.getElementById("result");
+                    for(var i = 0; i< files.length; i++)
+                    {
+                        var file = files[i];
+                        //Only pics
+                        // if(!file.type.match('image'))
+                        if(file.type.match('image.*')){
+                            if(this.files[0].size < 2097152){
+                                // continue;
+                                var picReader = new FileReader();
+                                picReader.addEventListener("load",function(event){
+                                    var picFile = event.target;
+                                    var div = document.createElement("div");
+                                    div.innerHTML = "<img class='thumbnail' src='" + picFile.result + "'" +
+                                        " title='preview image'/>";
+                                    output.insertBefore(div,null);
+                                });
+                                //Read the image
+                                $('#clear, #result').show();
+                                picReader.readAsDataURL(file);
+                            }else{
+                                alert("Image Size is too big. Minimum size is 2MB.");
+                                $(this).val("");
+                            }
+                        }else{
+                            alert("You can only upload image file.");
+                            $(this).val("");
+                        }
+                    }
 
-                reader.onload = function (e) {
-                    $(temp)
-                        .attr('src', e.target.result)
-                        .width(500)
-                        .height(250);
-                };
-                reader.readAsDataURL(input.files[0]);
+                });
             }
-        }
+            else
+            {
+                console.log("Your browser does not support File API");
+            }
+        };
+
+        $('#files').on("click", function() {
+            $('.thumbnail').parent().remove();
+            $('result').hide();
+            $(this).val("");
+        });
+
+        $('#clear').on("click", function() {
+            $('.thumbnail').parent().remove();
+            $('#result').hide();
+            $('#files').val("");
+            $(this).hide();
+        });
+
     </script>
+
 @endsection
