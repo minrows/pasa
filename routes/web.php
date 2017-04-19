@@ -21,9 +21,11 @@ Route::get('/about', 'HomeController@about');
 Route::get('/rp', 'HomeController@recruitment');
 Route::post('/rp', 'HomeController@recruitment');
 
+
+Route::get('/{dwn}/download','HomeController@download');
 //Route::get('add_carousel', 'home_controller@add_carousel');
 //Route::get('/{pasainternational}/edit_carousel', 'home_controller@edit_carousel');
-Route::get('/{pasainternational}/delete_carousel', 'home_controller@delete_carousel');
+//Route::get('/{pasainternational}/delete_carousel', 'home_controller@delete_carousel');
 
 
 /*
