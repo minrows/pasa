@@ -122,13 +122,12 @@
 				========================================================================= -->
 			<!-- SLIDER STARTS
 				========================================================================= -->
-
 			<section id="slider-main" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner">
                     @php $i=1;@endphp
                     @foreach($carousels as $carousel)
 					<div class="item @if($i==1) {{' active'}} @endif" id="particles-js" style="background-image:url({{asset('/image/'.$carousel->img)}}); ">
-						<div class="carousel-caption slider-item-center slider-item-v-center fx">
+						{{-- <div class="carousel-caption slider-item-center slider-item-v-center fx">
 							<h2 class="fx-start" data-animation="fadeInDown">
 								<span>Welcome to Pasa International</span>
 							</h2>
@@ -138,7 +137,7 @@
 							<a class="button-big button-main fx-start" href="#" data-animation="fadeInDown"><i class="fa fa-download"></i>Application Form</a>
 							<a class="button-big button-main fx-start" href="#" data-animation="fadeInDown"><i class="fa fa-download"></i>Recruitment Process</a>
 							<!-- <a class="button-big button-dark fx-start black" href="#" data-animation="fadeInDown"><i class="fa fa-file-text-o"></i>Contact Us</a> -->
-						</div>
+						</div> --}}
 					</div>
                         @php $i++;@endphp
                     @endforeach
@@ -859,19 +858,19 @@
 								</div>
 							</aside>
 							<aside class="widget aio-widget-blogs col-sm-6 col-md-4 ">
-								<h3 class="header h1 white">&nbsp;Keep In touch</h3>		
-								  <ul style="list-style: none;">
-								    <li class="footer-contact" style="padding: 7px;"><i class="fa fa-map-marker"></i><span>&nbsp;P.O. Box No.: 20330 Samakhushi, Kathmandu, Nepal</span></li>
-								   
-								    <li class="footer-contact"><i class="fa fa-phone"></i><span>&nbsp;+977-1-4387207 ( 6 Lines) </span></li>
-                                    
-                                      <li class="footer-contact"><i class="fa fa-fax"></i><span>&nbsp;+977-1-4387208</span></li>
-                                    
-                                     <li class="footer-contact"><i class="fa fa-envelope"></i><span><a href="mailto:info@pasainternational.com.np">&nbsp;info@pasainternational.com.np</a></span></li>
-                                     
-                                     <li class="footer-contact"><i class="fa fa-globe"></i><span><a href="http://www.pasainternational.com.np">&nbsp;www.pasainternational.com.np</a></span></li>
-                                     
-															    </ul>
+							    <h3 class="header h1 white">&nbsp;Keep In touch</h3>
+							    <ul style="list-style: none;">
+							        <li class="footer-contact" style="padding: 7px;"><i class="fa fa-map-marker"></i><span>&nbsp;P.O. Box No.: 20330 Samakhushi, Kathmandu, Nepal</span></li>
+
+							        <li class="footer-contact"><i class="fa fa-phone"></i><span>&nbsp;+977-1-4387207 ( 6 Lines) </span></li>
+
+							        <li class="footer-contact"><i class="fa fa-fax"></i><span>&nbsp;+977-1-4387208</span></li>
+
+							        <li class="footer-contact"><i class="fa fa-envelope"></i><span><a href="mailto:info@pasainternational.com.np">&nbsp;info@pasainternational.com.np</a></span></li>
+
+							        <li class="footer-contact"><i class="fa fa-globe"></i><span><a href="http://www.pasainternational.com.np">&nbsp;www.pasainternational.com.np</a></span></li>
+
+							    </ul>
 
 							</aside>
 						</div>

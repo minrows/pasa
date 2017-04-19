@@ -3412,18 +3412,21 @@ a.label-main:hover,
 	/*background-color: #270c35;*/
 	background-color: rgba(0,0,0,0.5);
     /*color: #FFF;*/
-    height: 90px;
+    /*height: 90px;*/
+    line-height: 0px;
 }
 .cta h2 {
 	text-align: left;
 	margin-top: 10px;
 	color: #FFF;
+	vertical-align: middle !important;
 }
 .cta .button-big {
     background: #f3c633;
     border-radius: 5px;
     border: 1px solid #000000;
     color: #000000 !important;
+    vertical-align: middle !important;
 }
 .cta i {
 	color: #000000 !important;
