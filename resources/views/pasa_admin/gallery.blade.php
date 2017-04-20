@@ -51,6 +51,23 @@
             margin-right:auto;
         }
 
+        .contain {
+            position:relative;
+            display:inline-block;
+            text-align:center;
+            border:1px solid #006dcc;
+        }
+
+        .contained {
+            position:absolute;
+            bottom:10px;
+            margin-left:auto;
+            margin-right:auto;
+            right:20px;
+            /*width:150px;*/
+            /*height:30px;*/
+        }
+
 
     </style>
     <div class="row">
@@ -65,23 +82,38 @@
                         @endif
                         <h1 align="center">Gallery</h1>
                         <a class="btn btn-default pull-right" data-toggle="modal" data-target="#add_new_modal">Add New</a>
+
+                        <br>
+                        <br>
+                        <br>
                     </div>
                 </div>
                 <div class="panel-body">
-                    <div class="table-responsive">
-                        <table width="100%" class="table table-striped">
-                            <thead>
-                                <tr>
-                                    <th>&nbsp;</th>
-                                    <th>Title</th>
-                                    <th>State</th>
-                                    <th>&nbsp;</th>
-                                </tr>
-                            </thead>
-                            <tbody>
+                    <div class="row">
+                        @php $i=1; @endphp
+                        @foreach($galleries as $gallery)
+                            <div class="col-xs-6 col-sm-4 col-md-3 col-lg-3">
+                                <div class="contain">
+                                    <img class="img-thumbnail" src="{{asset('/image/'.$gallery->img_thumb)}}">
+                                    <div class="contained center-block">
+                                        <a class="btn btn-primary btn-xs" data-toggle="modal" data-target="#edit_modal_{{$gallery->id}}">Edit</a>
+                                        <a class="btn btn-primary btn-xs" href="{{ '/pasa_admin/delete_gallery' }}"
+                                           onclick="event.preventDefault();
+                                           document.getElementById('delete-form_{{$gallery->id}}').submit();"
+                                        >
+                                            Delete
+                                        </a>
 
-                            </tbody>
-                        </table>
+                                        <form id="delete-form_{{$gallery->id}}" action="{{'/pasa_admin/delete_gallery'}}" method="POST" style="display: none;">
+                                            {{ csrf_field() }}
+                                            <input type="hidden" value="{{$gallery->id}}" id="del_id" name="del_id" />
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                            @if($i%4==0) <div class="clearfix"></div><br> @endif
+                            @php $i++; @endphp
+                        @endforeach
                     </div>
                 </div>
             </div>
@@ -119,6 +151,62 @@
             </div>
         </div>
     </div>
+
+    @foreach($galleries as $gallery)
+
+        <div id="edit_modal_{{$gallery->id}}" class="modal fade" role="dialog">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 align="center" class="modal-title">Edit Gallery</h4>
+                    </div>
+                    <div class="modal-body">
+                        <form class="form-horizontal" name="edit_{{$gallery->id}}" id="edit_{{$gallery->id}}" action="{{'/pasa_admin/update_gallery'}}" method="post" enctype="multipart/form-data">
+                            {{ csrf_field() }}
+                            <fieldset>
+                                <div class="form-group">
+                                    <label for="id" class="col-lg-2 control-label">Id:</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" readonly class="form-control" id="id" name="id" value="{{$gallery->id}}">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="title" class="col-lg-2 control-label">Title:</label>
+                                    <div class="col-lg-10">
+                                        <input type="text" class="form-control" id="title" name="title" value="{{$gallery->title}}" placeholder="Enter picture title!">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="state" class="col-lg-2 control-label">State:</label>
+                                    <div class="col-lg-10">
+                                        <select name="state" id="state" class="form-control">
+                                            <option @if($gallery->state==='on') {{'selected'}} @endif>on</option>
+                                            <option @if($gallery->state==='off') {{'selected'}} @endif>off</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <input class="center-block btn btn-default" type="file" name="img" onchange="readURL(this,'#blah_{{$gallery->id}}')" />
+                                </div>
+                                <div class="_img text-center"><img id="blah_{{$gallery->id}}" height="250px" width="250px" src="{{asset('/image/'.$gallery->img_thumb)}}"/>
+                                    <p><strong><center>Image Preview </center></strong></p><br><br>
+                                </div>
+
+                                <div class="form-group">
+                                    <div class="col-lg-10 col-lg-offset-2">
+                                        <button type="submit" class="btn btn-default pull-right">Edit</button>
+                                    </div>
+                                </div>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    @endforeach
 
     <script>
         window.onload = function(){
@@ -178,6 +266,22 @@
             $(this).hide();
         });
 
+    </script>
+
+    <script>
+        function readURL(input, temp) {
+            if (input.files && input.files[0]) {
+                var reader = new FileReader();
+
+                reader.onload = function (e) {
+                    $(temp)
+                        .attr('src', e.target.result)
+                        .width(250)
+                        .height(250);
+                };
+                reader.readAsDataURL(input.files[0]);
+            }
+        }
     </script>
 
 @endsection

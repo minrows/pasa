@@ -2794,6 +2794,7 @@ button[type=submit] {
 .gallery-full .thumbnail {
 	margin-left: -15px;
 	margin-right: -15px;
+	padding: 3px;
 }
 .gallery-full .thumbnail img {
 	width: 100%;
@@ -3983,6 +3984,29 @@ form {
 	margin-bottom: 50px;
 }
 
+/*Buttons*/
+.btn-fresh {
+color: #fff;
+background-color: #51bf87;
+border-bottom:2px solid #41996c;
+}
+
+.btn-fresh:hover, .btn-sky.active:focus, .btn-fresh:focus, .open>.dropdown-toggle.btn-fresh {
+color: #fff;
+background-color: #66c796;
+border-bottom:2px solid #529f78;
+outline: none;
+}
+
+
+.btn-fresh:active, .btn-fresh.active {
+color: #fff;
+background-color: #47a877;
+border-top:2px solid #39865f;
+outline: none;
+outline-offset: none;
+margin-top: 2px;
+}
 
 /* RESPONSIVE ENDS
 ========================================================================= */

@@ -20,6 +20,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/about', 'HomeController@about');
 Route::get('/rp', 'HomeController@recruitment');
 Route::post('/rp', 'HomeController@recruitment');
+Route::get('/gallery', 'HomeController@gallery');
 
 //Route::get('add_carousel', 'home_controller@add_carousel');
 //Route::get('/{pasainternational}/edit_carousel', 'home_controller@edit_carousel');

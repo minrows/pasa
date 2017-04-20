@@ -354,15 +354,16 @@ class AdminController extends Controller
 
     public function gallery()
     {
-        // $pass=curr_demand_img::all();
+         $galleries=gallery::all();
+//         return $pasa;
         // return array_keys(curr_demand_img:ldap_get_attributes(link_identifier, result_entry_identifier);
-        return view('pasa_admin.gallery');
+        return view('pasa_admin.gallery',compact('galleries'));
     }
     public function add_gallery(Request $request)
     {
-        $pasa=new gallery;
         foreach($request->file('myFiles') as $file)
         {
+            $pasa=new gallery;
             $path = $file->store('gallery');
             $pasa->title=" ";
             $pasa->img_thumb=$path;
@@ -373,6 +374,46 @@ class AdminController extends Controller
         session()->flash('message', 'Data Added Successfully!');
         return back();
     }
+
+    public function update_overseas_client(Request $request)
+    {
+        $pasa=gallery::find($request->id);
+
+        if ($request->hasFile('img')) {
+            $del=$pasa->img;
+            $del=str_replace('/','\\',$del);
+            $del=public_path('image\\').$del;
+            File::delete($del);
+            $path = $request->file('img')->store('overseas_client');
+            $pasa->img=$path;
+        }
+        $pasa->title=$request->title;
+        $pasa->country=$request->country;
+        $pasa->state=$request->state;
+        $pasa->save();
+        session()->flash('message', 'Data Updated Successfully!');
+        return back();
+    }
+
+    public function delete_gallery(Request $request)
+    {
+        $pasa=gallery::find($request->del_id);
+
+        //img file delete
+        if($pasa->img!=null && $pasa->img!="") {
+            $del = $pasa->img_full;
+            $del = str_replace('/', '\\', $del);
+            $del = public_path('image\\') . $del;
+            File::delete($del);
+
+//            todo for thumb
+        }
+
+        $pasa->delete();
+        session()->flash('message', 'Data Deleted Successfully!');
+        return back();
+    }
+
 
     public function overseas_client()
     {
@@ -417,20 +458,20 @@ class AdminController extends Controller
         return back();
     }
 
-    public function update_overseas_client(Request $request)
+    public function update_gallery(Request $request)
     {
-        $pasa=overseas_client::find($request->id);
+        $pasa=gallery::find($request->id);
 
         if ($request->hasFile('img')) {
-            $del=$pasa->img;
+            $del=$pasa->img_full;
             $del=str_replace('/','\\',$del);
             $del=public_path('image\\').$del;
             File::delete($del);
-            $path = $request->file('img')->store('overseas_client');
-            $pasa->img=$path;
+            $path = $request->file('img')->store('gallery');
+            $pasa->img_full=$path;
+            $pasa->img_thumb=$path;
         }
         $pasa->title=$request->title;
-        $pasa->country=$request->country;
         $pasa->state=$request->state;
         $pasa->save();
         session()->flash('message', 'Data Updated Successfully!');
