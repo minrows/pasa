@@ -18,6 +18,25 @@
         background-image: url({{asset('image/'.$chairman->img)}});
     }
 
+    .slider {
+        width: 80%;
+        margin: 50px auto;
+    }
+
+    .slick-slide {
+      margin: 0px 20px;
+    }
+
+    .slick-slide img {
+      width: 100%;
+      height: 246px;
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        color: black;
+    }
+
 </style>
     <head>
     	
@@ -40,6 +59,7 @@
 		<link rel='stylesheet' href="{{asset('css/home_css/animate.css')}}" type='text/css' />
 		<link rel='stylesheet' href="{{asset('css/home_css/fx.css')}}" type='text/css' />
 		<link rel='stylesheet' href="{{asset('css/home_css/style.css')}}" type='text/css' />
+		<link rel='stylesheet' href="{{asset('css/home_css/slick.css')}}" type='text/css' />
 	</head>
 	<body id="home">
 			<!-- PRELOADER STARTS
@@ -205,7 +225,7 @@
 						</div>
 						<div class="icon triggerfour col-xs-6 col-sm-4 col-lg-2">
 							<span class="h1 fa fa-clock-o animated"></span>
-							<div class="h4">Review</div>
+							<div class="h4">Our Services</div>
 						</div>
 						<div class="icon triggerfive col-xs-6 col-sm-4 col-lg-2">
 							<span class="h1 fa fa-tachometer animated"></span>
@@ -213,7 +233,7 @@
 						</div>
 						<div class="icon triggersix col-xs-6 col-sm-4 col-lg-2">
 							<span class="h1 fa fa-calendar animated"></span>
-							<div class="h4">Sucess</div>
+							<div class="h4">Success</div>
 						</div>
 					</div>
 				</div>
@@ -223,300 +243,31 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="one">
-								<div class="h1">Lorem ipsum dolor sit amet consectetur<small>Administration, Service &amp; Repair</small></div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-university"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-line-chart"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-calendar"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-bar-chart"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="clearfix"></div>
+								<div class="h1">WHO ARE WE?</small></div>
+								<div><p style="font-size: 19px;">We started our journey in this business from the year 1998; we are one of the Nepal's best Recruiting Agencies. The number of years of experience and knowledge gives us the confident to say that, "we outsource the best human resources". We have been providing expert and unparalleled value added recruitment services to our clients across the world who are looking for professional and smart candidates to excel in their business. We are happy to have satisfied clients with us from a long time and we feel proud and honored to give the best to our precious clients.</p></div>
 							</div>
 							<div class="two">
 								<div class="h1">Lorem ipsum dolor sit amet consectetur<small>Administration, Service &amp; Repair</small></div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-university"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-line-chart"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-calendar"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-bar-chart"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="clearfix"></div>
 							</div>
 							<div class="three">
 								<div class="h1">Lorem ipsum dolor sit amet consectetur<small>Administration, Service &amp; Repair</small></div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-university"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-line-chart"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-calendar"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-bar-chart"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
 								<div class="clearfix"></div>
 							</div>
 							<div class="four">
 								<div class="h1">Lorem ipsum dolor sit amet consectetur<small>Administration, Service &amp; Repair</small></div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-university"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-line-chart"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-calendar"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-bar-chart"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="clearfix"></div>
 							</div>
 							<div class="five">
 								<div class="h1">Lorem ipsum dolor sit amet consectetur<small>Administration, Service &amp; Repair</small></div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-university"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-line-chart"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-calendar"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-bar-chart"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
 								<div class="clearfix"></div>
 							</div>
 							<div class="six">
 								<div class="h1">Lorem ipsum dolor sit amet consectetur<small>Administration, Service &amp; Repair</small></div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-university"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-line-chart"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-calendar"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-bar-chart"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
-								</div>
 								<div class="clearfix"></div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-
-				
-					
 				<!-- MESSAGE STARTS
 					========================================================================= -->
 				<div class="container-fluid spadding message" id="message">
@@ -542,7 +293,7 @@
 				</div>
 				<!-- MESSAGE ENDS
 					========================================================================= -->
-				<!-- INDUSTRIES STARTS
+				<!-- RECRUITMENT PROCEDURES
 					========================================================================= -->
 				<div class="container-fluid spadding boxes" id="rp">
 					<div class="container">
@@ -585,7 +336,7 @@
 					</div>
 
 				</div>
-				<!-- INDUSTRIES ENDS
+				<!-- RECRUITMENT PROCEDURE ENDS
 					========================================================================= -->
 				<!-- GALLERY STARTS
 					========================================================================= -->
@@ -625,6 +376,25 @@
 				</div>
 				<!-- GALLERY ENDS
 					========================================================================= -->
+				<!-- CURRENT DEMANDS-->
+				<div class="container-fluid spadding cd" id="cd">
+					<div class="row">
+						<div class="container">
+							<div class="col-md-12">
+								<h1 class="header h1 white">Current Demands</h1>
+								<section class="center slider">
+								@foreach($curr_demand_img as $cd_img)
+								    <div>
+								      <img style="max-height: 1000px;" src="{{asset('/image/'.$cd_img->img_thumb)}}">
+								    </div>
+								@endforeach   
+								</section>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- CURRENT DEMANDS ENDS -->
+
 				<!-- TESTIMONIALS STARTS
 					========================================================================= -->
 				<div class="container-fluids spadding testimonials" id="testimonials">
@@ -780,6 +550,17 @@
 		        });
 		    });
 		</script>
+		<script type="text/javascript">
+		    $(document).ready(function(){
+		      $('.center').slick({
+		        // dots: true,
+		        infinite: true,
+		        centerMode: true,
+		        slidesToShow: 3,
+		        slidesToScroll: 3
+		      });
+		    });
+  		</script>
 		<script type='text/javascript' src="{{asset('js/home_js/jquery-3.1.1.min.js')}}"></script>
 		<script type='text/javascript' src="{{asset('js/home_js/bootstrap.js')}}"></script>
 		<script type='text/javascript' src="{{asset('js/home_js/owl.carousel.js')}}"></script>
@@ -790,6 +571,7 @@
 		<script type='text/javascript' src="{{asset('js/home_js/jquery.mmenu.js')}}"></script>
 		<script type='text/javascript' src="{{asset('js/home_js/app.js')}}"></script>
 		<script type='text/javascript' src="{{asset('js/home_js/scripts.js')}}"></script>
+		<script type='text/javascript' src="{{asset('js/home_js/slick.min.js')}}"></script>
 		
 	</body>
 </html>
