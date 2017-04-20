@@ -134,8 +134,8 @@
 							<p class="fx-start" data-animation="fadeInUp">
 								<span>We started our journey in this business from the year 1998. We are one of the Nepal's best Recruiting Agencies. The number of years of experience and knowledge gives us the confident to say that, "We outsource the best Human Resources".</span>
 							</p>
-							<a class="button-big button-main fx-start" href="#" data-animation="fadeInDown"><i class="fa fa-download"></i>Application Form</a>
-							<a class="button-big button-main fx-start" href="#" data-animation="fadeInDown"><i class="fa fa-download"></i>Recruitment Process</a>
+							<a class="btn button-big button-main fx-start" href="/application_form/download" data-animation="fadeInDown"><i class="fa fa-download"></i>Application Form</a>
+							<a class="btn button-big button-main fx-start" href="/recruitment_procedure/download" data-animation="fadeInDown"><i class="fa fa-download"></i>Recruitment Process</a>
 							<!-- <a class="button-big button-dark fx-start black" href="#" data-animation="fadeInDown"><i class="fa fa-file-text-o"></i>Contact Us</a> -->
 						</div> --}}
 					</div>
@@ -161,7 +161,7 @@
 							<div class="col-md-5 right">
                                 <a href="/about" class="button-big button-main"><i class="fa fa-book"></i>Read More</a>
                                 &nbsp;&nbsp;
-								<a href="#" class="button-big button-main"><i class="fa fa-envelope"></i>Apply Online</a>
+								<a href="/online" class="button-big button-main"><i class="fa fa-envelope"></i>Apply Online</a>
 							</div>
 						</div>
 					</div>

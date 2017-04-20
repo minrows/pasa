@@ -50,10 +50,34 @@ class HomeController extends Controller
         $sel=$request->sel;
         return view('pasa_home/recruitment',compact('rps','sel'));
     }
+
+    public function download($dwn)
+    {
+        switch ($dwn)
+        {
+            case "application_form":
+                $pathToFile=public_path('/files/pasa-international-application-form.pdf');
+                break;
+            case "recruitment_procedure":
+                $pathToFile=public_path('/files/pasa-international-recruitment-process.pdf');
+                break;
+            default:
+                $pathToFile="";
+                break;
+        }
+        return response()->download($pathToFile);
+    }
+
+    public function online()
+    {
+        return view('pasa_home/online');
+    }
+
      public function gallery(Request $request)
     {
         $gallery=gallery::where('state','on')->get();
         // $sel=$request->sel;
         return view('pasa_home/gallery',compact('gallery'));
+
     }
 }
