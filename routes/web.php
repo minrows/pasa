@@ -22,6 +22,7 @@ Route::get('/home', 'HomeController@index');
 Route::get('/about', 'HomeController@about');
 Route::get('/rp', 'HomeController@recruitment');
 Route::post('/rp', 'HomeController@recruitment');
+Route::get('/gallery', 'HomeController@gallery');
 
 Route::get('/online', 'HomeController@online');
 

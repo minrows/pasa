@@ -9,6 +9,7 @@ use App\Http\Controllers\Controller;
 
 use App\pasa_carousel;
 use App\about;
+use App\gallery;
 
 class HomeController extends Controller
 {
@@ -18,8 +19,10 @@ class HomeController extends Controller
         $about=about::where(['state'=>'on','title'=>'Company Profile'])->first();
         $chairman=about::where(['state'=>'on','title'=>'Message from Chairman'])->first();
         $rps=recruitment_procedure::where('state','on')->get();
+        $gallery=gallery::limit(8)->where('state','on')->get();
+        // Game::limit(8)->offset(8)->get();
 
-        return view('pasa_home/home',compact('carousels','about','chairman','rps'));
+        return view('pasa_home/home',compact('carousels','about','chairman','rps','gallery'));
     }
 
     public function about()
@@ -68,5 +71,13 @@ class HomeController extends Controller
     public function online()
     {
         return view('pasa_home/online');
+    }
+
+     public function gallery(Request $request)
+    {
+        $gallery=gallery::where('state','on')->get();
+        // $sel=$request->sel;
+        return view('pasa_home/gallery',compact('gallery'));
+
     }
 }

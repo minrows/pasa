@@ -122,13 +122,12 @@
 				========================================================================= -->
 			<!-- SLIDER STARTS
 				========================================================================= -->
-
 			<section id="slider-main" class="carousel slide" data-ride="carousel">
 				<div class="carousel-inner">
                     @php $i=1;@endphp
                     @foreach($carousels as $carousel)
 					<div class="item @if($i==1) {{' active'}} @endif" id="particles-js" style="background-image:url({{asset('/image/'.$carousel->img)}}); ">
-						<div class="carousel-caption slider-item-center slider-item-v-center fx">
+						{{-- <div class="carousel-caption slider-item-center slider-item-v-center fx">
 							<h2 class="fx-start" data-animation="fadeInDown">
 								<span>Welcome to Pasa International</span>
 							</h2>
@@ -138,7 +137,7 @@
 							<a class="btn button-big button-main fx-start" href="/application_form/download" data-animation="fadeInDown"><i class="fa fa-download"></i>Application Form</a>
 							<a class="btn button-big button-main fx-start" href="/recruitment_procedure/download" data-animation="fadeInDown"><i class="fa fa-download"></i>Recruitment Process</a>
 							<!-- <a class="button-big button-dark fx-start black" href="#" data-animation="fadeInDown"><i class="fa fa-file-text-o"></i>Contact Us</a> -->
-						</div>
+						</div> --}}
 					</div>
                         @php $i++;@endphp
                     @endforeach
@@ -194,15 +193,15 @@
 					<div class="row">
 						<div class="icon triggerone col-xs-6 col-sm-4 col-lg-2">
 							<span class="h1 fa fa-university animated"></span>
-							<div class="h4">Consulting</div>
+							<div class="h4">Who We Are?</div>
 						</div>
 						<div class="icon triggertwo col-xs-6 col-sm-4 col-lg-2">
 							<span class="h1 fa fa-line-chart animated"></span>
-							<div class="h4">Expertise</div>
+							<div class="h4">Why PASA?</div>
 						</div>
 						<div class="icon triggerthree col-xs-6 col-sm-4 col-lg-2">
 							<span class="h1 fa fa-bar-chart animated"></span>
-							<div class="h4">Hire</div>
+							<div class="h4">Where We Are?</div>
 						</div>
 						<div class="icon triggerfour col-xs-6 col-sm-4 col-lg-2">
 							<span class="h1 fa fa-clock-o animated"></span>
@@ -224,17 +223,7 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="one">
-								<div class="h1">Lorem ipsum dolor sit amet consectetur<small>Administration, Service &amp; Repair</small></div>
-								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
-									<div class="feature-box">
-										<div class="feature-head">
-											<h3><i class="fa fa-university"></i>Global Investment</h3>
-										</div>
-										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
-										<p class="center">
-											<a class="button-medium button-main btn small" href="#">Contact Us</a>
-										</p>
-									</div>
+								klfjalskdfljlasdfjlkjlkjaskdfklds
 								</div>
 								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
 									<div class="feature-box">
@@ -553,39 +542,6 @@
 							</div>
 						</div>
 					</div>
-					{{-- <div class="row">
-						<div class="container">
-                            @php $i=1; @endphp
-							@foreach($rps as $rp)
-                            <div class="col-md-4">
-								<div class="box">
-									<i class="fa fa-calendar"></i>
-									<h3>{{$rp->title}}</h3>
-                                    <br />
-
-									<a href="{{ '/rp' }}"
-									   class="btn btn-link pull-right"
-									   onclick="event.preventDefault();
-											   document.getElementById('pass_{{$rp->id}}').submit();">
-										Read More
-									</a>
-
-									<form id="pass_{{$rp->id}}" action="{{'/rp'}}" method="POST" style="display: none;">
-										{{ csrf_field() }}
-										<input type="hidden" value="{{$rp->title}}" id="sel" name="sel" />
-									</form>
-
-								</div>
-							</div>
-                                @if($i%3==0) <div class="clearfix"></div> @endif
-                                @php $i++; @endphp
-                            @endforeach
-
-
-						</div>
-					</div> --}}
-
-					{{-- lets try --}}
 					<div class="row">
 						<div class="container">
 		                    @php $i=1; @endphp
@@ -629,121 +585,32 @@
 							<div class="col-md-12">
 								<h1 class="header h1 purple">Gallery</h1>
 								<div class="container">
-									<div class="gallery-full column-equal col-sm-6 col-md-3 fx-start" data-animation="bounceIn">
+									@php $i=1; @endphp
+									@foreach($gallery as $galery)
+									<div class="gallery-full column-equal col-sm-6 col-md-3 fx-start" data-animation="bounceIn" >
 										<div class="thumbnail fx-hover">
 											<div class="fx-hover-back"></div>
 											<div class="fx-hover-content">
-												<h3><a href="#">Gallery One</a></h3>
-												<p>Web Design</p>
+											<div class="clearfix"></div>
+												<h3 style="margin-top: 14px;"><a href="#">{{$galery->title}}</a></h3>
 												<div class="line"></div>
 											</div>
 											<div class="fx-hover-icon">
-												<a class="icon-medium icon-main" href="{{asset('image/check/g1.jpg')}}" data-lightbox="gallery" data-title="Gallery One"><i class="fa fa-camera"></i></a>
+												<a class="icon-medium icon-main" href="{{asset('/image/'.$galery->img_full)}}" data-lightbox="gallery" data-title="{{$galery->title}}"><i class="fa fa-camera"></i></a>
 											</div>
-											<img src="{{asset('image/check/g1.jpg')}}" width="400" height="400" alt="Gallery One" />
+											<img class='' src="{{asset('/image/'.$galery->img_thumb)}}"  width="400" height="400" alt="{{$galery->title}}" style="min-height: 211.5px;"/>
 										</div>
 									</div>
-									<div class="gallery-full column-equal col-sm-6 col-md-3 fx-start" data-animation="bounceIn">
-										<div class="thumbnail fx-hover">
-											<div class="fx-hover-back"></div>
-											<div class="fx-hover-content">
-												<h3><a href="#">Gallery Two</a></h3>
-												<p>Graphic Design</p>
-												<div class="line"></div>
-											</div>
-											<div class="fx-hover-icon">
-												<a class="icon-medium icon-main" href="{{asset('image/check/g2.jpg')}}" data-lightbox="gallery" data-title="Gallery Two"><i class="fa fa-camera"></i></a>
-											</div>
-											<img src="{{asset('image/check/g2.jpg')}}" width="400" height="400" alt="Gallery Two" />
-										</div>
-									</div>
-									<div class="gallery-full column-equal col-sm-6 col-md-3 fx-start" data-animation="bounceIn">
-										<div class="thumbnail fx-hover">
-											<div class="fx-hover-back"></div>
-											<div class="fx-hover-content">
-												<h3><a href="#">Gallery Three</a></h3>
-												<p>Development</p>
-												<div class="line"></div>
-											</div>
-											<div class="fx-hover-icon">
-												<a class="icon-medium icon-main" href="{{asset('image/check/g3.jpg')}}" data-lightbox="gallery" data-title="Gallery Three"><i class="fa fa-camera"></i></a>
-											</div>
-											<img src="{{asset('image/check/g3.jpg')}}" width="400" height="400" alt="Gallery Three" />
-										</div>
-									</div>
-									<div class="gallery-full column-equal col-sm-6 col-md-3 fx-start" data-animation="bounceIn">
-										<div class="thumbnail fx-hover">
-											<div class="fx-hover-back"></div>
-											<div class="fx-hover-content">
-												<h3><a href="#">Gallery Four</a></h3>
-												<p>Photography</p>
-												<div class="line"></div>
-											</div>
-											<div class="fx-hover-icon">
-												<a class="icon-medium icon-main" href="{{asset('image/check/g4.jpg')}}" data-lightbox="gallery" data-title="Gallery Four"><i class="fa fa-camera"></i></a>
-											</div>
-											<img src="{{asset('image/check/g4.jpg')}}" width="400" height="400" alt="Gallery Four" />
-										</div>
-									</div>
-									<div class="gallery-full column-equal col-sm-6 col-md-3 fx-start" data-animation="bounceIn">
-										<div class="thumbnail fx-hover">
-											<div class="fx-hover-back"></div>
-											<div class="fx-hover-content">
-												<h3><a href="#">Gallery Five</a></h3>
-												<p>Prototyping</p>
-												<div class="line"></div>
-											</div>
-											<div class="fx-hover-icon">
-												<a class="icon-medium icon-main" href="{{asset('image/check/g5.jpg')}}" data-lightbox="gallery" data-title="Gallery Five"><i class="fa fa-camera"></i></a>
-											</div>
-											<img src="{{asset('image/check/g5.jpg')}}" width="400" height="400" alt="Gallery Five" />
-										</div>
-									</div>
-									<div class="gallery-full column-equal col-sm-6 col-md-3 fx-start" data-animation="bounceIn">
-										<div class="thumbnail fx-hover">
-											<div class="fx-hover-back"></div>
-											<div class="fx-hover-content">
-												<h3><a href="#">Gallery Six</a></h3>
-												<p>Management</p>
-												<div class="line"></div>
-											</div>
-											<div class="fx-hover-icon">
-												<a class="icon-medium icon-main" href="{{asset('image/check/g6.jpg')}}" data-lightbox="gallery" data-title="Gallery Six"><i class="fa fa-camera"></i></a>
-											</div>
-											<img src="{{asset('image/check/g6.jpg')}}" width="400" height="400" alt="Gallery Six" />
-										</div>
-									</div>
-									<div class="gallery-full column-equal col-sm-6 col-md-3 fx-start" data-animation="bounceIn">
-										<div class="thumbnail fx-hover">
-											<div class="fx-hover-back"></div>
-											<div class="fx-hover-content">
-												<h3><a href="#">Gallery Seven</a></h3>
-												<p>Administration</p>
-												<div class="line"></div>
-											</div>
-											<div class="fx-hover-icon">
-												<a class="icon-medium icon-main" href="{{asset('image/check/g7.jpg')}}" data-lightbox="gallery" data-title="Gallery Seven"><i class="fa fa-camera"></i></a>
-											</div>
-											<img src="{{asset('image/check/g7.jpg')}}" width="400" height="400" alt="Gallery Seven" />
-										</div>
-									</div>
-									<div class="gallery-full column-equal col-sm-6 col-md-3 fx-start" data-animation="bounceIn">
-										<div class="thumbnail fx-hover">
-											<div class="fx-hover-back"></div>
-											<div class="fx-hover-content">
-												<h3><a href="#">Gallery Eight</a></h3>
-												<p>Staff</p>
-												<div class="line"></div>
-											</div>
-											<div class="fx-hover-icon">
-												<a class="icon-medium icon-main" href="{{asset('image/check/g8.jpg')}}" data-lightbox="gallery" data-title="Gallery Eight"><i class="fa fa-camera"></i></a>
-											</div>
-											<img src="{{asset('image/check/g8.jpg')}}" width="400" height="400" alt="Gallery Eight" />
-										</div>
+									@if($i%4==0) <div class="clearfix"></div> @endif
+		                        	@php $i++; @endphp
+		                    		@endforeach
+		                    		<div class="col-md-2 center-block" style="margin-top: 15px; ">
+		                                <a href="/gallery" class="btn btn-fresh text-uppercase btn-lg"><i class="fa fa-camera"></i>&nbsp;&nbsp;MORE PHOTOS</a>
 									</div>
 								</div>
 							</div>
 						</div>
+
 					</div>
 				</div>
 				<!-- GALLERY ENDS
@@ -859,19 +726,19 @@
 								</div>
 							</aside>
 							<aside class="widget aio-widget-blogs col-sm-6 col-md-4 ">
-								<h3 class="header h1 white">&nbsp;Keep In touch</h3>		
-								  <ul style="list-style: none;">
-								    <li class="footer-contact" style="padding: 7px;"><i class="fa fa-map-marker"></i><span>&nbsp;P.O. Box No.: 20330 Samakhushi, Kathmandu, Nepal</span></li>
-								   
-								    <li class="footer-contact"><i class="fa fa-phone"></i><span>&nbsp;+977-1-4387207 ( 6 Lines) </span></li>
-                                    
-                                      <li class="footer-contact"><i class="fa fa-fax"></i><span>&nbsp;+977-1-4387208</span></li>
-                                    
-                                     <li class="footer-contact"><i class="fa fa-envelope"></i><span><a href="mailto:info@pasainternational.com.np">&nbsp;info@pasainternational.com.np</a></span></li>
-                                     
-                                     <li class="footer-contact"><i class="fa fa-globe"></i><span><a href="http://www.pasainternational.com.np">&nbsp;www.pasainternational.com.np</a></span></li>
-                                     
-															    </ul>
+							    <h3 class="header h1 white">&nbsp;Keep In touch</h3>
+							    <ul style="list-style: none;">
+							        <li class="footer-contact" style="padding: 7px;"><i class="fa fa-map-marker"></i><span>&nbsp;P.O. Box No.: 20330 Samakhushi, Kathmandu, Nepal</span></li>
+
+							        <li class="footer-contact"><i class="fa fa-phone"></i><span>&nbsp;+977-1-4387207 ( 6 Lines) </span></li>
+
+							        <li class="footer-contact"><i class="fa fa-fax"></i><span>&nbsp;+977-1-4387208</span></li>
+
+							        <li class="footer-contact"><i class="fa fa-envelope"></i><span><a href="mailto:info@pasainternational.com.np">&nbsp;info@pasainternational.com.np</a></span></li>
+
+							        <li class="footer-contact"><i class="fa fa-globe"></i><span><a href="http://www.pasainternational.com.np">&nbsp;www.pasainternational.com.np</a></span></li>
+
+							    </ul>
 
 							</aside>
 						</div>
