@@ -223,7 +223,17 @@
 					<div class="row">
 						<div class="col-sm-12">
 							<div class="one">
-								klfjalskdfljlasdfjlkjlkjaskdfklds
+								<div class="h1">Lorem ipsum dolor sit amet consectetur<small>Administration, Service &amp; Repair</small></div>
+								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
+									<div class="feature-box">
+										<div class="feature-head">
+											<h3><i class="fa fa-university"></i>Global Investment</h3>
+										</div>
+										<p>Lorem ipsum dolor sit amet consectetur labore et dolore magna aliqua elit sed do eiusmod minim veniam quis</p>
+										<p class="center">
+											<a class="button-medium button-main btn small" href="#">Contact Us</a>
+										</p>
+									</div>
 								</div>
 								<div class="feature-list column-equal col-sm-6 col-md-3 fx-start" data-animation="fadeInUp">
 									<div class="feature-box">
