@@ -1,5 +1,7 @@
 <?php
 
+use Illuminate\Support\Facades\Mail;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,8 +23,12 @@ Route::get('/about', 'HomeController@about');
 Route::get('/rp', 'HomeController@recruitment');
 Route::post('/rp', 'HomeController@recruitment');
 
+Route::get('/online', 'HomeController@online');
+
 
 Route::get('/{dwn}/download','HomeController@download');
+
+Route::get('send','MailController@send');
 //Route::get('add_carousel', 'home_controller@add_carousel');
 //Route::get('/{pasainternational}/edit_carousel', 'home_controller@edit_carousel');
 //Route::get('/{pasainternational}/delete_carousel', 'home_controller@delete_carousel');
@@ -98,3 +104,4 @@ Route::post('/pasa_admin/delete_corporate_field','AdminController@delete_corpora
 Route::post('/pasa_admin/add_corporate_member','AdminController@add_corporate_member');
 Route::post('/pasa_admin/update_corporate_member','AdminController@update_corporate_member');
 Route::post('/pasa_admin/delete_corporate_member','AdminController@delete_corporate_member');
+

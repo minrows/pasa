@@ -64,4 +64,9 @@ class HomeController extends Controller
         }
         return response()->download($pathToFile);
     }
+
+    public function online()
+    {
+        return view('pasa_home/online');
+    }
 }

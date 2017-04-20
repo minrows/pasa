@@ -162,7 +162,7 @@
 							<div class="col-md-5 right">
                                 <a href="/about" class="button-big button-main"><i class="fa fa-book"></i>Read More</a>
                                 &nbsp;&nbsp;
-								<a href="#" class="button-big button-main"><i class="fa fa-envelope"></i>Apply Online</a>
+								<a href="/online" class="button-big button-main"><i class="fa fa-envelope"></i>Apply Online</a>
 							</div>
 						</div>
 					</div>
