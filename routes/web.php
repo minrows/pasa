@@ -25,6 +25,7 @@ Route::post('/rp', 'HomeController@recruitment');
 Route::get('/gallery', 'HomeController@gallery');
 
 Route::get('/online', 'HomeController@online');
+Route::post('/online_submit', 'HomeController@online_submit');
 
 
 Route::get('/{dwn}/download','HomeController@download');
