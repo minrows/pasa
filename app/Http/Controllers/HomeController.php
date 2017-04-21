@@ -61,7 +61,7 @@ class HomeController extends Controller
         return view('pasa_home/gallery',compact('gallery'));
     }
 
-    public function online(Request $request)
+    public function online()
     {
         return view('pasa_home/online');
     }
@@ -74,6 +74,7 @@ class HomeController extends Controller
         }
         else
         {
+//            return $request->doe;
             $pasa=new online_form;
             $pasa->name=$request->name;
             $pasa->position=$request->position;
@@ -95,8 +96,7 @@ class HomeController extends Controller
             $pasa->doi=$request->doi;
             $pasa->place_of_issue=$request->place_of_issue;
             $pasa->doe=$request->doe;
-            $pasa->doe=$request->height_feet;
-            $pasa->height_inch=$request->height_inch;
+            $pasa->height_feet=$request->height_feet;
             $pasa->height_inch=$request->height_inch;
             $pasa->weight=$request->weight;
             $pasa->parent_name=$request->parent_name;
@@ -106,6 +106,24 @@ class HomeController extends Controller
             $pasa->save();
 
             $inserted=online_form::orderBy('id','desc')->first();
+
+            $path_pp=$request->pp->storeAs('online_files','pp_'.$inserted->id.'.'.$request->pp->extension());
+            $path_pp_doc=$request->pp_doc->storeAs('online_files','pp_doc_'.$inserted->id.'.'.$request->pp_doc->extension());
+            $path_cv_doc=$request->cv_doc->storeAs('online_files','cv_doc_'.$inserted->id.'.'.$request->cv_doc->extension());
+            if ($request->hasFile('edu_doc')) {
+                $path_edu_doc=$request->edu_doc->storeAs('online_files','edu_doc_'.$inserted->id.'.'.$request->edu_doc->extension());
+            }
+            if ($request->hasFile('exp_doc')) {
+                $path_exp_doc=$request->exp_doc->storeAs('online_files','exp_doc_'.$inserted->id.'.'.$request->exp_doc->extension());
+            }
+            if ($request->hasFile('train_doc')) {
+                $path_train_doc=$request->train_doc->storeAs('online_files','train_doc_'.$inserted->id.'.'.$request->train_doc->extension());
+            }
+            if ($request->hasFile('drive_doc')) {
+                $path_drive_doc=$request->drive_doc->storeAs('online_files','drive_doc_'.$inserted->id.'.'.$request->drive_doc->extension());
+            }
+
+
 
             return $inserted;
         }
