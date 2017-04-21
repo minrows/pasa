@@ -383,11 +383,11 @@
 						<div class="container">
 							<div class="col-md-12">
 							<div class="cell-3">
-                <h3 class="block-head side-heading">Current <span>Requirements</span></h3>
+                <h3 class="block-head side-heading" style="margin-top: 30px;">Current </br> <span>Requirements</span></h3>
                 <p class="portfolio-lft-txt">Browse our current <br> requirements.
                 </p>
                 <div class="viewAll-home">
-                    <a class="btn btn-default" href="#">Browse All Requirements</a>
+                    <a class="btn btn-default" href="#" style="margin-top: 30px;">Browse All Requirements</a>
                 </div>
             </div>
 								{{-- <h1 class="header h1 white">Current Demands</h1> --}}
