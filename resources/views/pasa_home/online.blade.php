@@ -145,8 +145,8 @@
     </script>
 
     <div class="container">
-        <form name="online-form" method="post" action="" onsubmit="return validation();" enctype="multipart/form-data">
-            {{csrf_field()}}
+        <form name="online-form" method="post" action="/online_submit" onsubmit="return validation();" enctype="multipart/form-data">
+            {{ csrf_field() }}
             <h1 align="center">Application Form</h1>
             <div class="row">
                 <div class="col-lg-8 col-md-8">
@@ -165,7 +165,7 @@
                 </div>
                 <div class="col-lg-4 col-md-4">
                     <div class="form-group pull-right">
-                        <div id="img" name="img" class="img center-block"><img alt="preview" id="preview" height="144px" width="116px"/></div>
+                        <div id="img" name="img" class="img center-block"><img src="{{asset('/image/default.jpg')}}" alt="preview" id="preview" height="144px" width="116px"/></div>
                         <br />
                         <label class="custom-file-upload" for="pp">Choose PP</label>
                         <input class="center-block" type="file" name="pp" id="pp" onchange="readURL(this,'#preview')" />
