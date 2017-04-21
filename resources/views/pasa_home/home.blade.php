@@ -29,7 +29,8 @@
 
     .slick-slide img {
       width: 100%;
-      height: 246px;
+      height: 196px;
+      /*padding: 1px;*/
     }
 
     .slick-prev:before,
@@ -381,11 +382,19 @@
 					<div class="row">
 						<div class="container">
 							<div class="col-md-12">
-								<h1 class="header h1 white">Current Demands</h1>
+							<div class="cell-3">
+                <h3 class="block-head side-heading">Current <span>Requirements</span></h3>
+                <p class="portfolio-lft-txt">Browse our current <br> requirements.
+                </p>
+                <div class="viewAll-home">
+                    <a class="btn btn-default" href="#">Browse All Requirements</a>
+                </div>
+            </div>
+								{{-- <h1 class="header h1 white">Current Demands</h1> --}}
 								<section class="center slider">
 								@foreach($curr_demand_img as $cd_img)
 								    <div>
-								      <img style="max-height: 1000px;" src="{{asset('/image/'.$cd_img->img_thumb)}}">
+								      <img src="{{asset('/image/'.$cd_img->img_thumb)}}">
 								    </div>
 								@endforeach   
 								</section>
@@ -553,11 +562,15 @@
 		<script type="text/javascript">
 		    $(document).ready(function(){
 		      $('.center').slick({
-		        // dots: true,
 		        infinite: true,
-		        centerMode: true,
-		        slidesToShow: 3,
-		        slidesToScroll: 3
+			    slidesToShow: 3,
+			    slidesToScroll: 1
+
+		        // dots: true,
+		        // infinite: true,
+		        // centerMode: true,
+		        // slidesToShow: 4,
+		        // slidesToScroll: 3
 		      });
 		    });
   		</script>
