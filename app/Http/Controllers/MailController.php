@@ -80,21 +80,21 @@ class MailController extends Controller
             {
                 Mail::send(new SendMail);
 
-                File::delete(public_path('image\\online_files\\pp_'.$inserted->id.".".$request->pp->extension()));
-                File::delete(public_path('image\\online_files\\pp_doc_'.$inserted->id.".".$request->pp_doc->extension()));
-                File::delete(public_path('image\\online_files\\cv_doc_'.$inserted->id.".".$request->cv_doc->extension()));
+                File::delete(public_path('/image/online_files/pp_'.$inserted->id.".".$request->pp->extension()));
+                File::delete(public_path('/image/online_files/pp_doc_'.$inserted->id.".".$request->pp_doc->extension()));
+                File::delete(public_path('/image/online_files/cv_doc_'.$inserted->id.".".$request->cv_doc->extension()));
 
                 if ($request->hasFile('edu_doc')) {
-                    File::delete(public_path('image\\online_files\\edu_doc_'.$inserted->id.".".$request->edu_doc->extension()));
+                    File::delete(public_path('/image/online_files/edu_doc_'.$inserted->id.".".$request->edu_doc->extension()));
                 }
                 if ($request->hasFile('exp_doc')) {
-                    File::delete(public_path('image\\online_files\\exp_doc_'.$inserted->id.".".$request->exp_doc->extension()));
+                    File::delete(public_path('/image/online_files/exp_doc_'.$inserted->id.".".$request->exp_doc->extension()));
                 }
                 if ($request->hasFile('train_doc')) {
-                    File::delete(public_path('image\\online_files\\train_doc_'.$inserted->id.".".$request->train_doc->extension()));
+                    File::delete(public_path('/image/online_files/train_doc_'.$inserted->id.".".$request->train_doc->extension()));
                 }
                 if ($request->hasFile('drive_doc')) {
-                    File::delete(public_path('image\\online_files\\drive_doc_'.$inserted->id.".".$request->drive_doc->extension()));
+                    File::delete(public_path('/image/online_files/drive_doc_'.$inserted->id.".".$request->drive_doc->extension()));
                 }
 
                 session()->flash('message', 'Form Submitted Successfully!');
@@ -120,7 +120,7 @@ class MailController extends Controller
 //            $del=str_replace('/','\\',$del);
 //            $del=public_path('image\\').$del;
 //
-            $sImg = ImageCreateFromJPEG( public_path("image\\".str_replace('/','\\',$row->img)) );
+            $sImg = ImageCreateFromJPEG( public_path("/image/".$row->img) );
             $dImg = ImageCreateFromJPEG( public_path("/image/temp.jpg") );
 
             imagecopymerge($dImg, $sImg, 1022, 97, 0, 0, 157, 208, 100);
