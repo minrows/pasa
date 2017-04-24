@@ -8,6 +8,12 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Some message</h1>
+
+    <h1>Online Application Detail: &lt; Online Ref. no: {{$inserted->id}} &gt;</h1>
+
+    <h2>Name: {{$inserted->name}}</h2>
+    <h2>Email: {{$inserted->email}}</h2>
+
+
 </body>
 </html>

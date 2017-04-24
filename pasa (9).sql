@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 21, 2017 at 01:22 PM
+-- Generation Time: Apr 24, 2017 at 11:03 AM
 -- Server version: 5.5.39
 -- PHP Version: 7.1.1
 
@@ -481,7 +481,7 @@ ALTER TABLE `migrations`
 -- AUTO_INCREMENT for table `online_forms`
 --
 ALTER TABLE `online_forms`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `overseas_clients`
 --

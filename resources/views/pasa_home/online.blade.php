@@ -145,6 +145,11 @@
     </script>
 
     <div class="container">
+
+        @if(session()->has('message'))
+            <h1 align="center" class="alert alert-danger">{{session()->get('message')}}</h1>
+        @endif
+
         <form name="online-form" method="post" action="/online_submit" onsubmit="return validation();" enctype="multipart/form-data">
             {{ csrf_field() }}
             <h1 align="center">Application Form</h1>
