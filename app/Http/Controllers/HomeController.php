@@ -1,16 +1,14 @@
 <?php
-
 namespace App\Http\Controllers;
-
 use App\overseas_client;
 use App\recruitment_procedure;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-
 use App\pasa_carousel;
 use App\about;
 use App\gallery;
 use App\curr_demand_img;
+use App\curr_demand;
 use App\online_form;
 
 
@@ -32,9 +30,7 @@ class HomeController extends Controller
     public function about()
     {
         $abouts=about::where('state','on')->get();
-
         $oc_countries=overseas_client::select('country')->where('state','on')->distinct()->get();
-
         $overseas_clients=$overseas_clients=overseas_client::orderBy('country')
             ->groupBy('country')
             ->groupBy('title')
@@ -44,7 +40,6 @@ class HomeController extends Controller
             ->groupBy('created_at')
             ->groupBy('updated_at')
             ->get();
-
         return view('pasa_home/about',compact('abouts','oc_countries','overseas_clients'));
     }
 
@@ -54,17 +49,34 @@ class HomeController extends Controller
         $sel=$request->sel;
         return view('pasa_home/recruitment',compact('rps','sel'));
     }
-     public function gallery(Request $request)
+
+    public function gallery(Request $request)
     {
         $gallery=gallery::where('state','on')->get();
         // $sel=$request->sel;
         return view('pasa_home/gallery',compact('gallery'));
+    }
+    public function curr_demand(Request $request)
+    {
+        $curr_demand=curr_demand::where('state','on')->get();
+        $curr_demand=curr_demand::where('state','on')->orderBy('title')
+            ->groupBy('title')
+            ->groupBy('country')
+            ->groupBy('trade')
+            ->groupBy('id')
+            ->groupBy('quantity')
+            ->groupBy('state')
+            ->groupBy('created_at')
+            ->groupBy('updated_at')
+             ->get();
+        return view('pasa_home/curr_demand',compact('curr_demand'));
     }
 
     public function online(Request $request)
     {
         return view('pasa_home/online');
     }
+
 
     public function online_submit(Request $request)
     {
@@ -120,25 +132,15 @@ class HomeController extends Controller
             $row = $result->fetch_assoc();
             $font="./fonts/times.ttf";
             //$font="home/pasa_international/pasainternational.com.np/fonts/times.TTF";
-
-
-
-
             $sImg = ImageCreateFromJPEG( $row['img'] );
             $dImg = ImageCreateFromJPEG( "temp.jpg" );
-
             imagecopymerge($dImg, $sImg, 1022, 97, 0, 0, 157, 208, 100);
-
             //header('Content-Type: image/png');
             imagejpeg($dImg,"temp1.jpg");
-
             imagedestroy($dImg);
             imagedestroy($sImg);
-
             $rImg = ImageCreateFromJPEG( "temp1.jpg" );
             $color = imagecolorallocate($rImg, 0, 0, 0);
-
-
             imagettftext($rImg,18,0,255,350,$color,$font,$row['name']);
 //            imagestring( $rImg,50,255,345,urldecode(imagettftext($rImg,15,0,260,345,$color,$font,$row['name'])),$color );
             imagettftext($rImg,18,0,939,350,$color,$font,$row['position']);
@@ -198,6 +200,4 @@ class HomeController extends Controller
             return;
         }
     }
-
-
 }

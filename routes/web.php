@@ -23,6 +23,7 @@ Route::get('/about', 'HomeController@about');
 Route::get('/rp', 'HomeController@recruitment');
 Route::post('/rp', 'HomeController@recruitment');
 Route::get('/gallery', 'HomeController@gallery');
+Route::get('/curr_demand', 'HomeController@curr_demand');
 
 Route::get('/online', 'HomeController@online');
 Route::post('/online_submit', 'HomeController@online_submit');

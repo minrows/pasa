@@ -883,7 +883,7 @@ a {
 }
 .icon .h4 {
 	color: #2e2e2e;
-	font-size: 18px;
+	font-size: 14px;
 	font-weight: 600;
 	margin: 0px 10px 10px 10px;
 }
@@ -907,7 +907,7 @@ a {
 .icon:hover .h4,
 .icon:hover .h1.fa,
 .icon:hover .glyphicons {
-	color: #002796;
+	color: #71447d !important;
 	-webkit-animation-name: rubberBand;
 	animation-name: rubberBand;
 }
@@ -919,9 +919,18 @@ a {
 }
 .hidden-content-wrapper {
 	background: #d8d8d8;
-	color: #002796;
+	color: #000000;
 	position: relative;
 	top: 0px;
+}
+.hidden-content-wrapper p{
+	font-size: 14px;
+}
+.hidden-content-wrapper .h1{
+	text-align: center;
+	font-size: 27px;
+	font-weight: bold;
+	margin: 20px 20px 20px 20px !important; 
 }
 .hidden-content-wrapper .btn {
 	margin-bottom: 3px;
@@ -3861,6 +3870,7 @@ form {
 		border: 1px solid #000000;
 	}
 	.table {
+		background-color: gray !important;
 		border-collapse: collapse !important;
 	}
 	.table td,
