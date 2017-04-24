@@ -5,9 +5,8 @@
 @endsection
 
 @section('content')
-    {{-- @if($sel==null || $sel=="")
-        @php $sel=$rps[0]['title']; @endphp
-    @endif --}}
+
+
     <style>
         h3{
             color:lightcyan;

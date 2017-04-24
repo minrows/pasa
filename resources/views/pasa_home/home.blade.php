@@ -417,7 +417,7 @@
 						<div class="container">
 							<div class="col-md-12">
 							<div class="cell-3">
-                <h3 class="block-head side-heading" style="margin-top: 30px;">Current </br> <span>Demands</span></h3>
+                <h3 class="block-head side-heading" style="margin-top: 20px;">Current </br> <span>Requirements</span></h3>
                 <p class="portfolio-lft-txt">Browse our current <br> requirements.
                 </p>
                 <div class="viewAll-home">
@@ -428,7 +428,8 @@
 								<section class="center slider">
 								@foreach($curr_demand_img as $cd_img)
 								    <div>
-								      <img src="{{asset('/image/'.$cd_img->img_thumb)}}">
+
+								     <a href="{{asset('/image/'.$cd_img->img_full)}}" data-lightbox="gallery" data-title="hy"> <img src="{{asset('/image/'.$cd_img->img_thumb)}}"></a>
 								    </div>
 								@endforeach   
 								</section>
