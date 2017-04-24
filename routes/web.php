@@ -26,7 +26,7 @@ Route::get('/gallery', 'HomeController@gallery');
 Route::get('/curr_demand', 'HomeController@curr_demand');
 
 Route::get('/online', 'HomeController@online');
-Route::post('/online_submit', 'HomeController@online_submit');
+Route::post('/online_submit', 'MailController@send');
 
 
 Route::get('/{dwn}/download','HomeController@download');

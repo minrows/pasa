@@ -72,7 +72,7 @@ class HomeController extends Controller
         return view('pasa_home/curr_demand',compact('curr_demand'));
     }
 
-    public function online(Request $request)
+    public function online()
     {
         return view('pasa_home/online');
     }
@@ -86,6 +86,7 @@ class HomeController extends Controller
         }
         else
         {
+//            return $request->doe;
             $pasa=new online_form;
             $pasa->name=$request->name;
             $pasa->position=$request->position;
@@ -107,8 +108,7 @@ class HomeController extends Controller
             $pasa->doi=$request->doi;
             $pasa->place_of_issue=$request->place_of_issue;
             $pasa->doe=$request->doe;
-            $pasa->doe=$request->height_feet;
-            $pasa->height_inch=$request->height_inch;
+            $pasa->height_feet=$request->height_feet;
             $pasa->height_inch=$request->height_inch;
             $pasa->weight=$request->weight;
             $pasa->parent_name=$request->parent_name;
@@ -119,21 +119,61 @@ class HomeController extends Controller
 
             $inserted=online_form::orderBy('id','desc')->first();
 
-            return $inserted;
-        }
-    }
+            $pasa1=online_form::find($inserted->id);
+            $path_pp=$request->pp->storeAs('online_files','pp_'.$inserted->id.'.'.$request->pp->extension());
+            $pasa1->img=$path_pp;
+            $pasa1->save();
 
-    public function create_pdf($ref,$conn)
-    {
-        $sql = "SELECT * FROM online_application where ref_no=" . $ref . "";
-        $result = $conn->query($sql);
-        if ($result->num_rows > 0) {
+            $path_pp_doc=$request->pp_doc->storeAs('online_files','pp_doc_'.$inserted->id.'.'.$request->pp_doc->extension());
+            $path_cv_doc=$request->cv_doc->storeAs('online_files','cv_doc_'.$inserted->id.'.'.$request->cv_doc->extension());
+
 
             $row = $result->fetch_assoc();
             $font="./fonts/times.ttf";
             //$font="home/pasa_international/pasainternational.com.np/fonts/times.TTF";
             $sImg = ImageCreateFromJPEG( $row['img'] );
             $dImg = ImageCreateFromJPEG( "temp.jpg" );
+
+
+
+            if ($request->hasFile('edu_doc')) {
+                $path_edu_doc=$request->edu_doc->storeAs('online_files','edu_doc_'.$inserted->id.'.'.$request->edu_doc->extension());
+            }
+            if ($request->hasFile('exp_doc')) {
+                $path_exp_doc=$request->exp_doc->storeAs('online_files','exp_doc_'.$inserted->id.'.'.$request->exp_doc->extension());
+            }
+            if ($request->hasFile('train_doc')) {
+                $path_train_doc=$request->train_doc->storeAs('online_files','train_doc_'.$inserted->id.'.'.$request->train_doc->extension());
+            }
+            if ($request->hasFile('drive_doc')) {
+                $path_drive_doc=$request->drive_doc->storeAs('online_files','drive_doc_'.$inserted->id.'.'.$request->drive_doc->extension());
+            }
+
+            if($this->create_pdf($inserted->id))
+            {
+                session()->flash('message', 'Form Submitted Successfully!');
+                return redirect('/');
+            }
+            else
+            {
+                session()->flash('message', 'Sorry, some error occurred!');
+                return back();
+            }
+        }
+    }
+
+    public function create_pdf($id)
+    {
+        $row=online_form::where('id',$id)->first();
+        if (count($row)>0) {
+            $font=public_path('/fonts/times.ttf');
+            //$font="home/pasa_international/pasainternational.com.np/fonts/times.TTF";
+
+//            $del=str_replace('/','\\',$del);
+//            $del=public_path('image\\').$del;
+//
+            $sImg = ImageCreateFromJPEG( public_path("image\\".str_replace('/','\\',$row->img)) );
+            $dImg = ImageCreateFromJPEG( public_path("/image/temp.jpg") );
             imagecopymerge($dImg, $sImg, 1022, 97, 0, 0, 157, 208, 100);
             //header('Content-Type: image/png');
             imagejpeg($dImg,"temp1.jpg");
@@ -142,18 +182,24 @@ class HomeController extends Controller
             $rImg = ImageCreateFromJPEG( "temp1.jpg" );
             $color = imagecolorallocate($rImg, 0, 0, 0);
             imagettftext($rImg,18,0,255,350,$color,$font,$row['name']);
+            imagejpeg($dImg,public_path("/image/temp1.jpg"));
+            imagedestroy($dImg);
+            imagedestroy($sImg);
+            $rImg = ImageCreateFromJPEG( public_path("/image/temp1.jpg") );
+            $color = imagecolorallocate($rImg, 0, 0, 0);
+            imagettftext($rImg,18,0,255,350,$color,$font,$row->name);
 //            imagestring( $rImg,50,255,345,urldecode(imagettftext($rImg,15,0,260,345,$color,$font,$row['name'])),$color );
-            imagettftext($rImg,18,0,939,350,$color,$font,$row['position']);
-            imagettftext( $rImg,18,0,255,403,$color,$font,$row['tel_no']);
-            imagettftext( $rImg,18,0,558,403,$color,$font,$row['mob_no']);
-            imagettftext( $rImg,18,0,942,403,$color,$font,$row['religion']);
-            imagettftext( $rImg,18,0,255,452,$color,$font,$row['address']);
-            imagettftext( $rImg,18,0,255,510,$color,$font,$row['con_address']);
-            imagettftext( $rImg,18,0,255,565,$color,$font,$row['email']);
-            imagettftext( $rImg,18,0,814,565,$color,$font,$row['qualification']);
+            imagettftext($rImg,18,0,939,350,$color,$font,$row->position);
+            imagettftext( $rImg,18,0,255,403,$color,$font,$row->tel_no);
+            imagettftext( $rImg,18,0,558,403,$color,$font,$row->mob_no);
+            imagettftext( $rImg,18,0,942,403,$color,$font,$row->religion);
+            imagettftext( $rImg,18,0,255,452,$color,$font,$row->address);
+            imagettftext( $rImg,18,0,255,510,$color,$font,$row->con_address);
+            imagettftext( $rImg,18,0,255,565,$color,$font,$row->email);
+            imagettftext( $rImg,18,0,814,565,$color,$font,$row->qualification);
 
             //inserting dob date
-            $time_dob = strtotime($row['dob']);
+            $time_dob = strtotime($row->dob);
             $dob_y= date('Y', $time_dob);
             $dob_m= date('m', $time_dob);
             $dob_d= date('d', $time_dob);
@@ -167,7 +213,37 @@ class HomeController extends Controller
             imagettftext( $rImg,18,0,515,630,$color,$font,($dob_y[2]));
             imagettftext( $rImg,18,0,553,630,$color,$font,($dob_y[3]));
 
-            if($row['gender']=='male')
+            //inserting doi date
+            $time_doi = strtotime($row->doi);
+            $doi_y= date('Y', $time_doi);
+            $doi_m= date('m', $time_doi);
+            $doi_d= date('d', $time_doi);
+
+            imagettftext( $rImg,18,0,572,736,$color,$font,($doi_d[0]));
+            imagettftext( $rImg,18,0,603,736,$color,$font,($doi_d[1]));
+            imagettftext( $rImg,18,0,642,736,$color,$font,($doi_m[0]));
+            imagettftext( $rImg,18,0,672,736,$color,$font,($doi_m[1]));
+            imagettftext( $rImg,18,0,714,736,$color,$font,($doi_y[0]));
+            imagettftext( $rImg,18,0,744,736,$color,$font,($doi_y[1]));
+            imagettftext( $rImg,18,0,772,736,$color,$font,($doi_y[2]));
+            imagettftext( $rImg,18,0,800,736,$color,$font,($doi_y[3]));
+
+            //inserting Expiry date
+            $time_doe = strtotime($row->doe);
+            $doe_y= date('Y', $time_doe);
+            $doe_m= date('m', $time_doe);
+            $doe_d= date('d', $time_doe);
+
+            imagettftext( $rImg,18,0,232,796,$color,$font,($doe_d[0]));
+            imagettftext( $rImg,18,0,268,796,$color,$font,($doe_d[1]));
+            imagettftext( $rImg,18,0,317,796,$color,$font,($doe_m[0]));
+            imagettftext( $rImg,18,0,349,796,$color,$font,($doe_m[1]));
+            imagettftext( $rImg,18,0,399,796,$color,$font,($doe_y[0]));
+            imagettftext( $rImg,18,0,433,796,$color,$font,($doe_y[1]));
+            imagettftext( $rImg,18,0,467,796,$color,$font,($doe_y[2]));
+            imagettftext( $rImg,18,0,501,796,$color,$font,($doe_y[3]));
+
+            if($row->gender=='male')
             {
                 imagestring( $rImg,50,800,616,urldecode('*'),$color );
             }
@@ -176,7 +252,7 @@ class HomeController extends Controller
                 imagestring( $rImg,50,928,616,urldecode('*'),$color );
             }
 
-            if($row['marital_status']=='single')
+            if($row->marital_status=='single')
             {
                 imagestring( $rImg,50,229,667,urldecode('*'),$color );
             }
@@ -184,20 +260,21 @@ class HomeController extends Controller
             {
                 imagestring( $rImg,50,326,667,urldecode('*'),$color );
             }
-            imagettftext( $rImg,18,0,643,675,$color,$font,$row['spouse_name']);
-            imagettftext( $rImg,18,0,260,724,$color,$font,$row['passport_no']);
-            imagettftext( $rImg,18,0,997,724,$color,$font,$row['place_of_issue']);
-            imagettftext( $rImg,18,0,638,781,$color,$font,$row['height_feet']);
-            imagettftext( $rImg,18,0,747,781,$color,$font,$row['height_inch']);
-            imagettftext( $rImg,18,0,961,781,$color,$font,$row['weight']);
-            imagettftext( $rImg,18,0,260,831,$color,$font,$row['parent_name']);
-            imagettftext( $rImg,18,0,260,884,$color,$font,$row['prior_exp']);
-            imagettftext( $rImg,18,0,260,989,$color,$font,$row['document']);
+            imagettftext( $rImg,18,0,643,675,$color,$font,$row->spouse_name);
+            imagettftext( $rImg,18,0,260,724,$color,$font,$row->passport_no);
+            imagettftext( $rImg,18,0,997,724,$color,$font,$row->place_of_issue);
+            imagettftext( $rImg,18,0,638,781,$color,$font,$row->height_feet);
+            imagettftext( $rImg,18,0,747,781,$color,$font,$row->height_inch);
+            imagettftext( $rImg,18,0,961,781,$color,$font,$row->weight);
+            imagettftext( $rImg,18,0,260,831,$color,$font,$row->parent_name);
+            imagettftext( $rImg,18,0,260,884,$color,$font,$row->prior_exp);
+            imagettftext( $rImg,18,0,260,989,$color,$font,$row->document);
 
             //header('Content-type: image/jpeg');
-            imagejpeg($rImg,"images/attachments/form_".$ref.".jpg");
+            imagejpeg($rImg,public_path('/image/online_files/form_'.$id.'.jpg'));
             imagedestroy($rImg);
-            return;
+            return true;
         }
+        return false;
     }
 }

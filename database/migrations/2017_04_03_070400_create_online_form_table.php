@@ -19,6 +19,7 @@ class CreateOnlineFormTable extends Migration
             $table->string('position',20);
             $table->string('tel_no',20);
             $table->string('mob_no',20);
+            $table->string('religion',50);
             $table->text('address');
             $table->text('con_address');
             $table->string('email',50);
@@ -29,7 +30,7 @@ class CreateOnlineFormTable extends Migration
             $table->string('spouse_name',50);
             $table->string('passport_no',10);
             $table->date('doi');
-            $table->string('plae_of_issue',20);
+            $table->string('place_of_issue',20);
             $table->date('doe');
             $table->integer('height_feet');
             $table->integer('height_inch');

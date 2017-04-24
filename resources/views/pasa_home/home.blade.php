@@ -63,6 +63,9 @@
 		<link rel='stylesheet' href="{{asset('css/home_css/slick.css')}}" type='text/css' />
 	</head>
 	<body id="home">
+	@if(session()->has('message'))
+		<h1 align="center" class="alert alert-success">{{session()->get('message')}}</h1>
+	@endif
 			<!-- PRELOADER STARTS
 			========================================================================= -->
 		<div class="preloader"></div>
