@@ -10,6 +10,7 @@ use App\gallery;
 use App\curr_demand_img;
 use App\curr_demand;
 use App\online_form;
+use App\link;
 
 
 class HomeController extends Controller
@@ -22,9 +23,11 @@ class HomeController extends Controller
         $rps=recruitment_procedure::where('state','on')->get();
         $gallery=gallery::limit(8)->where('state','on')->get();
         $curr_demand_img=curr_demand_img::where('state','on')->get();
+        $links=link::all();
+
         // Game::limit(8)->offset(8)->get();
 
-        return view('pasa_home/home',compact('carousels','about','chairman','rps','gallery','curr_demand_img'));
+        return view('pasa_home/home',compact('carousels','about','chairman','rps','gallery','curr_demand_img','links'));
     }
 
     public function about()
@@ -40,21 +43,24 @@ class HomeController extends Controller
             ->groupBy('created_at')
             ->groupBy('updated_at')
             ->get();
-        return view('pasa_home/about',compact('abouts','oc_countries','overseas_clients'));
+        $links=link::all();
+        return view('pasa_home/about',compact('abouts','oc_countries','overseas_clients','links'));
     }
 
     public function recruitment(Request $request)
     {
         $rps=recruitment_procedure::where('state','on')->get();
+        $links=link::all();
         $sel=$request->sel;
-        return view('pasa_home/recruitment',compact('rps','sel'));
+        return view('pasa_home/recruitment',compact('rps','sel','links'));
     }
 
     public function gallery(Request $request)
     {
         $gallery=gallery::where('state','on')->get();
+        $links=link::all();
         // $sel=$request->sel;
-        return view('pasa_home/gallery',compact('gallery'));
+        return view('pasa_home/gallery',compact('gallery','links'));
     }
     public function curr_demand(Request $request)
     {
@@ -69,12 +75,14 @@ class HomeController extends Controller
             ->groupBy('created_at')
             ->groupBy('updated_at')
              ->get();
-        return view('pasa_home/curr_demand',compact('curr_demand'));
+        $links=link::all();
+        return view('pasa_home/curr_demand',compact('curr_demand','links'));
     }
 
     public function online()
     {
-        return view('pasa_home/online');
+        $links=link::all();
+        return view('pasa_home/online','links');
     }
 
 

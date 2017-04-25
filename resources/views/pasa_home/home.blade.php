@@ -91,12 +91,16 @@
 							<p><i class="fa fa-map-marker"></i>Pasa International, Office No. 10, Kupondole, Nepal</p>
 						</div>
 						<div class="social-media">
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-google-plus"></i></a>
-							<a href="#"><i class="fa fa-youtube"></i></a>
-							<a href="#"><i class="fa fa-rss"></i></a>
-							<a href="mailto:info@example.com"><i class="fa fa-envelope"></i></a>
+							@foreach($links as $link)
+								<a href="{{$link->url}}" target="_blank"><i class="{{$link->icon}}"></i></a>
+							@endforeach
+
+							{{--<a href="#"><i class="fa fa-facebook"></i></a>--}}
+							{{--<a href="#"><i class="fa fa-twitter"></i></a>--}}
+							{{--<a href="#"><i class="fa fa-google-plus"></i></a>--}}
+							{{--<a href="#"><i class="fa fa-youtube"></i></a>--}}
+							{{--<a href="#"><i class="fa fa-rss"></i></a>--}}
+							{{--<a href="mailto:info@example.com"><i class="fa fa-envelope"></i></a>--}}
 						</div>
 					</div>
 				</div>
@@ -117,11 +121,11 @@
 						<nav id="site-navigation" class="main-navigation" role="navigation">
 							<ul id="primary-menu" class="light">
 								<li><a href="#home">Home</a></li>
-								<li><a href="#intro">About Us</a></li>
+								<li><a href="#about-us">About Us</a></li>
 								<li ><a href="#rp">Recruit Procedures</a></li>
 								<li ><a href="#gallery">Gallery</a></li>
-								<li><a href="#testimonials">Current Demands</a></li>
-								<li><a href="#contact-us">Contact Us</a></li>
+								<li><a href="#cd">Current Demands</a></li>
+								<li><a href="" data-toggle="modal" data-target="#contacts">Contact Us</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -129,7 +133,7 @@
 				<nav id="mobile-navigation" role="navigation">
 					<ul class="menu">
 						<li class="current-menu-item"><a href="#home">Home</a></li>
-						<li class="menu-item-has-children"><a href="#intro">About Us</a>
+						<li class="menu-item-has-children"><a href="#about-us">About Us</a>
 								{{-- <ul class="sub-menu">
 									<li><a href="#message">Message</a></li>
 									<li><a href="#gallery">Gallery</a></li>
@@ -137,8 +141,8 @@
 						</li>
 						<li><a href="#rp">Recruit Procedures</a></li>
 						<li><a href="#gallery">Gallery</a></li>
-						<li><a href="#testimonials">Current Demands</a></li>
-						<li><a href="#contact-us">Contact Us</a></li>
+						<li><a href="#cd">Current Demands</a></li>
+						<li><a href="" data-toggle="modal" data-target="contacts">Contact Us</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -438,79 +442,83 @@
 				</div>
 				<!-- CURRENT DEMANDS ENDS -->
 
-				<!-- TESTIMONIALS STARTS
-					========================================================================= -->
-				<div class="container-fluids spadding testimonials" id="testimonials">
-					<div class="row">
-						<div class="container">
-							<div class="col-md-7 center-block">
-								<h1 class="header h1">Testimonials</h1>
-								<div class="testimonials-slider owl-carousel owl-theme">
-									<!-- TESTIMONIAL ONE STARTS
-										========================================================================= -->
-									<div class="item">
-										<blockquote>
-											<figure>
-												<img src="{{asset('image/check/user1.jpg')}}" alt="user" class="img-circle">
-											</figure>
-											<p>"Vivamus fringilla sem varius leo tempor, sed posuere nulla dapibus. Integer dapibus tortor quis libero ullamcorper rutrum neque ullamcorper convallis metus."</p>
-											<footer>
-												<cite>Willie Meyer,<i>Manager Facelook inc</i></cite>
-											</footer>
-										</blockquote>
-									</div>
-									<!-- TESTIMONIAL ONE ENDS
-										========================================================================= -->
-									<!-- TESTIMONIAL TWO STARTS
-										========================================================================= -->
-									<div class="item">
-										<blockquote>
-											<figure>
-												<img src="{{asset('image/check/user2.jpg')}}" alt="user" class="img-circle">
-											</figure>
-											<p>"Nullam pellentesque nisl nec velit tincidunt viverra. Ut ut felis mi. Mauris tristique ante non feugiat fermentum morbi nec ultricies est accumsan ligula."</p>
-											<footer>
-												<cite>Jessica Campbell,<i>Blogger</i></cite>
-											</footer>
-										</blockquote>
-									</div>
-									<!-- TESTIMONIAL TWO ENDS
-										========================================================================= -->
-									<!-- TESTIMONIAL THREE STARTS
-										========================================================================= -->
-									<div class="item">
-										<blockquote>
-											<figure>
-												<img src="{{asset('image/check/user3.jpg')}}" alt="user" class="img-circle">
-											</figure>
-											<p>"Donec ullamcorper imperdiet velit, et tincidunt lectus bibendum ut. Fusce ut nunc tortor. Donec vel tempus nisl, sed porta efficitur eu justo leo sollicitudin gravida."</p>
-											<footer>
-												<cite>Hannah Romero,<i>Designer at xyz</i></cite>
-											</footer>
-										</blockquote>
-									</div>
-									<!-- TESTIMONIAL THREE ENDS
-										========================================================================= -->
+				{{--<!-- TESTIMONIALS STARTS--}}
+					{{--========================================================================= -->--}}
+				{{--<div class="container-fluids spadding testimonials" id="testimonials">--}}
+					{{--<div class="row">--}}
+						{{--<div class="container">--}}
+							{{--<div class="col-md-7 center-block">--}}
+								{{--<h1 class="header h1">Testimonials</h1>--}}
+								{{--<div class="testimonials-slider owl-carousel owl-theme">--}}
+									{{--<!-- TESTIMONIAL ONE STARTS--}}
+										{{--========================================================================= -->--}}
+									{{--<div class="item">--}}
+										{{--<blockquote>--}}
+											{{--<figure>--}}
+												{{--<img src="{{asset('image/check/user1.jpg')}}" alt="user" class="img-circle">--}}
+											{{--</figure>--}}
+											{{--<p>"Vivamus fringilla sem varius leo tempor, sed posuere nulla dapibus. Integer dapibus tortor quis libero ullamcorper rutrum neque ullamcorper convallis metus."</p>--}}
+											{{--<footer>--}}
+												{{--<cite>Willie Meyer,<i>Manager Facelook inc</i></cite>--}}
+											{{--</footer>--}}
+										{{--</blockquote>--}}
+									{{--</div>--}}
+									{{--<!-- TESTIMONIAL ONE ENDS--}}
+										{{--========================================================================= -->--}}
+									{{--<!-- TESTIMONIAL TWO STARTS--}}
+										{{--========================================================================= -->--}}
+									{{--<div class="item">--}}
+										{{--<blockquote>--}}
+											{{--<figure>--}}
+												{{--<img src="{{asset('image/check/user2.jpg')}}" alt="user" class="img-circle">--}}
+											{{--</figure>--}}
+											{{--<p>"Nullam pellentesque nisl nec velit tincidunt viverra. Ut ut felis mi. Mauris tristique ante non feugiat fermentum morbi nec ultricies est accumsan ligula."</p>--}}
+											{{--<footer>--}}
+												{{--<cite>Jessica Campbell,<i>Blogger</i></cite>--}}
+											{{--</footer>--}}
+										{{--</blockquote>--}}
+									{{--</div>--}}
+									{{--<!-- TESTIMONIAL TWO ENDS--}}
+										{{--========================================================================= -->--}}
+									{{--<!-- TESTIMONIAL THREE STARTS--}}
+										{{--========================================================================= -->--}}
+									{{--<div class="item">--}}
+										{{--<blockquote>--}}
+											{{--<figure>--}}
+												{{--<img src="{{asset('image/check/user3.jpg')}}" alt="user" class="img-circle">--}}
+											{{--</figure>--}}
+											{{--<p>"Donec ullamcorper imperdiet velit, et tincidunt lectus bibendum ut. Fusce ut nunc tortor. Donec vel tempus nisl, sed porta efficitur eu justo leo sollicitudin gravida."</p>--}}
+											{{--<footer>--}}
+												{{--<cite>Hannah Romero,<i>Designer at xyz</i></cite>--}}
+											{{--</footer>--}}
+										{{--</blockquote>--}}
+									{{--</div>--}}
+									{{--<!-- TESTIMONIAL THREE ENDS--}}
+										{{--========================================================================= -->--}}
+								{{--</div>--}}
+							{{--</div>--}}
+						{{--</div>--}}
+					{{--</div>--}}
+				{{--</div>--}}
+				{{--<!-- TESTIMONIALS ENDS--}}
+					{{--========================================================================= -->--}}
+
+
+				<div id="contacts" class="modal fade" role="dialog">
+					<div class="modal-dialog modal-lg">
+						<div class="modal-content">
+							<div class="modal-header">
+								<button type="button" class="close" data-dismiss="modal">&times;</button>
+								<br />
+								<div class="center-block">
+									<h1 class="header h1" align="center">Contact Us Today</h1>
+									<h3 align="center"><i>We'd love to hear from you!</i></h3>
 								</div>
+
 							</div>
-						</div>
-					</div>
-				</div>
-				<!-- TESTIMONIALS ENDS
-					========================================================================= -->
-				<!-- CONTACT-US STARTS
-					========================================================================= -->
-				<div class="container-fluids spadding contact-us" id="contact-us">
-					<div class="container">
-						<div class="container">
-							<div class="col-md-12 center-block">
-								<h1 class="header h1">Contact Us Today</h1>
-								<h3><i>We'd love to hear from you!</i></h3>
-							</div>
-						</div>
-						<div class="row">
-							<div class="col-sm-8 col-md-5 center-block">
+							<div class="modal-body">
 								<form id="cta-signup-form" class="cta-signup-form">
+									{{csrf_field()}}
 									<div class="form-group">
 										<input type="text" class="form-control input-lg" id="input-name" placeholder="Your name" required>
 									</div>
@@ -532,34 +540,88 @@
 						</div>
 					</div>
 				</div>
-				<!-- CONTACT-US ENDS
-					========================================================================= -->
+
+
+				{{--<!-- CONTACT-US STARTS--}}
+					{{--========================================================================= -->--}}
+				{{--<div class="container-fluids spadding contact-us" id="contact-us">--}}
+					{{--<div class="container">--}}
+						{{--<div class="container">--}}
+							{{--<div class="col-md-12 center-block">--}}
+								{{--<h1 class="header h1">Contact Us Today</h1>--}}
+								{{--<h3><i>We'd love to hear from you!</i></h3>--}}
+							{{--</div>--}}
+						{{--</div>--}}
+						{{--<div class="row">--}}
+							{{--<div class="col-sm-8 col-md-5 center-block">--}}
+								{{--<form id="cta-signup-form" class="cta-signup-form">--}}
+									{{--<div class="form-group">--}}
+										{{--<input type="text" class="form-control input-lg" id="input-name" placeholder="Your name" required>--}}
+									{{--</div>--}}
+									{{--<div class="form-group">--}}
+										{{--<input type="email" class="form-control input-lg" id="input-email" placeholder="Email address" required>--}}
+									{{--</div>--}}
+									{{--<div class="form-group">--}}
+										{{--<input type="phone" class="form-control input-lg" id="input-phone" placeholder="Phone number" required>--}}
+									{{--</div>--}}
+									{{--<div class="form-group">--}}
+										{{--<textarea class="form-control input-lg" id="input-message" placeholder="Your message" required></textarea>--}}
+									{{--</div>--}}
+									{{--<div class="form-btn">--}}
+										{{--<button type="submit" class="btn white">SEND</button>--}}
+										{{--<p class="form-terms">By submitting your enquriy you agree to our<a href="#">Terms</a>and<a href="#">Privacy Policy</a>.</p>--}}
+									{{--</div>--}}
+								{{--</form>--}}
+							{{--</div>--}}
+						{{--</div>--}}
+					{{--</div>--}}
+				{{--</div>--}}
+				{{--<!-- CONTACT-US ENDS--}}
+					{{--========================================================================= -->--}}
 			</div>
 			<!-- FOOTER STARTS
 				========================================================================= -->
-			<footer id="footer" class="site-footer light" role="contentinfo">
+			<footer id="footer" class="site-footer light" role="contentinfo" style="color: #464646 !important;">
 				<div class="footer-bg"></div>
-				<section id="footer-widget" class="widget-area" role="complementary">
+				<section id="footer-widget" style="background-color: whitesmoke !important;" class="widget-area" role="complementary">
 					<div class="container">
 						<div class="row">
-							<aside class="widget aio-widget-text col-sm-6 col-md-4 ">
+							<aside class="widget aio-widget-text col-xs-12 col-sm-4 col-md-4 ">
 								<div class="text clearfix">
-									<img src="{{asset('image/check/logo-footer.png')}}" width="160" height="48" />
-									<p class="footer-text">lorem ipsum dolor sit amet consec labore et dolore magna aliqua elit seddo eiusmod tempor lorem ipsum dolor sit amet consec labore et dolore magna aliqua elit seddo eiusmod tempor lorem ipsum dolor sit amet</p>
+									<img src="{{asset('image/logo.png')}}" width="160" height="48" />
+									<p class="" style="color: #464646 !important;">lorem ipsum dolor sit amet consec labore et dolore magna aliqua elit seddo eiusmod tempor lorem ipsum dolor sit amet consec labore et dolore magna aliqua elit seddo eiusmod tempor lorem ipsum dolor sit amet</p>
 								</div>
 							</aside>
-							<aside class="widget aio-widget-blogs col-sm-6 col-md-4 ">
-							    <h3 class="header h1 white">&nbsp;Keep In touch</h3>
-							    <ul style="list-style: none;">
-							        <li class="footer-contact" style="padding: 7px;"><i class="fa fa-map-marker"></i><span>&nbsp;P.O. Box No.: 20330 Samakhushi, Kathmandu, Nepal</span></li>
 
-							        <li class="footer-contact"><i class="fa fa-phone"></i><span>&nbsp;+977-1-4387207 ( 6 Lines) </span></li>
+							<aside class="widget aio-widget-blogs col-xs-12 col-sm-4 col-md-4 ">
+								<h3 class="header h1">&nbsp;Overview</h3>
+								<ul style="list-style: none; line-height: 2em;">
+									<li><a href="/about" class="btn btn-link" style="color: #464646 !important;">About Us</a></li>
 
-							        <li class="footer-contact"><i class="fa fa-fax"></i><span>&nbsp;+977-1-4387208</span></li>
+									<li><a href="/rp" class="btn btn-link" style="color: #464646 !important;">Recruitment Process</a></li>
 
-							        <li class="footer-contact"><i class="fa fa-envelope"></i><span><a href="mailto:info@pasainternational.com.np">&nbsp;info@pasainternational.com.np</a></span></li>
+									<li><a href="/curr_demand" class="btn btn-link" style="color: #464646 !important;">Current Demands</a></li>
 
-							        <li class="footer-contact"><i class="fa fa-globe"></i><span><a href="http://www.pasainternational.com.np">&nbsp;www.pasainternational.com.np</a></span></li>
+									<li><a href="/gallery" class="btn btn-link" style="color: #464646 !important;">Gallery</a></li>
+
+
+
+								</ul>
+
+							</aside>
+
+							<aside class="widget aio-widget-blogs col-xs-12 col-sm-4 col-md-4 ">
+							    <h3 class="header h1">&nbsp;Keep In Touch</h3>
+							    <ul style="list-style: none; line-height: 2em;">
+							        <li class="footer-contact" style="padding: 2px;"><i class="fa fa-map-marker"></i><span style="padding: 17px;">&nbsp;Kupondole, Lalitpur, Nepal</span></li>
+
+							        <li class="footer-contact" ><i class="fa fa-phone"></i><span style="padding: 10px;">&nbsp;+977-1-5554499, +977-1-5553380 </span></li>
+
+							        <li class="footer-contact" ><i class="fa fa-fax"></i><span style="padding: 10px;">&nbsp;+977-1-5538440</span></li>
+
+							        <li class="footer-contact" ><i class="fa fa-envelope"></i><span style="padding: 10px;"><a href="mailto:info@pasainternational.com.np" class="btn btn-link" style="color: #464646 !important;">&nbsp;info@pasainternational.com.np</a></span></li>
+
+							        <li class="footer-contact" ><i class="fa fa-globe"></i><span style="padding: 10px;"><a href="http://www.pasainternational.com.np" class="btn btn-link" style="color: #464646 !important;">&nbsp;www.pasainternational.com.np</a></span></li>
 
 							    </ul>
 
@@ -570,7 +632,7 @@
 				<section id="bottom" class="light">
 					<div class="container">
 						<div class="site-copyright">
-							<p>Copyright &copy; 2016 - Consultant</p>
+							<p>&copy; 2017. Pasa IT Solution Pvt. Ltd.</p>
 						</div>
 					</div>
 				</section>

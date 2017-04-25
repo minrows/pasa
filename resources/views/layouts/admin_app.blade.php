@@ -195,7 +195,7 @@
 
                 <!-- Footer -->
                 <div class="footer text-muted">
-                    &copy; 2017. Pasa IT Solution Pvt. Ltd.</a>
+                    &copy; 2017. Pasa IT Solution Pvt. Ltd.
                 </div>
                 <!-- /footer -->
 

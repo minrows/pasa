@@ -54,7 +54,6 @@ class SendMail extends Mailable
         if ($request->hasFile('drive_doc')) {
            $s ->attach(public_path('/image/online_/files/drive_doc_'.$inserted->id.".".$request->drive_doc->extension()));
         }
-
         return $s;
     }
 
