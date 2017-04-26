@@ -50,12 +50,15 @@
 							<p><i class="fa fa-map-marker"></i>Pasa International, Office No. 10, Kupondole, Nepal</p>
 						</div>
 						<div class="social-media">
-							<a href="#"><i class="fa fa-facebook"></i></a>
-							<a href="#"><i class="fa fa-twitter"></i></a>
-							<a href="#"><i class="fa fa-google-plus"></i></a>
-							<a href="#"><i class="fa fa-youtube"></i></a>
-							<a href="#"><i class="fa fa-rss"></i></a>
-							<a href="mailto:info@example.com"><i class="fa fa-envelope"></i></a>
+							@foreach($links as $link)
+								<a href="{{$link->url}}" target="_blank"><i class="{{$link->icon}}"></i></a>
+							@endforeach
+							{{--<a href="#"><i class="fa fa-facebook"></i></a>--}}
+							{{--<a href="#"><i class="fa fa-twitter"></i></a>--}}
+							{{--<a href="#"><i class="fa fa-google-plus"></i></a>--}}
+							{{--<a href="#"><i class="fa fa-youtube"></i></a>--}}
+							{{--<a href="#"><i class="fa fa-rss"></i></a>--}}
+							{{--<a href="mailto:info@example.com"><i class="fa fa-envelope"></i></a>--}}
 						</div>
 					</div>
 				</div>
@@ -84,7 +87,7 @@
 								</li>
 								<li ><a href="/#rp">Recruit Procedures</a></li>
 								<li ><a href="/#gallery">Gallery</a></li>
-								<li><a href="/#testimonials">Current Demands</a></li>
+								<li><a href="/#cd">Current Demands</a></li>
 								<li><a href="/#contact-us">Contact Us</a></li>
 							</ul>
 						</nav>
@@ -93,7 +96,7 @@
 				<nav id="mobile-navigation" role="navigation">
 					<ul class="menu">
 						<li class="current-menu-item"><a href="#home">Home</a></li>
-							<li class="menu-item-has-children"><a href="#intro">About Us</a>
+							<li class="menu-item-has-children"><a href="#about-us">About Us</a>
 								{{-- <ul class="sub-menu">
 									<li><a href="#message">Message</a></li>
 									<li><a href="#gallery">Gallery</a></li>
@@ -101,7 +104,7 @@
 							</li>
 						<li><a href="#rp">Recruit Procedures</a></li>
 						<li><a href="#gallery">Gallery</a></li>
-						<li><a href="#testimonials">Current Demands</a></li>
+						<li><a href="#cd">Current Demands</a></li>
 						<li><a href="#contact-us">Contact Us</a></li>
 					</ul>
 				</nav>
@@ -117,61 +120,50 @@
 
 			<!-- FOOTER STARTS
 				========================================================================= -->
-			<footer id="footer" class="site-footer light" role="contentinfo">
+			<footer id="footer" class="site-footer light" role="contentinfo" style="color: #464646 !important;">
 				<div class="footer-bg"></div>
-				<section id="footer-widget" class="widget-area" role="complementary">
+				<section id="footer-widget" style="background-color: whitesmoke !important;" class="widget-area" role="complementary">
 					<div class="container">
 						<div class="row">
-							<aside class="widget aio-widget-text col-sm-6 col-md-3 ">
+							<aside class="widget aio-widget-text col-xs-12 col-sm-4 col-md-4 ">
 								<div class="text clearfix">
-									<img src="{{asset('image/check/logo-footer.png')}}" width="160" height="48" />
-									<p class="footer-text">lorem ipsum dolor sit amet consec labore et dolore magna aliqua elit seddo eiusmod tempor lorem ipsum dolor sit amet consec labore et dolore magna aliqua elit seddo eiusmod tempor lorem ipsum dolor sit amet</p>
+									<img src="{{asset('image/logo.png')}}" width="160" height="48" />
+									<p class="" style="color: #464646 !important;">lorem ipsum dolor sit amet consec labore et dolore magna aliqua elit seddo eiusmod tempor lorem ipsum dolor sit amet consec labore et dolore magna aliqua elit seddo eiusmod tempor lorem ipsum dolor sit amet</p>
 								</div>
 							</aside>
-							<aside class="widget aio-widget-blogs col-sm-6 col-md-3 ">
-								<h3 class="header h1 white">Latest Updates</h3>		
-								<div class="blog-widget">
-									<div class="thumbnail">
-										<img src="{{asset('image/check/blog1.jpg')}}" width="400" height="400" alt="Board Of Director" />
-									</div>
-									<h3><a href="#">Announcement</a></h3>
-									<p>May 31, 2016</p>
-								</div>
-								<div class="blog-widget">
-									<div class="thumbnail">
-										<img src="{{asset('image/check/blog2.jpg')}}" width="400" height="400" alt="New Office Lobby" />
-									</div>
-									<h3><a href="#">Monthly Report</a></h3>
-									<p>Dec 30, 2016</p>
-								</div>
+
+							<aside class="widget aio-widget-blogs col-xs-12 col-sm-4 col-md-4 ">
+								<h3 class="header h1">&nbsp;Overview</h3>
+								<ul style="list-style: none; line-height: 2em;">
+									<li><a href="/about" class="btn btn-link" style="color: #464646 !important;">About Us</a></li>
+
+									<li><a href="/rp" class="btn btn-link" style="color: #464646 !important;">Recruitment Process</a></li>
+
+									<li><a href="/curr_demand" class="btn btn-link" style="color: #464646 !important;">Current Demands</a></li>
+
+									<li><a href="/gallery" class="btn btn-link" style="color: #464646 !important;">Gallery</a></li>
+
+
+
+								</ul>
+
 							</aside>
-							<aside class="widget aio-widget-testimonials col-sm-6 col-md-3 ">
-								<h3 class="header h1 white">Feedback</h3>
-								<div class="testimonial-grid column-equal">
-									<div class="testimonial-body">
-										<blockquote><i class="fa fa-quote-left"></i>veniam quis nostrud exercitation ullamco laboris nisi aliquip exea marvel<i class="fa fa-quote-right"></i></blockquote>
-									</div>
-									<div class="testimonial-foot clearfix">
-										<div class="thumbnail">
-											<img src="{{asset('image/check/review1.jpg')}}" width="100" height="100" alt="Miranda Hazard Footer" />
-										</div>
-										<cite>Jane Doe /<small class="label-main">Hazard &amp; Co.</small></cite>
-									</div>
-								</div>
-							</aside>
-							<aside class="widget aio-widget-testimonials col-sm-6 col-md-3 ">
-								<h3 class="header h1 white">Testimonial</h3>
-								<div class="testimonial-grid column-equal">
-									<div class="testimonial-body">
-										<blockquote><i class="fa fa-quote-left"></i>veniam quis nostrud exercitation ullamco laboris nisi aliquip exea marvel<i class="fa fa-quote-right"></i></blockquote>
-									</div>
-									<div class="testimonial-foot clearfix">
-										<div class="thumbnail">
-											<img src="{{asset('image/check/review2.jpg')}}" width="100" height="100" alt="Miranda Hazard Footer" />
-										</div>
-										<cite>Richard Hazard /<small class="label-main">Jane &amp; Co.</small></cite>
-									</div>
-								</div>
+
+							<aside class="widget aio-widget-blogs col-xs-12 col-sm-4 col-md-4 ">
+								<h3 class="header h1">&nbsp;Keep In Touch</h3>
+								<ul style="list-style: none; line-height: 2em;">
+									<li class="footer-contact" style="padding: 2px;"><i class="fa fa-map-marker"></i><span style="padding: 17px;">&nbsp;Kupondole, Lalitpur, Nepal</span></li>
+
+									<li class="footer-contact" ><i class="fa fa-phone"></i><span style="padding: 10px;">&nbsp;+977-1-5554499, +977-1-5553380 </span></li>
+
+									<li class="footer-contact" ><i class="fa fa-fax"></i><span style="padding: 10px;">&nbsp;+977-1-5538440</span></li>
+
+									<li class="footer-contact" ><i class="fa fa-envelope"></i><span style="padding: 10px;"><a href="mailto:info@pasainternational.com.np" class="btn btn-link" style="color: #464646 !important;">&nbsp;info@pasainternational.com.np</a></span></li>
+
+									<li class="footer-contact" ><i class="fa fa-globe"></i><span style="padding: 10px;"><a href="http://www.pasainternational.com.np" class="btn btn-link" style="color: #464646 !important;">&nbsp;www.pasainternational.com.np</a></span></li>
+
+								</ul>
+
 							</aside>
 						</div>
 					</div>
@@ -179,7 +171,7 @@
 				<section id="bottom" class="light">
 					<div class="container">
 						<div class="site-copyright">
-							<p>Copyright &copy; 2016 - Consultant</p>
+							<p>&copy; 2017. Pasa IT Solution Pvt. Ltd.</p>
 						</div>
 					</div>
 				</section>
