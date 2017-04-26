@@ -2,12 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Mail\FeedbackMail;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use Illuminate\Support\Facades\Mail;
 use App\Mail\SendMail;
 use App\online_form;
+use App\feedback;
 use Illuminate\Support\Facades\File;
 
 class MailController extends Controller
@@ -108,6 +110,20 @@ class MailController extends Controller
         }
 
 
+    }
+
+    public function send_feedback(Request $request)
+    {
+        $pasa=new feedback;
+        $pasa->name=$request->name;
+        $pasa->email=$request->email;
+        $pasa->phn_no=$request->phn_no;
+        $pasa->message=$request->message;
+
+        $pasa->save();
+
+        Mail::send(new FeedbackMail);
+        return back();
     }
 
     public function create_pdf($id)
@@ -226,4 +242,6 @@ class MailController extends Controller
         }
         return false;
     }
+
+
 }

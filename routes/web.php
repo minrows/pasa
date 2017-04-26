@@ -27,6 +27,7 @@ Route::get('/curr_demand', 'HomeController@curr_demand');
 
 Route::get('/online', 'HomeController@online');
 Route::post('/online_submit', 'MailController@send');
+Route::post('/feedback', 'MailController@send_feedback');
 
 
 Route::get('/{dwn}/download','HomeController@download');
