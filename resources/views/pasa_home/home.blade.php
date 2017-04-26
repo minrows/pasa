@@ -146,7 +146,7 @@
 						<li><a href="#rp">Recruit Procedures</a></li>
 						<li><a href="#gallery">Gallery</a></li>
 						<li><a href="#cd">Current Demands</a></li>
-						<li><a href="" data-toggle="modal" data-target="contacts">Contact Us</a></li>
+						<li><a href="" data-toggle="modal" data-target="#contacts">Contact Us</a></li>
 					</ul>
 				</nav>
 			</header>
