@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 24, 2017 at 11:03 AM
+-- Generation Time: Apr 26, 2017 at 10:33 AM
 -- Server version: 5.5.39
 -- PHP Version: 7.1.1
 
@@ -79,6 +79,13 @@ CREATE TABLE `admins` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `admins`
+--
+
+INSERT INTO `admins` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
+(1, 'Rijesh', 'craaabby@gmail.com', '$2y$10$Pz80pnjBhIFYpNzO6EabrOkcckALiSu5yA8mXxPsgtp7rIYQON74e', NULL, '2017-04-23 18:15:00', '2017-04-23 18:15:00');
 
 -- --------------------------------------------------------
 
@@ -161,18 +168,32 @@ CREATE TABLE `curr_demand_imgs` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `feedbacks`
+-- Table structure for table `feedback`
 --
 
-CREATE TABLE `feedbacks` (
+CREATE TABLE `feedback` (
   `id` int(10) UNSIGNED NOT NULL,
   `name` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `address` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `email` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `phn_no` varchar(20) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `message` text COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `feedback`
+--
+
+INSERT INTO `feedback` (`id`, `name`, `email`, `phn_no`, `message`, `created_at`, `updated_at`) VALUES
+(1, 'a', 'a@gmail.com', 'a', 'a', '2017-04-26 02:01:12', '2017-04-26 02:01:12'),
+(2, 'a', 'a@gmail.com', 'a', 'a', '2017-04-26 02:02:30', '2017-04-26 02:02:30'),
+(3, 'a', 'a@gmail.com', 'a', 'a', '2017-04-26 02:02:49', '2017-04-26 02:02:49'),
+(4, 'b', 'b@gmail.com', 'b', 'b', '2017-04-26 02:05:57', '2017-04-26 02:05:57'),
+(5, 'c', 'c@gmail.com', 'c', 'c', '2017-04-26 02:10:07', '2017-04-26 02:10:07'),
+(6, 'c', 'c@gmail.com', 'c', 'c', '2017-04-26 02:10:26', '2017-04-26 02:10:26'),
+(7, 'a', 'a@gmail.com', '5', 'a', '2017-04-26 02:25:12', '2017-04-26 02:25:12'),
+(8, 'b', 'b@gmail.com', '123', 'asdf', '2017-04-26 02:27:14', '2017-04-26 02:27:14');
 
 -- --------------------------------------------------------
 
@@ -189,6 +210,29 @@ CREATE TABLE `galleries` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `links`
+--
+
+CREATE TABLE `links` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `url` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `icon` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `created_at` timestamp NULL DEFAULT NULL,
+  `updated_at` timestamp NULL DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `links`
+--
+
+INSERT INTO `links` (`id`, `title`, `url`, `icon`, `created_at`, `updated_at`) VALUES
+(1, 'Facebook', 'https://www.facebook.com/Pasa-International-Pvt-Ltd-653196754701229/', 'fa fa-facebook', '2017-04-24 18:15:00', '2017-04-24 18:15:00'),
+(2, 'Mail', 'mailto:pimt@pasa.wlink.com.np', 'fa fa-envelope', NULL, NULL);
 
 -- --------------------------------------------------------
 
@@ -220,7 +264,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (11, '2017_04_03_064745_create_gallery_table', 1),
 (12, '2017_04_03_065614_create_feedback_table', 1),
 (13, '2017_04_03_070400_create_online_form_table', 1),
-(14, '2017_04_04_060255_create_admin_table', 1);
+(14, '2017_04_04_060255_create_admin_table', 1),
+(15, '2017_04_25_050420_create_links_table', 2);
 
 -- --------------------------------------------------------
 
@@ -258,6 +303,15 @@ CREATE TABLE `online_forms` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `online_forms`
+--
+
+INSERT INTO `online_forms` (`id`, `name`, `position`, `tel_no`, `mob_no`, `religion`, `address`, `con_address`, `email`, `qualification`, `dob`, `gender`, `marital_status`, `spouse_name`, `passport_no`, `doi`, `place_of_issue`, `doe`, `height_feet`, `height_inch`, `weight`, `parent_name`, `prior_exp`, `document`, `img`, `applied_date`, `created_at`, `updated_at`) VALUES
+(1, '1', '1', '1', '1', '1', '1', '1', 'asdf@gmail.com', '1', '0001-01-01', 'male', 'single', '1', '1', '0001-01-01', '1', '0001-01-01', 1, 1, 1, '1', '1', '1', 'online_files/pp_1.jpeg', NULL, '2017-04-24 04:31:19', '2017-04-24 04:31:20'),
+(2, '1', '1', '1', '1', '1', '1', '1', 'asdf@gmail.com', '1', '2017-04-24', 'male', 'single', NULL, '1', '2017-04-24', '1', '2017-04-24', 1, 1, 1, '1', '1', '1', 'online_files/pp_2.jpeg', NULL, '2017-04-24 04:44:55', '2017-04-24 04:44:55'),
+(3, '1', '1', '1', '1', '1', '1', '1', 'asdf@gmail.com', '1', '0001-01-01', 'male', 'single', '1', '1', '0001-01-01', '1', '0001-01-01', 1, 1, 1, '1', '1', '1', 'online_files/pp_3.jpeg', NULL, '2017-04-24 04:59:56', '2017-04-24 04:59:58');
 
 -- --------------------------------------------------------
 
@@ -382,15 +436,21 @@ ALTER TABLE `curr_demand_imgs`
   ADD PRIMARY KEY (`id`);
 
 --
--- Indexes for table `feedbacks`
+-- Indexes for table `feedback`
 --
-ALTER TABLE `feedbacks`
+ALTER TABLE `feedback`
   ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `galleries`
 --
 ALTER TABLE `galleries`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `links`
+--
+ALTER TABLE `links`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -441,7 +501,7 @@ ALTER TABLE `achievers`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `contacts`
 --
@@ -463,25 +523,30 @@ ALTER TABLE `curr_demands`
 ALTER TABLE `curr_demand_imgs`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
--- AUTO_INCREMENT for table `feedbacks`
+-- AUTO_INCREMENT for table `feedback`
 --
-ALTER TABLE `feedbacks`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+ALTER TABLE `feedback`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `galleries`
 --
 ALTER TABLE `galleries`
   MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 --
+-- AUTO_INCREMENT for table `links`
+--
+ALTER TABLE `links`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+--
 -- AUTO_INCREMENT for table `migrations`
 --
 ALTER TABLE `migrations`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 --
 -- AUTO_INCREMENT for table `online_forms`
 --
 ALTER TABLE `online_forms`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
 -- AUTO_INCREMENT for table `overseas_clients`
 --
