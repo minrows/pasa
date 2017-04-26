@@ -3409,7 +3409,7 @@ a.label-main:hover,
 	background: transparent;
 }
 .spadding {
-	padding: 30px !important;
+	padding: 15px !important;
 	border-bottom: 1px solid #EEE;
 }
 .sfluid {
@@ -3800,7 +3800,7 @@ form {
 		overflow-x: hidden !important;
 	}
 	}
-@media (max-width: 479px) {
+@media (max-width: 300px) {
 	#slider-main .carousel-caption {
 		width: 100%;
 		top: 25px;
@@ -4066,5 +4066,14 @@ font-weight: 600;
     color: white;
 }
 
+#about-us .button-big {
+    background: #f3c633;
+    border-radius: 5px;
+    color: #000000 !important;
+    vertical-align: middle !important;
+}
+#about-us i {
+    color: rgb(0, 0, 0);
+}
 /* RESPONSIVE ENDS
 ========================================================================= */

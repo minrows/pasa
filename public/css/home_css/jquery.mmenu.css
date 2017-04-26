@@ -494,6 +494,7 @@ html.mm-opened.mm-dragging #mm-blocker {
 .mm-menu.mm-hasheader > .mm-panel {
   padding-top: 80px; }
   .mm-menu.mm-hasheader > .mm-panel.mm-list {
+    background-color: #71447d;
     padding-top: 60px; }
   .mm-menu.mm-hasheader > .mm-panel > .mm-list:first-child {
     margin-top: -20px; }
@@ -504,7 +505,9 @@ html.mm-opened.mm-dragging #mm-blocker {
 
 .mm-menu .mm-header {
   border-color: rgba(0, 0, 0, 0.15);
-  color: #c5cfdd; }
+  color: #c5cfdd;
+  background-color: #71447d; 
+}
   .mm-menu .mm-header .mm-prev:before,
   .mm-menu .mm-header .mm-next:after {
     border-color: rgba(255, 255, 255, 0.3); }

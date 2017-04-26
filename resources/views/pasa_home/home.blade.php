@@ -100,7 +100,7 @@
 						</div>
 					</div>
 				</div>
-				
+			
 				<div id="menu" class="clearfix dark menu-class">
 					<div class="container">
 						<div id="logo">
@@ -118,6 +118,10 @@
 							<ul id="primary-menu" class="light">
 								<li><a href="#home">Home</a></li>
 								<li><a href="#intro">About Us</a></li>
+									<ul class="sub-menu">
+										<li><a href="#message">Message</a></li>
+										<li><a href="#gallery">Gallery</a></li>
+									</ul>
 								<li ><a href="#rp">Recruit Procedures</a></li>
 								<li ><a href="#gallery">Gallery</a></li>
 								<li><a href="#testimonials">Current Demands</a></li>
@@ -165,7 +169,6 @@
 					</div>
                         @php $i++;@endphp
                     @endforeach
-
 				    <a class="slider-main-prev slider-prev" href="#slider-main" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
 				    <a class="slider-main-next slider-next" href="#slider-main" data-slide="next"><i class="fa fa-chevron-right"></i></a>
                 </div>
@@ -183,8 +186,6 @@
 								<h2>PASA: A Friend at Your Service</h2>
 							</div>
 							<div class="col-md-5 right">
-                                <a href="/about" class="button-big button-main"><i class="fa fa-book"></i>Read More</a>
-                                &nbsp;&nbsp;
 								<a href="/online" class="button-big button-main"><i class="fa fa-envelope"></i>Apply Online</a>
 							</div>
 						</div>
@@ -204,6 +205,9 @@
 								<div class="banner-center">
 									<div class="banner-inner" id="introduction">
                                         {!!html_entity_decode($about->description)!!}
+                                        <div class="col-md-2 center-block">
+                                			<a href="/about" class="button-big button-main"><i class="fa fa-book"></i>Read More</a>
+										</div>
 									</div>
 								</div>
 							</div>
@@ -364,7 +368,7 @@
 
 								</div>
 							</div>
-		                        @if($i%3==0) <div class="clearfix"></div> @endif
+		                        {{-- @if($i%3==0) <div class="clearfix"></div> @endif not ok for mobile view --}}
 		                        @php $i++; @endphp
 		                    @endforeach
 						</div>
@@ -413,31 +417,35 @@
 					========================================================================= -->
 				<!-- CURRENT DEMANDS-->
 				<div class="container-fluid spadding cd" id="cd">
-					<div class="row">
-						<div class="container">
-							<div class="col-md-12">
-							<div class="cell-3">
-                <h3 class="block-head side-heading" style="margin-top: 20px;">Current </br> <span>Requirements</span></h3>
-                <p class="portfolio-lft-txt">Browse our current <br> requirements.
-                </p>
-                <div class="viewAll-home">
-                    <a class="btn btn-default" href="/curr_demand" style="margin-top: 30px;">Browse All Requirements</a>
-                </div>
-            </div>
-								{{-- <h1 class="header h1 white">Current Demands</h1> --}}
-								<section class="center slider">
-								@foreach($curr_demand_img as $cd_img)
-								    <div>
-
-								     <a href="{{asset('/image/'.$cd_img->img_full)}}" data-lightbox="gallery" data-title="hy"> <img src="{{asset('/image/'.$cd_img->img_thumb)}}"></a>
-								    </div>
-								@endforeach   
-								</section>
-							</div>
-						</div>
-					</div>
-				</div>
-				<!-- CURRENT DEMANDS ENDS -->
+				    <div class="row">
+				        <div class="container">
+				        	<div class="hidden-lg hidden-md col-sm-12 col-xs-12">
+				        		<h1 class="header h1 white">Current Demands</h1>
+				        		<div class="viewAll-home">
+					                        <a class="btn btn-default" href="/curr_demand" style="margin-top: 30px;">Browse All Requirements</a>
+					                    </div>
+				        	</div>
+				            <div class="col-md-12">
+					            <div class="hidden-sm hidden-xs">
+					                <div class="cell-3 ">
+					                    <h3 class="block-head side-heading" style="margin-top: 20px;">Current </br> <span>Requirements</span></h3>
+					                    <p class="portfolio-lft-txt">Browse our current <br> requirements.</p>
+					                    <div class="viewAll-home">
+					                        <a class="btn btn-default" href="/curr_demand" style="margin-top: 30px;">Browse All Requirements</a>
+					                    </div>
+					                </div>
+					            </div>
+				                <section class="center slider">
+				                    @foreach($curr_demand_img as $cd_img)
+				                    <div class="col-xs-6 col-md-4">
+				                        <a href="{{asset('/image/'.$cd_img->img_full)}}" data-lightbox="gallery" data-title="hy"> <img src="{{asset('/image/'.$cd_img->img_thumb)}}"></a>
+				                    </div>
+				                    @endforeach
+				                </section>
+				            </div>
+				        </div>
+				    </div>
+				</div>				<!-- CURRENT DEMANDS ENDS -->
 
 				<!-- TESTIMONIALS STARTS
 					========================================================================= -->
@@ -599,13 +607,34 @@
 		      $('.center').slick({
 		        infinite: true,
 			    slidesToShow: 3,
-			    slidesToScroll: 1
-
-		        // dots: true,
-		        // infinite: true,
-		        // centerMode: true,
-		        // slidesToShow: 4,
-		        // slidesToScroll: 3
+			    slidesToScroll: 1,
+			    responsive: [
+			    {
+			      breakpoint: 1024,
+			      settings: {
+			        slidesToShow: 3,
+			        slidesToScroll: 1,
+			        infinite: true,
+			      }
+			    },
+			    {
+			      breakpoint: 850,
+			      settings: {
+			        slidesToShow: 2,
+			        slidesToScroll: 1
+			      }
+			    },
+			    {
+			      breakpoint: 560,
+			      settings: {
+			        slidesToShow: 1,
+			        slidesToScroll: 1
+			      }
+			    }
+			    // You can unslick at a given breakpoint now by adding:
+			    // settings: "unslick"
+			    // instead of a settings object
+			  ]
 		      });
 		    });
   		</script>
