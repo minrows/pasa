@@ -8,7 +8,7 @@ use Illuminate\Queue\SerializesModels;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
-use App\online_form;
+use App\feedback;
 
 class FeedbackMail extends Mailable
 {
@@ -31,7 +31,10 @@ class FeedbackMail extends Mailable
      */
     public function build(Request $request)
     {
-        $inserted=online_form::orderBy('id','desc')->first();
-        return $this->view('pasa_home/feedback_check', compact('inserted'));
+        $inserted=feedback::orderBy('id','desc')->first();
+        return $this->to('info@pasainternational.com.np')
+            ->from("'".$inserted->email."'")
+            ->subject('Contact Us: < Contact Id: '.$inserted->id.' >')
+            ->view('pasa_home/feedback_check', compact('inserted'));
     }
 }

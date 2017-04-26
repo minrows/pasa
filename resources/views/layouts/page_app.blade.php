@@ -88,7 +88,7 @@
 								<li ><a href="/#rp">Recruit Procedures</a></li>
 								<li ><a href="/#gallery">Gallery</a></li>
 								<li><a href="/#cd">Current Demands</a></li>
-								<li><a href="/#contact-us">Contact Us</a></li>
+								<li><a href="" data-toggle="modal" data-target="#contacts">Contact Us</a></li>
 							</ul>
 						</nav>
 					</div>
@@ -105,7 +105,7 @@
 						<li><a href="#rp">Recruit Procedures</a></li>
 						<li><a href="#gallery">Gallery</a></li>
 						<li><a href="#cd">Current Demands</a></li>
-						<li><a href="#contact-us">Contact Us</a></li>
+						<<li><a href="" data-toggle="modal" data-target="#contacts">Contact Us</a></li>
 					</ul>
 				</nav>
 			</header>
@@ -192,6 +192,43 @@
 		<script type='text/javascript' src="{{asset('js/home_js/jquery.mmenu.js')}}"></script>
 		{{--<script type='text/javascript' src="{{asset('js/home_js/app.js')}}"></script>--}}
 		<script type='text/javascript' src="{{asset('js/home_js/scripts.js')}}"></script>
+
+			<div id="contacts" class="modal fade" role="dialog">
+				<div class="modal-dialog modal-lg">
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<br />
+							<div class="center-block">
+								<h1 class="header h1" align="center">Contact Us Today</h1>
+								<h3 align="center"><i>We'd love to hear from you!</i></h3>
+							</div>
+
+						</div>
+						<div class="modal-body" style="margin:25px;">
+							<form id="cta-signup-form" action="/feedback" method="post" class="cta-signup-form">
+								{{csrf_field()}}
+								<div class="form-group">
+									<input type="text" class="form-control input-lg" name="name" id="input-name" placeholder="Your name" required>
+								</div>
+								<div class="form-group">
+									<input type="email" class="form-control input-lg" name="email" id="input-email" placeholder="Email address" required>
+								</div>
+								<div class="form-group">
+									<input type="text" class="form-control input-lg" name="phn_no" id="input-phone" placeholder="Phone number" required>
+								</div>
+								<div class="form-group">
+									<textarea class="form-control input-lg" name="message" id="input-message" placeholder="Your message" required></textarea>
+								</div>
+								<div class="form-btn">
+									<button type="submit" class="btn btn-rounded white">SEND</button>
+									<p class="form-terms">By submitting your enquiry you agree to our<a href="#">Terms</a>and<a href="#">Privacy Policy</a>.</p>
+								</div>
+							</form>
+						</div>
+					</div>
+				</div>
+			</div>
 		
 	</body>
 
