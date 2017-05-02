@@ -37,6 +37,10 @@
     .slick-next:before {
         color: black;
     }
+    #clients img{
+    	height: 180px !important;
+    	width: 180px !important;
+    }
 
 </style>
     <head>
@@ -159,7 +163,7 @@
                     @php $i=1;@endphp
                     @foreach($carousels as $carousel)
 					<div class="item @if($i==1) {{' active'}} @endif" id="particles-js" style="background-image:url({{asset('/image/'.$carousel->img)}}); ">
-						{{-- <div class="carousel-caption slider-item-center slider-item-v-center fx">
+	{{-- 					<div class="carousel-caption slider-item-center slider-item-v-center fx">
 							<h2 class="fx-start" data-animation="fadeInDown">
 								<span>Welcome to Pasa International</span>
 							</h2>
@@ -336,6 +340,38 @@
 				</div>
 				<!-- MESSAGE ENDS
 					========================================================================= -->
+					<!-- CURRENT DEMANDS-->
+				<div class="container-fluid spadding cd" id="cd">
+				    <div class="row">
+				        <div class="container">
+				        	<div class="hidden-lg hidden-md col-sm-12 col-xs-12">
+				        		<h1 class="header h1 white">Current Demands</h1>
+				        		<div class="viewAll-home">
+					                        <a class="btn btn-default" href="/curr_demand" style="margin-top: 30px;">Browse All Requirements</a>
+					                    </div>
+				        	</div>
+				            <div class="col-md-12">
+					            <div class="hidden-sm hidden-xs">
+					                <div class="cell-3 ">
+					                    <h3 class="block-head side-heading" style="margin-top: 20px;">Current </br> <span>Requirements</span></h3>
+					                    <p class="portfolio-lft-txt">Browse our current <br> requirements.</p>
+					                    <div class="viewAll-home">
+					                        <a class="btn btn-default" href="/curr_demand" style="margin-top: 30px;">Browse All Requirements</a>
+					                    </div>
+					                </div>
+					            </div>
+				                <section class="center slider">
+				                    @foreach($curr_demand_img as $cd_img)
+				                    <div class="col-xs-6 col-md-4">
+				                        <a href="{{asset('/image/'.$cd_img->img_full)}}" data-lightbox="gallery" data-title="hy"> <img src="{{asset('/image/'.$cd_img->img_thumb)}}"></a>
+				                    </div>
+				                    @endforeach
+				                </section>
+				            </div>
+				        </div>
+				    </div>
+				</div>				<!-- CURRENT DEMANDS ENDS -->
+
 				<!-- RECRUITMENT PROCEDURES
 					========================================================================= -->
 				<div class="container-fluid spadding boxes" id="rp">
@@ -372,7 +408,7 @@
 
 								</div>
 							</div>
-		                        {{-- @if($i%3==0) <div class="clearfix"></div> @endif not ok for mobile view --}}
+		                        @if($i%3==0) <div class="clearfix hidden-sm hidden-xs"></div> @endif 
 		                        @php $i++; @endphp
 		                    @endforeach
 						</div>
@@ -419,140 +455,27 @@
 				</div>
 				<!-- GALLERY ENDS
 					========================================================================= -->
-				<!-- CURRENT DEMANDS-->
-				<div class="container-fluid spadding cd" id="cd">
-				    <div class="row">
-				        <div class="container">
-				        	<div class="hidden-lg hidden-md col-sm-12 col-xs-12">
-				        		<h1 class="header h1 white">Current Demands</h1>
-				        		<div class="viewAll-home">
-					                        <a class="btn btn-default" href="/curr_demand" style="margin-top: 30px;">Browse All Requirements</a>
-					                    </div>
-				        	</div>
-				            <div class="col-md-12">
-					            <div class="hidden-sm hidden-xs">
-					                <div class="cell-3 ">
-					                    <h3 class="block-head side-heading" style="margin-top: 20px;">Current </br> <span>Requirements</span></h3>
-					                    <p class="portfolio-lft-txt">Browse our current <br> requirements.</p>
-					                    <div class="viewAll-home">
-					                        <a class="btn btn-default" href="/curr_demand" style="margin-top: 30px;">Browse All Requirements</a>
-					                    </div>
-					                </div>
-					            </div>
-				                <section class="center slider">
-				                    @foreach($curr_demand_img as $cd_img)
-				                    <div class="col-xs-6 col-md-4">
-				                        <a href="{{asset('/image/'.$cd_img->img_full)}}" data-lightbox="gallery" data-title="hy"> <img src="{{asset('/image/'.$cd_img->img_thumb)}}"></a>
-				                    </div>
-				                    @endforeach
-				                </section>
-				            </div>
-				        </div>
-				    </div>
-				</div>				<!-- CURRENT DEMANDS ENDS -->
+				
 
-				{{--<!-- TESTIMONIALS STARTS--}}
-					{{--========================================================================= -->--}}
-				{{--<div class="container-fluids spadding testimonials" id="testimonials">--}}
-					{{--<div class="row">--}}
-						{{--<div class="container">--}}
-							{{--<div class="col-md-7 center-block">--}}
-								{{--<h1 class="header h1">Testimonials</h1>--}}
-								{{--<div class="testimonials-slider owl-carousel owl-theme">--}}
-									{{--<!-- TESTIMONIAL ONE STARTS--}}
-										{{--========================================================================= -->--}}
-									{{--<div class="item">--}}
-										{{--<blockquote>--}}
-											{{--<figure>--}}
-												{{--<img src="{{asset('image/check/user1.jpg')}}" alt="user" class="img-circle">--}}
-											{{--</figure>--}}
-											{{--<p>"Vivamus fringilla sem varius leo tempor, sed posuere nulla dapibus. Integer dapibus tortor quis libero ullamcorper rutrum neque ullamcorper convallis metus."</p>--}}
-											{{--<footer>--}}
-												{{--<cite>Willie Meyer,<i>Manager Facelook inc</i></cite>--}}
-											{{--</footer>--}}
-										{{--</blockquote>--}}
-									{{--</div>--}}
-									{{--<!-- TESTIMONIAL ONE ENDS--}}
-										{{--========================================================================= -->--}}
-									{{--<!-- TESTIMONIAL TWO STARTS--}}
-										{{--========================================================================= -->--}}
-									{{--<div class="item">--}}
-										{{--<blockquote>--}}
-											{{--<figure>--}}
-												{{--<img src="{{asset('image/check/user2.jpg')}}" alt="user" class="img-circle">--}}
-											{{--</figure>--}}
-											{{--<p>"Nullam pellentesque nisl nec velit tincidunt viverra. Ut ut felis mi. Mauris tristique ante non feugiat fermentum morbi nec ultricies est accumsan ligula."</p>--}}
-											{{--<footer>--}}
-												{{--<cite>Jessica Campbell,<i>Blogger</i></cite>--}}
-											{{--</footer>--}}
-										{{--</blockquote>--}}
-									{{--</div>--}}
-									{{--<!-- TESTIMONIAL TWO ENDS--}}
-										{{--========================================================================= -->--}}
-									{{--<!-- TESTIMONIAL THREE STARTS--}}
-										{{--========================================================================= -->--}}
-									{{--<div class="item">--}}
-										{{--<blockquote>--}}
-											{{--<figure>--}}
-												{{--<img src="{{asset('image/check/user3.jpg')}}" alt="user" class="img-circle">--}}
-											{{--</figure>--}}
-											{{--<p>"Donec ullamcorper imperdiet velit, et tincidunt lectus bibendum ut. Fusce ut nunc tortor. Donec vel tempus nisl, sed porta efficitur eu justo leo sollicitudin gravida."</p>--}}
-											{{--<footer>--}}
-												{{--<cite>Hannah Romero,<i>Designer at xyz</i></cite>--}}
-											{{--</footer>--}}
-										{{--</blockquote>--}}
-									{{--</div>--}}
-									{{--<!-- TESTIMONIAL THREE ENDS--}}
-										{{--========================================================================= -->--}}
-								{{--</div>--}}
-							{{--</div>--}}
-						{{--</div>--}}
-					{{--</div>--}}
-				{{--</div>--}}
-				{{--<!-- TESTIMONIALS ENDS--}}
-					{{--========================================================================= -->--}}
-
-
-
-
-
-				{{--<!-- CONTACT-US STARTS--}}
-					{{--========================================================================= -->--}}
-				{{--<div class="container-fluids spadding contact-us" id="contact-us">--}}
-					{{--<div class="container">--}}
-						{{--<div class="container">--}}
-							{{--<div class="col-md-12 center-block">--}}
-								{{--<h1 class="header h1">Contact Us Today</h1>--}}
-								{{--<h3><i>We'd love to hear from you!</i></h3>--}}
-							{{--</div>--}}
-						{{--</div>--}}
-						{{--<div class="row">--}}
-							{{--<div class="col-sm-8 col-md-5 center-block">--}}
-								{{--<form id="cta-signup-form" class="cta-signup-form">--}}
-									{{--<div class="form-group">--}}
-										{{--<input type="text" class="form-control input-lg" id="input-name" placeholder="Your name" required>--}}
-									{{--</div>--}}
-									{{--<div class="form-group">--}}
-										{{--<input type="email" class="form-control input-lg" id="input-email" placeholder="Email address" required>--}}
-									{{--</div>--}}
-									{{--<div class="form-group">--}}
-										{{--<input type="phone" class="form-control input-lg" id="input-phone" placeholder="Phone number" required>--}}
-									{{--</div>--}}
-									{{--<div class="form-group">--}}
-										{{--<textarea class="form-control input-lg" id="input-message" placeholder="Your message" required></textarea>--}}
-									{{--</div>--}}
-									{{--<div class="form-btn">--}}
-										{{--<button type="submit" class="btn white">SEND</button>--}}
-										{{--<p class="form-terms">By submitting your enquriy you agree to our<a href="#">Terms</a>and<a href="#">Privacy Policy</a>.</p>--}}
-									{{--</div>--}}
-								{{--</form>--}}
-							{{--</div>--}}
-						{{--</div>--}}
-					{{--</div>--}}
-				{{--</div>--}}
-				{{--<!-- CONTACT-US ENDS--}}
-					{{--========================================================================= -->--}}
+					<!-- OverSeas Clients -->
+				<div class="container-fluids spadding testimonials" id="clients">
+					<div class="row">
+						<div class="container">
+							<div class="col-md-7 center-block">
+								<h1 class="header h1 purple" style="margin-top: 50px;">Overseas Clients</h1>
+							</div>
+							<section class="clients slider" style="width: 99% !important;">
+			                    @foreach($overseas_client as $oc)
+			                    <div style="margin: 0px 2px !important;" {{-- class="col-xs-6 col-md-6" --}}>
+			                        <a href="{{asset('/image/'.$oc->img)}}" data-lightbox="gallery" data-title="hy"><img src="{{asset('/image/'.$oc->img)}}"></a>
+			                    </div>
+			                    @endforeach
+				            </section>
+						</div>
+					</div>
+				</div>				
 			</div>
+
 			<!-- FOOTER STARTS
 				========================================================================= -->
 			<footer id="footer" class="site-footer light" role="contentinfo" style="color: #464646 !important;">
@@ -562,8 +485,8 @@
 						<div class="row">
 							<aside class="widget aio-widget-text col-xs-12 col-sm-4 col-md-4 ">
 								<div class="text clearfix">
-									<img src="{{asset('image/logo.png')}}" width="160" height="48" />
-									<p class="" style="color: #464646 !important;">lorem ipsum dolor sit amet consec labore et dolore magna aliqua elit seddo eiusmod tempor lorem ipsum dolor sit amet consec labore et dolore magna aliqua elit seddo eiusmod tempor lorem ipsum dolor sit amet</p>
+									<img src="{{asset('image/logo.png')}}" width="300" height="48" style="margin-top: -15px;" />
+									<p class="" style="color: #464646 !important;"></p>
 								</div>
 							</aside>
 
@@ -594,17 +517,15 @@
 							        <li class="footer-contact" ><i class="fa fa-envelope"></i><span style="padding: 10px;"><a href="mailto:info@pasainternational.com.np" class="btn btn-link" style="color: #464646 !important;">&nbsp;info@pasainternational.com.np</a></span></li>
 
 							        <li class="footer-contact" ><i class="fa fa-globe"></i><span style="padding: 10px;"><a href="http://www.pasainternational.com.np" class="btn btn-link" style="color: #464646 !important;">&nbsp;www.pasainternational.com.np</a></span></li>
-
 							    </ul>
-
 							</aside>
 						</div>
 					</div>
 				</section>
-				<section id="bottom" class="light">
+				<section id="bottom" class="light" style="background: url({{asset('./image/check/footer-bg.png')}});">
 					<div class="container">
-						<div class="site-copyright">
-							<p>&copy; 2017. Pasa IT Solution Pvt. Ltd.</p>
+						<div class="site-copyright" style="position: absolute; bottom: 0px;">
+							<p>&copy; 2017 Pasa IT Solution Pvt. Ltd.</p>
 						</div>
 					</div>
 				</section>
@@ -629,8 +550,44 @@
 		</script>
 		<script type="text/javascript">
 		    $(document).ready(function(){
-		      $('.center').slick({
+		      $('.clients').slick({
 		        infinite: true,
+			    slidesToShow: 6,
+			    slidesToScroll: 1,
+			    responsive: [
+			    {
+			      breakpoint: 1024,
+			      settings: {
+			        slidesToShow: 6,
+			        slidesToScroll: 1,
+			        infinite: true,
+			      }
+			    },
+			    {
+			      breakpoint: 850,
+			      settings: {
+			        slidesToShow: 4,
+			        slidesToScroll: 1
+			      }
+			    },
+			    {
+			      breakpoint: 560,
+			      settings: {
+			        slidesToShow: 2,
+			        slidesToScroll: 1
+			      }
+			    }
+			    // You can unslick at a given breakpoint now by adding:
+			    // settings: "unslick"
+			    // instead of a settings object
+			  ]
+		      });
+		    });
+  		</script>
+		<script type="text/javascript">
+		    $(document).ready(function(){
+		      $('.center').slick({
+		        // infinite: true,
 			    slidesToShow: 3,
 			    slidesToScroll: 1,
 			    responsive: [
@@ -675,6 +632,7 @@
 		<script type='text/javascript' src="{{asset('js/home_js/scripts.js')}}"></script>
 		<script type='text/javascript' src="{{asset('js/home_js/slick.min.js')}}"></script>
 
+	{{-- Modal Pop-Up Contact Form --}}
 	<div id="contacts" class="modal fade" role="dialog">
 		<div class="modal-dialog modal-lg">
 			<div class="modal-content">

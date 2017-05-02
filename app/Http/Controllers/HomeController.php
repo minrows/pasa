@@ -27,10 +27,9 @@ class HomeController extends Controller
         $gallery=gallery::limit(8)->where('state','on')->get();
         $curr_demand_img=curr_demand_img::where('state','on')->get();
         $links=link::all();
+        $overseas_client=overseas_client::where('state','on')->get();
 
-        // Game::limit(8)->offset(8)->get();
-
-        return view('pasa_home/home',compact('carousels','about','chairman','rps','gallery','curr_demand_img','links'));
+        return view('pasa_home/home',compact('carousels','about','chairman','rps','gallery','curr_demand_img','links','overseas_client'));
     }
 
     public function about()

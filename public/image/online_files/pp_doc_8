@@ -1,0 +1,43 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use Illuminate\Http\Request;
+
+class AdminController extends Controller
+{
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth:admin');
+    }
+
+    /**
+     * Show the application dashboard.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
+    {
+        return view('pasa_admin.home');
+    }
+
+    public function edit_carousel()
+    {
+        return view('pasa_admin.edit_carousel');
+    }
+
+    public function edit_current_demand()
+    {
+        return view('pasa_admin.edit_current_demand');
+    }
+
+    public function edit_current_demand_img()
+    {
+        return view('pasa_admin.edit_current_demand_img');
+    }
+}
