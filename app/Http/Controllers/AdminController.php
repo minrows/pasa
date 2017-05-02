@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 
+use Faker\Provider\Image;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
@@ -361,15 +362,53 @@ class AdminController extends Controller
     }
     public function add_gallery(Request $request)
     {
+        $i=0;
         foreach($request->file('myFiles') as $file)
         {
             $pasa=new gallery;
             $path = $file->store('gallery');
-            $pasa->title=" ";
-            $pasa->img_thumb=$path;
             $pasa->img_full=$path;
+
+            $filename  = time() . '.' . $file->getClientOriginalExtension();
+
+            $thumb=Image::make($file->getRealPath())->resize(200, 200)->save('gallery/thumb');
+            $pasa->img_full=$thumb;
+
+//            $thumb=asset('image/gallery/thumb/').substr($path,7,strlen($path));
+//
+//
+//
+//            $thumb_tmp = imagecreatetruecolor(285, 218);
+//            $w=0;$h=0;
+//            $image = imagecreatefromjpeg(public_path('/image/'.$path));
+//
+//            Image::make();
+//
+//
+//            list($w, $h) = getimagesize(asset('/image/'.$path));
+//            echo $w;
+//            echo $h;
+//            exit;
+//
+//            header('Content-Type: image/jpeg');
+//            imagejpeg($image, null, 100);
+//            exit;
+
+
+//            imagecopyresampled($thumb_tmp, $image, 0, 0, 0, 0, 285, 218, $w, $h);
+//
+//            imagejpeg($thumb_tmp, $thumb, 100);
+//
+//            move_uploaded_file($thumb, $thumb);
+//
+//
+
+            $pasa->img_thumb=$path;
+
+            $pasa->title=" ";
             $pasa->state="on";
             $pasa->save();
+            $i++;
         }
         session()->flash('message', 'Data Added Successfully!');
         return back();
