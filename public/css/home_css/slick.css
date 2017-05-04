@@ -175,3 +175,21 @@
 	text-align: center;
 	color: #777;
 }
+.hellow{
+	font-size: 30px;
+	color: white;
+}
+@media (max-width: 767px) {
+	.hellow{
+		font-size: 12px;
+		color: pink;
+	}
+#clients	.slick-prev{
+	right: 32px;
+	top: -100px;
+}
+#clients .slick-next{
+	right: 0px;
+	top: -100px;
+}
+}

@@ -18,7 +18,7 @@
         <div class="container" >
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="header h1" id="about-us">Current Demands</h1>
+                    <h1 class="header h1 white" id="about-us">Current Demands</h1>
                 </div>
             </div>
         </div>

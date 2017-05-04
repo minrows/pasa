@@ -127,8 +127,8 @@
 						<div class="row">
 							<aside class="widget aio-widget-text col-xs-12 col-sm-4 col-md-4 ">
 								<div class="text clearfix">
-									<img src="{{asset('image/logo.png')}}" width="160" height="48" />
-									<p class="" style="color: #464646 !important;">lorem ipsum dolor sit amet consec labore et dolore magna aliqua elit seddo eiusmod tempor lorem ipsum dolor sit amet consec labore et dolore magna aliqua elit seddo eiusmod tempor lorem ipsum dolor sit amet</p>
+									<img src="{{asset('image/logo.png')}}" width="300" height="48" style="margin-top: -15px;" />
+									<p class="" style="color: #464646 !important;"></p>
 								</div>
 							</aside>
 
@@ -143,35 +143,31 @@
 
 									<li><a href="/gallery" class="btn btn-link" style="color: #464646 !important;">Gallery</a></li>
 
-
-
 								</ul>
 
 							</aside>
 
 							<aside class="widget aio-widget-blogs col-xs-12 col-sm-4 col-md-4 ">
-								<h3 class="header h1">&nbsp;Keep In Touch</h3>
-								<ul style="list-style: none; line-height: 2em;">
-									<li class="footer-contact" style="padding: 2px;"><i class="fa fa-map-marker"></i><span style="padding: 17px;">&nbsp;Kupondole, Lalitpur, Nepal</span></li>
+							    <h3 class="header h1">&nbsp;Keep In Touch</h3>
+							    <ul style="list-style: none; line-height: 2em;">
+							        <li class="footer-contact" style="padding: 2px;"><i class="fa fa-map-marker"></i><span style="padding: 17px;">&nbsp;Kupondole, Lalitpur, Nepal</span></li>
 
-									<li class="footer-contact" ><i class="fa fa-phone"></i><span style="padding: 10px;">&nbsp;+977-1-5554499, +977-1-5553380 </span></li>
+							        <li class="footer-contact" ><i class="fa fa-phone"></i><span style="padding: 10px;">&nbsp;+977-1-5554499, +977-1-5553380 </span></li>
 
-									<li class="footer-contact" ><i class="fa fa-fax"></i><span style="padding: 10px;">&nbsp;+977-1-5538440</span></li>
+							        <li class="footer-contact" ><i class="fa fa-fax"></i><span style="padding: 10px;">&nbsp;+977-1-5538440</span></li>
 
-									<li class="footer-contact" ><i class="fa fa-envelope"></i><span style="padding: 10px;"><a href="mailto:info@pasainternational.com.np" class="btn btn-link" style="color: #464646 !important;">&nbsp;info@pasainternational.com.np</a></span></li>
+							        <li class="footer-contact" ><i class="fa fa-envelope"></i><span style="padding: 10px;"><a href="mailto:info@pasainternational.com.np" class="btn btn-link" style="color: #464646 !important;">&nbsp;info@pasainternational.com.np</a></span></li>
 
-									<li class="footer-contact" ><i class="fa fa-globe"></i><span style="padding: 10px;"><a href="http://www.pasainternational.com.np" class="btn btn-link" style="color: #464646 !important;">&nbsp;www.pasainternational.com.np</a></span></li>
-
-								</ul>
-
+							        <li class="footer-contact" ><i class="fa fa-globe"></i><span style="padding: 10px;"><a href="http://www.pasainternational.com.np" class="btn btn-link" style="color: #464646 !important;">&nbsp;www.pasainternational.com.np</a></span></li>
+							    </ul>
 							</aside>
 						</div>
 					</div>
 				</section>
-				<section id="bottom" class="light">
+				<section id="bottom" class="light" style="background: url({{asset('./image/check/footer-bg.png')}});">
 					<div class="container">
-						<div class="site-copyright">
-							<p>&copy; 2017. Pasa IT Solution Pvt. Ltd.</p>
+						<div class="site-copyright" style="position: absolute; bottom: 0px;">
+							<p>&copy; 2017 Pasa IT Solution Pvt. Ltd.</p>
 						</div>
 					</div>
 				</section>

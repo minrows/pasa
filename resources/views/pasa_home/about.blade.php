@@ -7,7 +7,7 @@
 @section('content')
     <style>
         h3{
-            color:lightcyan;
+            color:white;
         }
         h4{
             margin:0;
@@ -17,7 +17,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
-                    <h1 class="header h1" id="about-us">About Us</h1>
+                    <h1 class="header h1 white" id="about-us">About Us</h1>
                     <div class="banner-center">
                         <div class="banner-inner" id="introduction">
                             <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"> <!-- required for floating -->
@@ -48,14 +48,17 @@
                                                             @php $j=1; @endphp
                                                         @foreach($overseas_clients as $overseas_client)
                                                             @if($overseas_client->country===$oc_country->country)
-                                                                <div class="oc col-lg-4">
-                                                                    @if($overseas_client->img!=null && $overseas_client->img!="")
+                                                                <div class="oc col-lg-6">
+                                                                   {{--  @if($overseas_client->img!=null && $overseas_client->img!="")
                                                                         <div class="center-block"><img src="{{asset('/image/'.$overseas_client->img)}}" height="100px" width="100px" /></div>
                                                                     @endif
-                                                                    <br>
-                                                                    <h4 align="center">{{$overseas_client->title}}</h4>
+                                                                    <br> --}}
+                                                                    <ul class="list-group">
+                                                                        <li class="list-group-item"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;{{$overseas_client->title}}</li>
+                                                                    </ul>
+                                                                    {{-- <h4 align="left"></h4> --}}
                                                                 </div>
-                                                                @if($j%3==0)
+                                                                @if($j%2==0)
                                                                     <div class="clearfix"></div>
                                                                 @endif
                                                                 @php $j++; @endphp

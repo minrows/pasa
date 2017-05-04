@@ -348,7 +348,7 @@
 				        		<h1 class="header h1 white">Current Demands</h1>
 				        		<div class="viewAll-home">
 					                        <a class="btn btn-default" href="/curr_demand" style="margin-top: 30px;">Browse All Requirements</a>
-					                    </div>
+					            </div>
 				        	</div>
 				            <div class="col-md-12">
 					            <div class="hidden-sm hidden-xs">
@@ -413,7 +413,6 @@
 		                    @endforeach
 						</div>
 					</div>
-
 				</div>
 				<!-- RECRUITMENT PROCEDURE ENDS
 					========================================================================= -->
@@ -422,47 +421,63 @@
 				<div class="container-fluid spadding gallery" id="gallery">
 					<div class="container">
 						<div class="row">
-							<div class="col-md-12">
-								<h1 class="header h1 purple">Gallery</h1>
-								<div class="container">
-									@php $i=1; @endphp
-									@foreach($gallery as $galery)
-									<div class="gallery-full column-equal col-sm-6 col-md-3 fx-start" data-animation="bounceIn" >
-										<div class="thumbnail fx-hover">
-											<div class="fx-hover-back"></div>
-											<div class="fx-hover-content">
-											<div class="clearfix"></div>
-												<h3 style="margin-top: 14px;"><a href="#">{{$galery->title}}</a></h3>
-												<div class="line"></div>
+							<div class="hidden-lg hidden-md col-sm-12 col-xs-12">
+				        		<h1 class="header h1 purple">Gallery</h1>
+				        		<section class="clients slider" style="width: 99% !important; margin-top: -8px;">
+			                    @foreach($gallery as $galery)
+			                    <div style="margin: 0px 5px !important;" {{-- class="col-xs-6 col-md-6" --}}>
+			                        <a href="{{asset('/image/'.$galery->img_full)}}" data-lightbox="gallery" data-title="{{$galery->title}}"><img src="{{asset('/image/'.$galery->img_thumb)}}"></a>
+			                    </div>
+			                    @endforeach
+				            </section>
+				        	</div>
+				        	<div class="hidden-sm hidden-xs">
+								<div class="col-md-12">
+									<h1 class="header h1 purple">Gallery</h1>
+									<div class="container">
+										@php $i=1; @endphp
+										@foreach($gallery as $galery)
+										<div class="gallery-full column-equal col-sm-6 col-md-3 fx-start" data-animation="bounceIn" >
+											<div class="thumbnail fx-hover">
+												<div class="fx-hover-back"></div>
+												<div class="fx-hover-content">
+												<div class="clearfix"></div>
+													<h3 style="margin-top: 14px;"><a href="#">{{$galery->title}}</a></h3>
+													<div class="line"></div>
+												</div>
+												<div class="fx-hover-icon">
+													<a class="icon-medium icon-main" href="{{asset('/image/'.$galery->img_full)}}" data-lightbox="gallery" data-title="{{$galery->title}}"><i class="fa fa-camera"></i></a>
+												</div>
+												<img class='' src="{{asset('/image/'.$galery->img_thumb)}}"  width="400" height="400" alt="{{$galery->title}}" style="min-height: 211.5px;"/>
 											</div>
-											<div class="fx-hover-icon">
-												<a class="icon-medium icon-main" href="{{asset('/image/'.$galery->img_full)}}" data-lightbox="gallery" data-title="{{$galery->title}}"><i class="fa fa-camera"></i></a>
-											</div>
-											<img class='' src="{{asset('/image/'.$galery->img_thumb)}}"  width="400" height="400" alt="{{$galery->title}}" style="min-height: 211.5px;"/>
+										</div>
+										@if($i%4==0) <div class="clearfix"></div> @endif
+			                        	@php $i++; @endphp
+			                    		@endforeach
+			                    		<div class="col-md-2 center-block" style="margin-top: 15px; ">
+			                                <a href="/gallery" class="btn btn-fresh text-uppercase btn-lg"><i class="fa fa-camera"></i>&nbsp;&nbsp;MORE PHOTOS</a>
 										</div>
 									</div>
-									@if($i%4==0) <div class="clearfix"></div> @endif
-		                        	@php $i++; @endphp
-		                    		@endforeach
-		                    		<div class="col-md-2 center-block" style="margin-top: 15px; ">
-		                                <a href="/gallery" class="btn btn-fresh text-uppercase btn-lg"><i class="fa fa-camera"></i>&nbsp;&nbsp;MORE PHOTOS</a>
-									</div>
 								</div>
-							</div>
+							</div>	
 						</div>
-
 					</div>
 				</div>
+
 				<!-- GALLERY ENDS
 					========================================================================= -->
-				
 
 					<!-- OverSeas Clients -->
 				<div class="container-fluids spadding testimonials" id="clients">
 					<div class="row">
 						<div class="container">
-							<div class="col-md-7 center-block">
-								<h1 class="header h1 purple" style="margin-top: 50px;">Overseas Clients</h1>
+							<div class="hidden-lg hidden-md col-sm-12 col-xs-12">
+				        		<h1 class="header h1 purple" align="left">Overseas Clients</h1>
+				        	</div>
+					        <div class="hidden-sm hidden-xs">
+								<div class="col-md-7 center-block">
+									<h1 class="header h1 purple" style="margin-top: 50px;">Overseas Clients</h1>
+								</div>
 							</div>
 							<section class="clients slider" style="width: 99% !important;">
 			                    @foreach($overseas_client as $oc)
@@ -485,7 +500,7 @@
 						<div class="row">
 							<aside class="widget aio-widget-text col-xs-12 col-sm-4 col-md-4 ">
 								<div class="text clearfix">
-									<img src="{{asset('image/logo.png')}}" width="300" height="48" style="margin-top: -15px;" />
+									<img src="{{asset('image/logo.png')}}" width="260" style="margin-top: -25px; margin-left: 25px;" />
 									<p class="" style="color: #464646 !important;"></p>
 								</div>
 							</aside>
@@ -533,7 +548,6 @@
 			<!-- FOOTER ENDS
 				========================================================================= -->
 			<a href="#page" class="button-go scroll-to"><i class="fa fa-chevron-up"></i></a>
-
 		</div>
 
 		<!-- SCRIPTS
@@ -553,13 +567,13 @@
 		      $('.clients').slick({
 		        infinite: true,
 			    slidesToShow: 6,
-			    slidesToScroll: 1,
+			    slidesToScroll: 6,
 			    responsive: [
 			    {
 			      breakpoint: 1024,
 			      settings: {
 			        slidesToShow: 6,
-			        slidesToScroll: 1,
+			        slidesToScroll: 6,
 			        infinite: true,
 			      }
 			    },
@@ -567,13 +581,20 @@
 			      breakpoint: 850,
 			      settings: {
 			        slidesToShow: 4,
-			        slidesToScroll: 1
+			        slidesToScroll: 4
+			      }
+			    },
+			    {
+			      breakpoint: 750,
+			      settings: {
+			        slidesToShow: 3,
+			        slidesToScroll: 4
 			      }
 			    },
 			    {
 			      breakpoint: 560,
 			      settings: {
-			        slidesToShow: 2,
+			        slidesToShow: 1,
 			        slidesToScroll: 1
 			      }
 			    }

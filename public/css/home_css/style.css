@@ -980,6 +980,15 @@ a {
 	border-radius: 49%;
 	margin: 10px 20px 30px 20px;
 }
+.testimonials img:hover{
+	/*border: 5px solid #868686;*/
+	-webkit-box-shadow:0 0 10px rgba(60,20,80,0.4);
+	-ms-box-shadow:0 0 10px rgba(60,20,80,0.4);
+	-moz-box-shadow:0 0 10px rgba(60,20,80,0.4);
+	box-shadow:0 0 10px rgba(60,20,80,0.4);
+	border-radius: 49%;
+	margin: 10px 20px 30px 20px;
+}
 
 
 .user-reviews.sections{
@@ -3499,6 +3508,7 @@ form {
 .box .fa {
     color: #000000;
 }
+
 /* FOOTER ENDS
 ========================================================================= */
 /* 8. RESPONSIVE STARTS
