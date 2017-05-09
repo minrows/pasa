@@ -693,6 +693,7 @@ a {
     top:0px !important;
 	z-index: 9999999999999;
 	width: 100%;
+	/*max-height:80px;*/
 	-webkit-animation: slideInDown 1s both;
     animation: slideInDown 1s both;
 	background: #FFFFFF;

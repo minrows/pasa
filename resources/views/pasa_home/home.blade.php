@@ -72,7 +72,7 @@
 	@endif
 			<!-- PRELOADER STARTS
 			========================================================================= -->
-		<div class="preloader"></div>
+		<div id="top" class="preloader"></div>
 		<!-- PRELOADER ENDS
 			========================================================================= -->
 		<div id="page" class="site sticky_header">
@@ -547,12 +547,25 @@
 			</footer>
 			<!-- FOOTER ENDS
 				========================================================================= -->
-			<a href="#page" class="button-go scroll-to"><i class="fa fa-chevron-up"></i></a>
+			<a href="#top" class="button-go scroll-to" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+				<i class="fa fa-chevron-up"></i>
+			</a>
+			{{--<a href="#page" class="button-go scroll-to"><i class="fa fa-chevron-up"></i></a>--}}
 		</div>
 
 		<!-- SCRIPTS
 			========================================================================= -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+	<script type='text/javascript' src="{{asset('js/home_js/jquery-3.1.1.min.js')}}"></script>
+	<script type='text/javascript' src="{{asset('js/home_js/bootstrap.js')}}"></script>
+	<script type='text/javascript' src="{{asset('js/home_js/owl.carousel.js')}}"></script>
+	<script type='text/javascript' src="{{asset('js/home_js/lightbox.js')}}"></script>
+	<script type='text/javascript' src="{{asset('js/home_js/particles.min.js')}}"></script>
+	<script type='text/javascript' src="{{asset('js/home_js/jquery.easing.js')}}"></script>
+	<script type='text/javascript' src="{{asset('js/home_js/masonry.js')}}"></script>
+	<script type='text/javascript' src="{{asset('js/home_js/jquery.mmenu.js')}}"></script>
+	<script type='text/javascript' src="{{asset('js/home_js/app.js')}}"></script>
+	<script type='text/javascript' src="{{asset('js/home_js/scripts.js')}}"></script>
+	<script type='text/javascript' src="{{asset('js/home_js/slick.min.js')}}"></script>
 		{{-- Menu Onclick function  --}}
 		<script type="text/javascript">
 		    $(function() {
@@ -641,17 +654,7 @@
 		      });
 		    });
   		</script>
-		<script type='text/javascript' src="{{asset('js/home_js/jquery-3.1.1.min.js')}}"></script>
-		<script type='text/javascript' src="{{asset('js/home_js/bootstrap.js')}}"></script>
-		<script type='text/javascript' src="{{asset('js/home_js/owl.carousel.js')}}"></script>
-		<script type='text/javascript' src="{{asset('js/home_js/lightbox.js')}}"></script>
-		<script type='text/javascript' src="{{asset('js/home_js/particles.min.js')}}"></script>
-		<script type='text/javascript' src="{{asset('js/home_js/jquery.easing.js')}}"></script>
-		<script type='text/javascript' src="{{asset('js/home_js/masonry.js')}}"></script>
-		<script type='text/javascript' src="{{asset('js/home_js/jquery.mmenu.js')}}"></script>
-		<script type='text/javascript' src="{{asset('js/home_js/app.js')}}"></script>
-		<script type='text/javascript' src="{{asset('js/home_js/scripts.js')}}"></script>
-		<script type='text/javascript' src="{{asset('js/home_js/slick.min.js')}}"></script>
+
 
 	{{-- Modal Pop-Up Contact Form --}}
 	<div id="contacts" class="modal fade" role="dialog">
