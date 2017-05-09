@@ -15,8 +15,9 @@ class CreateCorporateFieldTable extends Migration
     {
         Schema::create('corporate_fields', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('title',50);
-            $table->string('description');
+            $table->string('title',150);
+            $table->text('description');
+            $table->enum('state',['on','off']);
             $table->timestamps();
         });
     }

@@ -10,6 +10,14 @@
             width: 60%;
         }
     </style>
+
+    @php
+    echo "<pre>";
+    print_r($corporte_members);
+    echo "</pre>";
+    exit;
+    @endphp
+
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 
@@ -68,18 +76,18 @@
                                     <a class="btn btn-primary" data-toggle="modal" data-target="#edit_modal_{{$corporate_member->id}}">Edit</a>
                                     &nbsp;
 
-                                    <a href="{{ '/pasa_admin/delete_corporate_member' }}"
-                                       onclick="event.preventDefault();
-                                           document.getElementById('delete-form_{{$corporate_member->id}}').submit();"
-                                       class="btn btn-primary">
-                                        Delete
-                                    </a>
+                                    {{--<a href="{{ '/pasa_admin/delete_corporate_member' }}"--}}
+                                       {{--onclick="event.preventDefault();--}}
+                                           {{--document.getElementById('delete-form_{{$corporate_member->id}}').submit();"--}}
+                                       {{--class="btn btn-primary">--}}
+                                        {{--Delete--}}
+                                    {{--</a>--}}
 
-                                    <form id="delete-form_{{$corporate_member->id}}" action="{{'/pasa_admin/delete_corporate_member'}}" method="POST" style="display: none;">
-                                        {{ csrf_field() }}
-                                        <input type="hidden" value="{{$corporate_member->id}}" id="del_id" name="del_id" />
-                                        <input type="hidden" value="{{$corporate_member->corporate_field_id}}" id="del_id1" name="del_id1" />
-                                    </form>
+                                    {{--<form id="delete-form_{{$corporate_member->id}}" action="{{'/pasa_admin/delete_corporate_member'}}" method="POST" style="display: none;">--}}
+                                        {{--{{ csrf_field() }}--}}
+                                        {{--<input type="hidden" value="{{$corporate_member->id}}" id="del_id" name="del_id" />--}}
+                                        {{--<input type="hidden" value="{{$corporate_member->corporate_field_id}}" id="del_id1" name="del_id1" />--}}
+                                    {{--</form>--}}
                                 </td>
                             </tr>
                             @php
