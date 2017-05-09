@@ -11,13 +11,6 @@
         }
     </style>
 
-    @php
-    echo "<pre>";
-    print_r($corporte_members);
-    echo "</pre>";
-    exit;
-    @endphp
-
     <div class="row">
         <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
 

@@ -642,7 +642,7 @@ class AdminController extends Controller
             ->get();
 
 //        return $corporate_fields;
-        return view('pasa_admin.corporate_member',compact('corporate_fields'),compact('corporate_members'));
+        return view('pasa_admin.corporate_member',compact('corporate_fields','corporate_members'));
     }
 
     public function add_corporate_member(Request $request)
