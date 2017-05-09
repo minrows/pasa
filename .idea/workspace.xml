@@ -2,8 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="dfd28579-89ee-44c9-b0e4-7e81f50ba738" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resources/views/pasa_admin/corporate_member.blade.php" afterPath="$PROJECT_DIR$/resources/views/pasa_admin/corporate_member.blade.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -140,7 +139,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="corporate_member.blade.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="corporate_member.blade.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/resources/views/pasa_admin/corporate_member.blade.php">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="114">
@@ -178,6 +177,19 @@
                 <marker date="1494324282180" expanded="true" signature="12193:12214" ph="..." />
                 <marker date="1494324282180" expanded="true" signature="12340:12361" ph="..." />
                 <marker date="1494324282180" expanded="true" signature="12401:12440" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="HomeController.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="168">
+              <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+              <folding>
+                <element signature="e#38#62#0#PHP" expanded="true" />
+                <marker date="1494324390933" expanded="true" signature="2385:2391" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -224,7 +236,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>\\\</find>
       <find>act</find>
       <find>current</find>
       <find>extens</find>
@@ -254,6 +265,7 @@
       <find>menu-class</find>
       <find>line-height</find>
       <find>stickytop</find>
+      <find>corporte</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -303,7 +315,6 @@
         <option value="$PROJECT_DIR$/config/app.php" />
         <option value="$PROJECT_DIR$/app/Providers/AppServiceProvider.php" />
         <option value="$PROJECT_DIR$/database/migrations/2017_04_03_060546_create_corporate_field_table.php" />
-        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
         <option value="$PROJECT_DIR$/resources/views/pasa_home/about.blade.php" />
         <option value="$PROJECT_DIR$/resources/views/pasa_home/recruitment.blade.php" />
         <option value="$PROJECT_DIR$/public/css/home_css/slick-theme.css" />
@@ -313,6 +324,7 @@
         <option value="$PROJECT_DIR$/public/css/home_css/style.css" />
         <option value="$PROJECT_DIR$/app/Http/Controllers/AdminController.php" />
         <option value="$PROJECT_DIR$/resources/views/pasa_admin/corporate_member.blade.php" />
+        <option value="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" />
       </list>
     </option>
   </component>
@@ -938,12 +950,12 @@
       <workItem from="1493801864766" duration="888000" />
       <workItem from="1493874248780" duration="738000" />
       <workItem from="1493878199809" duration="73000" />
-      <workItem from="1494309124232" duration="11024000" />
+      <workItem from="1494309124232" duration="11124000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="179969000" />
+    <option name="totallyTimeSpent" value="180069000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="0" width="1370" height="735" extended-state="0" />
@@ -1150,17 +1162,6 @@
         <state relative-caret-position="255">
           <caret line="17" column="36" lean-forward="false" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="56" column="107" lean-forward="false" selection-start-line="56" selection-start-column="107" selection-end-line="56" selection-end-column="107" />
-          <folding>
-            <element signature="e#38#62#0#PHP" expanded="true" />
-            <marker date="1494315390018" expanded="true" signature="2403:2409" ph="{...}" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1538,14 +1539,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="408">
-          <caret line="644" column="77" lean-forward="false" selection-start-line="644" selection-start-column="77" selection-end-line="644" selection-end-column="77" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/resources/views/pasa_admin/corporate_member.blade.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="114">
@@ -1583,6 +1576,25 @@
             <marker date="1494324282180" expanded="true" signature="12193:12214" ph="..." />
             <marker date="1494324282180" expanded="true" signature="12340:12361" ph="..." />
             <marker date="1494324282180" expanded="true" signature="12401:12440" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/AdminController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="644" column="77" lean-forward="false" selection-start-line="644" selection-start-column="77" selection-end-line="644" selection-end-column="77" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/Http/Controllers/HomeController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="168">
+          <caret line="40" column="26" lean-forward="false" selection-start-line="40" selection-start-column="26" selection-end-line="40" selection-end-column="26" />
+          <folding>
+            <element signature="e#38#62#0#PHP" expanded="true" />
+            <marker date="1494324390933" expanded="true" signature="2385:2391" ph="{...}" />
           </folding>
         </state>
       </provider>

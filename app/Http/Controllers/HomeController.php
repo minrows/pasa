@@ -38,7 +38,7 @@ class HomeController extends Controller
     {
         $abouts=about::where('state','on')->get();
         $oc_countries=overseas_client::select('country')->where('state','on')->distinct()->get();
-        $overseas_clients=$overseas_clients=overseas_client::orderBy('country')
+        $overseas_clients=overseas_client::orderBy('country')
             ->groupBy('country')
             ->groupBy('title')
             ->groupBy('id')
