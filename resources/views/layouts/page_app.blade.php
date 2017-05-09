@@ -22,12 +22,13 @@
 		<link rel='stylesheet' href="{{asset('css/home_css/fx.css')}}" type='text/css' />
 		<link rel='stylesheet' href="{{asset('css/home_css/style.css')}}" type='text/css' />
 		<link rel='stylesheet' href="{{asset('css/home_css/tab.css')}}" type='text/css' />
+
 	</head>
 	<body id="home">
 	
 			<!-- PRELOADER STARTS
 			========================================================================= -->
-		<div class="preloader"></div>
+		<div class="preloader" id="top"></div>
 		<!-- PRELOADER ENDS
 			========================================================================= -->
 		<div id="page" class="site sticky_header">
@@ -174,7 +175,9 @@
 			</footer>
 			<!-- FOOTER ENDS
 				========================================================================= -->
-			<a href="#page" class="button-go scroll-to"><i class="fa fa-chevron-up"></i></a>
+			<a href="#top" class="button-go scroll-to" onclick="$('html,body').animate({scrollTop:0},'slow');return false;">
+				<i class="fa fa-chevron-up"></i>
+			</a>
 		</div>
 		<!-- SCRIPTS
 			========================================================================= -->
