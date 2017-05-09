@@ -416,7 +416,7 @@ class AdminController extends Controller
 
     public function update_overseas_client(Request $request)
     {
-        $pasa=gallery::find($request->id);
+        $pasa=overseas_client::find($request->id);
 
         if ($request->hasFile('img')) {
             $del=$pasa->img;
@@ -677,7 +677,7 @@ class AdminController extends Controller
 
     public function update_corporate_member(Request $request)
     {
-        $pasa=overseas_client::find($request->id);
+        $pasa=corporate_member::find($request->id);
 
         if ($request->hasFile('img')) {
             $del=$pasa->img;

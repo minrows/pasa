@@ -1,5 +1,7 @@
 <?php
 namespace App\Http\Controllers;
+use App\corporate_field;
+use App\corporate_member;
 use App\overseas_client;
 use App\recruitment_procedure;
 use Illuminate\Http\Request;
@@ -45,8 +47,14 @@ class HomeController extends Controller
             ->groupBy('created_at')
             ->groupBy('updated_at')
             ->get();
+
+        $cfs=corporate_field::where('state','on')->get();
+        $cms=corporate_member::where('state','on')->get();
+
+
+
         $links=link::all();
-        return view('pasa_home/about',compact('abouts','oc_countries','overseas_clients','links'));
+        return view('pasa_home/about',compact('abouts','oc_countries','overseas_clients','links','cfs','cms'));
     }
 
     public function recruitment(Request $request)
@@ -80,6 +88,7 @@ class HomeController extends Controller
         $links=link::all();
         return view('pasa_home/curr_demand',compact('curr_demand','links'));
     }
+
 
     public function online()
     {

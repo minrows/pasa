@@ -69,6 +69,15 @@
                                                 @endforeach
                                             @endif
 
+                                            @if($about->title==="Corporate Members")
+
+                                                @foreach($cfs as $cf)
+                                                    <h3>{{$cf->title}}</h3>
+                                                    <p>{!!html_entity_decode($cf->description)!!}</p>
+
+                                                @endforeach
+                                            @endif
+
                                         </div>
                                         @php $i++;@endphp
                                     @endforeach
