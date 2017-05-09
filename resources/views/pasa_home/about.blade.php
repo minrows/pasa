@@ -20,7 +20,7 @@
                     <h1 class="header h1 white" id="about-us">About Us</h1>
                     <div class="banner-center">
                         <div class="banner-inner" id="introduction">
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"> <!-- required for floating -->
+                            <div class="hidden-xs hidden-sm col-md-3 col-lg-3"> <!-- required for floating -->
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs tabs-left"><!-- 'tabs-right' for right tabs -->
                                     @php $i=1;@endphp
@@ -28,10 +28,27 @@
                                         <li class="@if($i==1) {{'active'}} @endif"><a id="about-title" href="#tab_{{$about->id}}" data-toggle="tab">{{$about->title}}</a></li>
                                         @php $i++;@endphp
                                     @endforeach
-
                                 </ul>
                             </div>
-                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                            <div class="col-xs-12 col-sm-12 hidden-md hidden-lg"> <!-- required for floating -->
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs"><!-- 'tabs-right' for right tabs -->
+                                    @php $i=1;@endphp
+                                    @foreach($abouts as $about)
+                                        <li class="col-xs-6 col-sm-6 @if($i==1) {{'active'}} @endif"><a id="about-title" href="#tab_{{$about->id}}" data-toggle="tab">{{$about->title}}</a></li>
+                                        @if($i%2==0)
+                                            <div class="clearfix"></div>
+                                        @endif
+                                        @php $i++;@endphp
+                                    @endforeach
+
+                                </ul>
+                                <br />
+                                <br />
+                                <br />
+                                <br />
+                            </div>
+                            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     @php $i=1;@endphp
@@ -74,7 +91,28 @@
                                                 @foreach($cfs as $cf)
                                                     <h3>{{$cf->title}}</h3>
                                                     <p>{!!html_entity_decode($cf->description)!!}</p>
-
+                                                    <div class="row">
+                                                    @foreach($cms as $cm)
+                                                        @if($cf->id==$cm->corporate_field_id)
+                                                            <div class="col-md-4 col-xs-4">
+                                                                @if($cm->img!=null && $cm!="")
+                                                                <div class="thumbnail" style="min-height:120px;">
+                                                                    <img src="{{asset('/image/'.$cm->img)}}">
+                                                                </div>
+                                                                @endif
+                                                                <br>
+                                                                <div class="center-block">
+                                                                    <h4 align="center">{{$cm->title}}</h4>
+                                                                    @if($cm->location!=null && $cm->location!="" && $cm!=" "  )
+                                                                            <h5 align="center">{{$cm->location}}</h5>
+                                                                    @endif
+                                                                </div>
+                                                                <br>
+                                                            </div>
+                                                        @endif
+                                                    @endforeach
+                                                    </div>
+                                                    <hr>
                                                 @endforeach
                                             @endif
 

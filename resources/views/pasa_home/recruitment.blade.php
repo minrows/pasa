@@ -23,7 +23,7 @@
                     <h1 class="header h1" id="about-us">Recruitment Procedure</h1>
                     <div class="banner-center">
                         <div class="banner-inner" id="introduction">
-                            <div class="col-xs-3 col-sm-3 col-md-3 col-lg-3"> <!-- required for floating -->
+                            <div class="hidden-xs hidden-sm col-md-3 col-lg-3"> <!-- required for floating -->
                                 <!-- Nav tabs -->
                                 <ul class="nav nav-tabs tabs-left"><!-- 'tabs-right' for right tabs -->
                                     @php $i=1;@endphp
@@ -34,7 +34,23 @@
 
                                 </ul>
                             </div>
-                            <div class="col-xs-9 col-sm-9 col-md-9 col-lg-9">
+                            <div class="col-xs-12 col-sm-12 hidden-md hidden-lg"> <!-- required for floating -->
+                                <!-- Nav tabs -->
+                                <ul class="nav nav-tabs"><!-- 'tabs-right' for right tabs -->
+                                    @php $i=1;@endphp
+                                    @foreach($rps as $rp)
+                                        <li class="col-xs-6 col-md-6 @if($sel==$rp->title) {{'active'}} @endif"><a id="about-title" href="#tab_{{$rp->id}}" data-toggle="tab">{{$rp->title}}</a></li>
+                                        @if($i%2==0)
+                                            <div class="clearfix"></div>
+                                        @endif
+                                        @php $i++;@endphp
+                                    @endforeach
+                                    <br/>
+
+                                </ul>
+                            </div>
+
+                            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
                                 <!-- Tab panes -->
                                 <br/>
                                 <br/>
