@@ -29,16 +29,7 @@ class HomeController extends Controller
         $gallery=gallery::limit(8)->where('state','on')->get();
         $curr_demand_img=curr_demand_img::where('state','on')->get();
         $links=link::all();
-        $overseas_client=overseas_client::where('state','on')->get();
-
-        return view('pasa_home/home',compact('carousels','about','chairman','rps','gallery','curr_demand_img','links','overseas_client'));
-    }
-
-    public function about()
-    {
-        $abouts=about::where('state','on')->get();
-        $oc_countries=overseas_client::select('country')->where('state','on')->distinct()->get();
-        $overseas_clients=$overseas_clients=overseas_client::orderBy('country')
+        $overseas_client=overseas_client::where('state','on')->orderBy('country')
             ->groupBy('country')
             ->groupBy('title')
             ->groupBy('id')
@@ -48,11 +39,24 @@ class HomeController extends Controller
             ->groupBy('updated_at')
             ->get();
 
+        return view('pasa_home/home',compact('carousels','about','chairman','rps','gallery','curr_demand_img','links','overseas_client'));
+    }
+
+    public function about()
+    {
+        $abouts=about::where('state','on')->get();
+        $oc_countries=overseas_client::select('country')->where('state','on')->distinct()->get();
+        $overseas_clients=overseas_client::orderBy('country')
+            ->groupBy('country')
+            ->groupBy('title')
+            ->groupBy('id')
+            ->groupBy('img')
+            ->groupBy('state')
+            ->groupBy('created_at')
+            ->groupBy('updated_at')
+            ->get();
         $cfs=corporate_field::where('state','on')->get();
         $cms=corporate_member::where('state','on')->get();
-
-
-
         $links=link::all();
         return view('pasa_home/about',compact('abouts','oc_countries','overseas_clients','links','cfs','cms'));
     }

@@ -986,7 +986,7 @@ a {
 	-ms-box-shadow:0 0 10px rgba(60,20,80,0.4);
 	-moz-box-shadow:0 0 10px rgba(60,20,80,0.4);
 	box-shadow:0 0 10px rgba(60,20,80,0.4);
-	border-radius: 49%;
+	border-radius: 5%;
 	margin: 10px 20px 30px 20px;
 }
 
@@ -3650,6 +3650,10 @@ form {
 	}
 }
 @media (max-width: 767px) {
+	/*.testimonials{
+	text-align: left !important;
+	background: #f6f6f6;
+}*/
 	.spadding {
 		padding: 10px !important;
 		overflow: hidden;
