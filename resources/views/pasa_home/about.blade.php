@@ -56,7 +56,6 @@
                                         <div class="tab-pane @if($i==1) {{'active'}} @endif" id="tab_{{$about->id}}">
                                             <h2>{{$about->title}}</h2>
                                             <div class="JustifyLeft">{!!html_entity_decode($about->description)!!}</div>
-
                                             @if($about->title==="Overseas Clients")
                                                 @foreach($oc_countries as $oc_country)
                                                     <div class="oc_country">
@@ -85,12 +84,10 @@
                                                     </div>
                                                 @endforeach
                                             @endif
-
                                             @if($about->title==="Corporate Members")
-
                                                 @foreach($cfs as $cf)
                                                     <h3>{{$cf->title}}</h3>
-                                                    <p>{!!html_entity_decode($cf->description)!!}</p>
+                                                    <p style="color: white !important;">{!!html_entity_decode($cf->description)!!}</p>
                                                     <div class="row">
                                                     @foreach($cms as $cm)
                                                         @if($cf->id==$cm->corporate_field_id)
@@ -104,7 +101,7 @@
                                                                 <div class="center-block">
                                                                     <h4 align="center">{{$cm->title}}</h4>
                                                                     @if($cm->location!=null && $cm->location!="" && $cm!=" "  )
-                                                                            <h5 align="center">{{$cm->location}}</h5>
+                                                                        <h5 align="center">{{$cm->location}}</h5>
                                                                     @endif
                                                                 </div>
                                                                 <br>
@@ -115,11 +112,9 @@
                                                     <hr>
                                                 @endforeach
                                             @endif
-
                                         </div>
                                         @php $i++;@endphp
                                     @endforeach
-
                                 </div>
                             </div>
                         </div>
