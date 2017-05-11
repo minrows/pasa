@@ -179,7 +179,17 @@
 	font-size: 30px;
 	color: white;
 }
+@media (max-width: 995px) {
+	.cd .slick-slider {
+	float: none;
+	width: 95%;
+	}
+	.cd .center{margin-top: 28px;}
+	.cd .slick-slide {
+      margin: 0px 3px;
+    }
 @media (max-width: 767px) {
+	
 	.hellow{
 		font-size: 12px;
 		color: pink;

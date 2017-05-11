@@ -12,6 +12,9 @@
 -------------------------------------------------------------------*/
 /* 1. GENERAL STARTS
 ========================================================================= */
+
+
+
 html,
 body,
 div,
@@ -688,7 +691,6 @@ a {
 	padding-bottom: 15px;
 }
 .menu-class.stickytop {
-	
     position:fixed !important;
     top:0px !important;
 	z-index: 9999999999999;
@@ -697,6 +699,12 @@ a {
 	-webkit-animation: slideInDown 1s both;
     animation: slideInDown 1s both;
 	background: #FFFFFF;
+}
+
+
+.menu-class.stickytop img{
+ /*width: px;*/
+ max-height: 50px;    
 }
 .fa.fa-search.search {
 	padding: 5px 10px;
@@ -987,7 +995,7 @@ a {
 	-ms-box-shadow:0 0 10px rgba(60,20,80,0.4);
 	-moz-box-shadow:0 0 10px rgba(60,20,80,0.4);
 	box-shadow:0 0 10px rgba(60,20,80,0.4);
-	border-radius: 5%;
+	border-radius: 50%;
 	margin: 10px 20px 30px 20px;
 }
 
@@ -3378,7 +3386,7 @@ a.label-main:hover,
 	transition: background-color 0.2s linear;
 }
 #primary-menu{
-	line-height: 50px;
+	line-height: 30px;
 }
 #primary-menu>li>a {
 	color: #3C1450 !important;
@@ -3434,7 +3442,7 @@ a.label-main:hover,
 	padding: 0px;
 	margin: 0px;
 }
-.cta {
+.btsld {
 	position: relative;
 	display: block;
 	/*background-color: #270c35;*/
@@ -3442,21 +3450,39 @@ a.label-main:hover,
     /*color: #FFF;*/
     /*height: 90px;*/
     line-height: 0px;
+    padding: 20px;
 }
-.cta h2 {
+.btsld h2 {
 	text-align: left;
 	margin-top: 10px;
 	color: #FFF;
 	vertical-align: middle !important;
+	margin-bottom: 15px;
 }
-.cta .button-big {
+.btsld h3 {
+	text-align: center;
+	margin-top: 10px;
+	color: #FFF;
+	vertical-align: middle !important;
+	margin-bottom: 3px;
+	font-size: 16px;
+}
+.btsld .button-big {
     background: #f3c633;
     border-radius: 5px;
     border: 1px solid #000000;
     color: #000000 !important;
     vertical-align: middle !important;
 }
-.cta i {
+.btsld .button-small {
+    background: #f3c633;
+    border-radius: 5px;
+    border: 1px solid #000000;
+    color: #000000 !important;
+    vertical-align: middle !important;
+    font-size: 16px;
+}
+.btsld i {
 	color: #000000 !important;
 }
 .message {
@@ -3655,6 +3681,7 @@ form {
 	text-align: left !important;
 	background: #f6f6f6;
 }*/
+	.cd .container
 	.spadding {
 		padding: 10px !important;
 		overflow: hidden;

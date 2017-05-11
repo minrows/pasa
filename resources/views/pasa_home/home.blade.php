@@ -79,13 +79,13 @@
 			<!-- HEADER STARTS
 				========================================================================= -->
 			<header id="masthead" class="masthead-corporate site-header  clearfix" role="banner">
-				<div id="site-search">
+				{{-- <div id="site-search">
 					<div class="container">
 						<form role="search" class="search-form" action="#">
 							<input type="text" class="search-field" placeholder="Search " value="" name="s" />
 						</form>
 					</div>
-				</div>
+				</div> --}}
 				<div id="top" class="clearfix dark">
 					<div class="container">
 						<div class="site-info">
@@ -119,9 +119,7 @@
 						<div id="button-menu" class="button-icon">
 							<a href="#mobile-navigation"><i class="fa fa-bars"></i></a>
 						</div>
-						<div id="button-search" class="button-icon">
-							<i class="fa fa-search search"></i>
-						</div>
+						
 						<nav id="site-navigation" class="main-navigation" role="navigation">
 							<ul id="primary-menu" class="light">
 								<li><a href="#home">Home</a></li>
@@ -160,25 +158,41 @@
 				========================================================================= -->
 			{{-- rijesh ko slider --}}
 			   
-			   <div class='carousel slide' id='featured'>
-				   
+			   <div class='carousel slide' id='featured'>				   
 				    <div class='carousel-inner'>
 						@php $i=1;@endphp
 		               @foreach($carousels as $carousel)
-				        <div class='item active'>
+				        <div class='item @if($i==1) {{' active'}} @endif'>
 				            <img src='{{asset('/image/'.$carousel->img)}}'>
 				        </div>
 				        @php $i++;@endphp
                     @endforeach
-
-				         <a class='left carousel-control' href='#featured' role='button' data-slide='prev'>
-				            <span class='glyphicon glyphicon-chevron-left'></span>
+				        <a class='left carousel-control' href='#featured' role='button' data-slide='prev'>
+				            <i class='fa fa-chevron-left' style=" position: absolute; line-height:50"></i>
 				        </a>
 				        <a class='right carousel-control' href='#featured' role='button' data-slide='next'>
-				            <span class='glyphicon glyphicon-chevron-right'></span>
-				        </a>
+				            <i class='fa fa-chevron-right'></i>
+				        </a>									        		
+				        <div class="container-fluid hidden-sm hidden-xs col-md-12 col-lg-12 row btsld" style="position: absolute; bottom: 0px; margin-right: 0px; margin-left: 0px;">
+							<div class="col-md-7" data-animation="fadeInDown">
+								<h2>PASA: A Friend at Your Service</h2>
+							</div>
+							<div class="col-md-5 right">
+								<a href="/online" class="button-big button-main"><i class="fa fa-envelope"></i>Apply Online</a>
+							</div>
+						</div>
 				    </div>
 				</div>
+				
+				<div class="container-fluid hidden-lg hidden-md  row btsld " style="display: block; margin-right: 0px; margin-left: 0px; 	background-color: rgba(0,0,0,1); padding: 6px;">
+							<div class="pull-left" data-animation="fadeInDown">
+								<h3>PASA: A Friend at Your Service</h2>
+							</div>
+							<div class="pull-right">
+								<a href="/online" class="button-small button-main"><i class="fa fa-envelope"></i>Apply Online</a>
+							</div>
+				</div>
+				
 				
 
 
@@ -379,10 +393,10 @@
 				        	<div class="hidden-lg hidden-md col-sm-12 col-xs-12">
 				        		<h1 class="header h1 white">Current Demands</h1>
 				        		<div class="viewAll-home">
-					                        <a class="btn btn-default" href="/curr_demand" style="margin-top: 30px;">Browse All Requirements</a>
+					                        <a class="btn btn-default" href="/curr_demand" style="margin-top: 3px; ">Browse All Requirements</a>
 					            </div>
 				        	</div>
-				            <div class="col-md-12">
+				            <div class="col-xs-12 col-md-12">
 					            <div class="hidden-sm hidden-xs">
 					                <div class="cell-3 ">
 					                    <h3 class="block-head side-heading" style="margin-top: 20px;">Current </br> <span>Requirements</span></h3>
@@ -394,7 +408,7 @@
 					            </div>
 				                <section class="center slider">
 				                    @foreach($curr_demand_img as $cd_img)
-				                    <div class="col-xs-6 col-md-4">
+				                    <div class="col-xs-12 col-md-4">
 				                        <a href="{{asset('/image/'.$cd_img->img_full)}}" data-lightbox="gallery" data-title="hy"> <img src="{{asset('/image/'.$cd_img->img_thumb)}}"></a>
 				                    </div>
 				                    @endforeach
@@ -514,9 +528,11 @@
 							<section class="clients slider" style="width: 99% !important;">
 			                    @foreach($overseas_client as $oc)
 			                    @if($oc->img!=null && $oc->img!="")
-			                    <div style="margin: 0px 2px !important;" {{-- class="col-xs-6 col-md-6" --}}>
-			                        <a href="{{asset('/image/'.$oc->img)}}" data-lightbox="gallery" data-title="hy"><img src="{{asset('/image/'.$oc->img)}}"></a>
+			                    
+			                    <div style="margin: 0px 2px !important;" >
+			                        <img src="{{asset('/image/'.$oc->img)}}" title="{{$oc->title}}" >
 			                    </div>
+
 			                    @endif
 			                    @endforeach
 				            </section>
@@ -678,16 +694,23 @@
 			      }
 			    },
 			    {
-			      breakpoint: 850,
+			      breakpoint: 995,
 			      settings: {
-			        slidesToShow: 2,
+			        slidesToShow: 4,
 			        slidesToScroll: 1
 			      }
 			    },
 			    {
-			      breakpoint: 560,
+			      breakpoint: 768,
 			      settings: {
-			        slidesToShow: 1,
+			        slidesToShow: 3,
+			        slidesToScroll: 1
+			      }
+			    },
+			    {
+			      breakpoint: 500,
+			      settings: {
+			        slidesToShow: 2,
 			        slidesToScroll: 1
 			      }
 			    }
