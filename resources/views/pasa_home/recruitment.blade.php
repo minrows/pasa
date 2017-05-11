@@ -34,23 +34,38 @@
 
                                 </ul>
                             </div>
-                            <div class="col-xs-12 col-sm-12 hidden-md hidden-lg"> <!-- required for floating -->
+                            <div class="col-xs-12 col-sm-12 hidden-md hidden-lg" style="margin-left:0;margin-right:0; padding-right: 0;padding-left:0;"> <!-- required for floating -->
                                 <!-- Nav tabs -->
-                                <ul class="nav nav-tabs"><!-- 'tabs-right' for right tabs -->
+                                <div class="panel-group" id="accordion">
                                     @php $i=1;@endphp
                                     @foreach($rps as $rp)
-                                        <li class="col-xs-6 col-md-6 @if($sel==$rp->title) {{'active'}} @endif"><a id="about-title" href="#tab_{{$rp->id}}" data-toggle="tab">{{$rp->title}}</a></li>
-                                        @if($i%2==0)
-                                            <div class="clearfix"></div>
-                                        @endif
+
+                                        <div class="panel panel-default">
+
+                                            <div class="panel-heading collapse_header">
+                                                <a data-toggle="collapse" data-parent="#accordion" href="#collapse_{{$rp->id}}"  >
+                                                    <div class="col-xs-12">
+                                                        <h4 style="font-size: 12px; font-weight:bold" align="center" class="panel-title">
+                                                            {{$rp->title}}
+                                                        </h4>
+                                                    </div>
+                                                    <br />
+                                                </a>
+                                            </div>
+
+                                            <div id="collapse_{{$rp->id}}" class="panel-collapse collapse @if($sel==$rp->title) {{'in'}} @endif">
+                                                <div class="panel-body" style="color:#333;">
+                                                    <h2>{{$rp->title}}</h2>
+                                                    <div class="JustifyLeft">{!!html_entity_decode($rp->description)!!}</div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         @php $i++;@endphp
                                     @endforeach
-                                    <br/>
-
-                                </ul>
+                                </div>
                             </div>
 
-                            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                            <div class="hidden-xs hidden-sm col-md-9 col-lg-9">
                                 <!-- Tab panes -->
                                 <br/>
                                 <br/>

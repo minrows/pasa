@@ -183,5 +183,11 @@ jQuery(document).ready(function($){
 
 });
 
+$('.collapse_header').on("click",function(){
+    $(window).scrollTop(0);
+});
+
+
+
 /* MOBILE MENU ENDS
 	========================================================================= */

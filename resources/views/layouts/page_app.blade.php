@@ -96,16 +96,16 @@
 				</div>				
 				<nav id="mobile-navigation" role="navigation">
 					<ul class="menu">
-						<li class="current-menu-item"><a href="#home">Home</a></li>
-							<li class="menu-item-has-children"><a href="#about-us">About Us</a>
+						<li class="current-menu-item"><a href="/#home">Home</a></li>
+							<li class="menu-item-has-children"><a href="/#about-us">About Us</a>
 								{{-- <ul class="sub-menu">
 									<li><a href="#message">Message</a></li>
 									<li><a href="#gallery">Gallery</a></li>
 								</ul> --}}
 							</li>
-						<li><a href="#rp">Recruit Procedures</a></li>
-						<li><a href="#gallery">Gallery</a></li>
-						<li><a href="#cd">Current Demands</a></li>
+						<li><a href="/#rp">Recruit Procedures</a></li>
+						<li><a href="/#gallery">Gallery</a></li>
+						<li><a href="/#cd">Current Demands</a></li>
 						<<li><a href="" data-toggle="modal" data-target="#contacts">Contact Us</a></li>
 					</ul>
 				</nav>
