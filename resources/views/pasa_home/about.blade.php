@@ -30,25 +30,85 @@
                                     @endforeach
                                 </ul>
                             </div>
-                            <div class="col-xs-12 col-sm-12 hidden-md hidden-lg"> <!-- required for floating -->
+                            <div class="col-xs-12 col-sm-12 hidden-md hidden-lg" style="margin-left:0;margin-right:0; padding-right: 0;padding-left:0;"> <!-- required for floating -->
                                 <!-- Nav tabs -->
-                                <ul class="nav nav-tabs"><!-- 'tabs-right' for right tabs -->
-                                    @php $i=1;@endphp
-                                    @foreach($abouts as $about)
-                                        <li class="col-xs-6 col-sm-6 @if($i==1) {{'active'}} @endif"><a id="about-title" href="#tab_{{$about->id}}" data-toggle="tab">{{$about->title}}</a></li>
-                                        @if($i%2==0)
-                                            <div class="clearfix"></div>
-                                        @endif
-                                        @php $i++;@endphp
-                                    @endforeach
+                                <div class="panel-group" id="accordion">
+                                @php $i=1;@endphp
+                                @foreach($abouts as $about)
 
-                                </ul>
-                                <br />
-                                <br />
-                                <br />
-                                <br />
+                                    <div class="panel panel-default">
+
+                                        <div class="panel-heading collapse_header">
+                                            <a data-toggle="collapse" data-parent="#accordion" href="#collapse_{{$about->id}}"  >
+                                            <div class="col-xs-12">
+                                            <h4 style="font-size: 12px; font-weight:bold" align="center" class="panel-title">
+                                                    {{$about->title}}
+                                            </h4>
+                                            </div>
+                                            <br />
+                                            </a>
+                                        </div>
+
+                                        <div id="collapse_{{$about->id}}" class="panel-collapse collapse">
+                                            <div class="panel-body" style="color:#333;">
+                                                <h2>{{$about->title}}</h2>
+                                                <div class="JustifyLeft">{!!html_entity_decode($about->description)!!}</div>
+                                                @if($about->title==="Overseas Clients")
+                                                    @foreach($oc_countries as $oc_country)
+                                                        <div class="oc_country">
+                                                            <h3 style="color: #333;">{{$oc_country->country}}</h3>
+                                                            <div class="row">
+                                                                @php $j=1; @endphp
+                                                                @foreach($overseas_clients as $overseas_client)
+                                                                    @if($overseas_client->country===$oc_country->country)
+                                                                        <div class="oc col-xs-12">
+                                                                            <ul class="list-group">
+                                                                                <li class="list-group-item"><span class="glyphicon glyphicon-envelope"></span>&nbsp;&nbsp;{{$overseas_client->title}}</li>
+                                                                            </ul>
+                                                                        </div>
+                                                                        @php $j++; @endphp
+                                                                    @endif
+                                                                @endforeach
+                                                            </div>
+                                                        </div>
+                                                    @endforeach
+                                                @endif
+                                                @if($about->title==="Corporate Members")
+                                                    @foreach($cfs as $cf)
+                                                        <h3 style="color: #333;">{{$cf->title}}</h3>
+                                                        <p style="color: white !important;">{!!html_entity_decode($cf->description)!!}</p>
+                                                        <div class="row">
+                                                            @foreach($cms as $cm)
+                                                                @if($cf->id==$cm->corporate_field_id)
+                                                                    <div class="col-md-4 col-xs-4">
+                                                                        @if($cm->img!=null && $cm!="")
+                                                                            <div class="thumbnail" style="min-height:60px;">
+                                                                                <img src="{{asset('/image/'.$cm->img)}}">
+                                                                            </div>
+                                                                        @endif
+                                                                        <br>
+                                                                        <div class="center-block" >
+                                                                            <h4 align="center" style="font-size:9px !important; font-weight: bold;">{{$cm->title}}</h4>
+                                                                            @if($cm->location!=null && $cm->location!="" && $cm!=" "  )
+                                                                                <h5 align="center" style="font-size:9px !important">{{$cm->location}}</h5>
+                                                                            @endif
+                                                                        </div>
+                                                                        <br>
+                                                                    </div>
+                                                                @endif
+                                                            @endforeach
+                                                        </div>
+                                                        <hr>
+                                                    @endforeach
+                                                @endif
+                                            </div>
+                                        </div>
+                                    </div>
+                                @php $i++;@endphp
+                                @endforeach
+                                </div>
                             </div>
-                            <div class="col-xs-12 col-sm-12 col-md-9 col-lg-9">
+                            <div class="hidden-xs hidden-sm col-md-9 col-lg-9">
                                 <!-- Tab panes -->
                                 <div class="tab-content">
                                     @php $i=1;@endphp
