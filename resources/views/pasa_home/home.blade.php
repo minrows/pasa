@@ -158,12 +158,36 @@
 				========================================================================= -->
 			<!-- SLIDER STARTS
 				========================================================================= -->
-			<section id="slider-main" class="carousel slide" data-ride="carousel">
-				<div class="carousel-inner">
+			{{-- rijesh ko slider --}}
+			   
+			   <div class='carousel slide' id='featured'>
+				   
+				    <div class='carousel-inner'>
+						@php $i=1;@endphp
+		               @foreach($carousels as $carousel)
+				        <div class='item active'>
+				            <img src='{{asset('/image/'.$carousel->img)}}'>
+				        </div>
+				        @php $i++;@endphp
+                    @endforeach
+
+				         <a class='left carousel-control' href='#featured' role='button' data-slide='prev'>
+				            <span class='glyphicon glyphicon-chevron-left'></span>
+				        </a>
+				        <a class='right carousel-control' href='#featured' role='button' data-slide='next'>
+				            <span class='glyphicon glyphicon-chevron-right'></span>
+				        </a>
+				    </div>
+				</div>
+				
+
+
+			{{-- <section id="slider-main" class="carousel slide" data-ride="carousel" >
+				<div class="carousel-inner" style="position: relative;  ">
                     @php $i=1;@endphp
                     @foreach($carousels as $carousel)
-					<div class="item @if($i==1) {{' active'}} @endif" id="particles-js" style="background-image:url({{asset('/image/'.$carousel->img)}}); ">
-	{{-- 					<div class="carousel-caption slider-item-center slider-item-v-center fx">
+					<div class="item @if($i==1) {{' active'}} @endif" style="background-image:url({{asset('/image/'.$carousel->img)}}); ">
+						<div class="carousel-caption slider-item-center slider-item-v-center fx">
 							<h2 class="fx-start" data-animation="fadeInDown">
 								<span>Welcome to Pasa International</span>
 							</h2>
@@ -173,21 +197,29 @@
 							<a class="btn button-big button-main fx-start" href="/application_form/download" data-animation="fadeInDown"><i class="fa fa-download"></i>Application Form</a>
 							<a class="btn button-big button-main fx-start" href="/recruitment_procedure/download" data-animation="fadeInDown"><i class="fa fa-download"></i>Recruitment Process</a>
 							<!-- <a class="button-big button-dark fx-start black" href="#" data-animation="fadeInDown"><i class="fa fa-file-text-o"></i>Contact Us</a> -->
-						</div> --}}
+						</div>
 					</div>
                         @php $i++;@endphp
                     @endforeach
 				    <a class="slider-main-prev slider-prev" href="#slider-main" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
 				    <a class="slider-main-next slider-next" href="#slider-main" data-slide="next"><i class="fa fa-chevron-right"></i></a>
-                </div>
-            </section>
+	                <div class="container-fluid col-md-12 row" style="position: absolute;  background-color: red; bottom: 0px; margin-right: 0px; margin-left: 0px;">
+						<div class="col-md-7" data-animation="fadeInDown">
+							<h2>PASA: A Friend at Your Service</h2>
+						</div>
+						<div class="col-md-5 right">
+							<a href="/online" class="button-big button-main"><i class="fa fa-envelope"></i>Apply Online</a>
+						</div>
+					</div>
+	            </div>
+            </section> --}}
 			{{-- SLIDER ENDS
 				========================================================================= --}}
 		{{-- 	ICONS STARTS
 				========================================================================= --}}
 			{{-- CTA STARTS
 					========================================================================= --}}
-				<div class="container-fluid spadding cta">
+				{{-- <div class="container-fluid spadding cta">
 					<div class="row">
 						<div class="container">
 							<div class="col-md-7" data-animation="fadeInDown">
@@ -198,7 +230,7 @@
 							</div>
 						</div>
 					</div>
-				</div>
+				</div> --}}
 				<!-- CTA ENDS
 			<!-- ICONS ENDS
 				========================================================================= -->
@@ -481,9 +513,11 @@
 							</div>
 							<section class="clients slider" style="width: 99% !important;">
 			                    @foreach($overseas_client as $oc)
+			                    @if($oc->img!=null && $oc->img!="")
 			                    <div style="margin: 0px 2px !important;" {{-- class="col-xs-6 col-md-6" --}}>
 			                        <a href="{{asset('/image/'.$oc->img)}}" data-lightbox="gallery" data-title="hy"><img src="{{asset('/image/'.$oc->img)}}"></a>
 			                    </div>
+			                    @endif
 			                    @endforeach
 				            </section>
 						</div>
@@ -566,6 +600,16 @@
 	<script type='text/javascript' src="{{asset('js/home_js/app.js')}}"></script>
 	<script type='text/javascript' src="{{asset('js/home_js/scripts.js')}}"></script>
 	<script type='text/javascript' src="{{asset('js/home_js/slick.min.js')}}"></script>
+		{{-- slider js --}}
+		<script type="text/javascript">$(function(){
+		    $('.carousel').carousel({
+		        interval: 3000,
+		        pause: false,
+		        keyboard: false
+		    });
+		});
+		</script>
+
 		{{-- Menu Onclick function  --}}
 		<script type="text/javascript">
 		    $(function() {
