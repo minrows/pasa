@@ -17,22 +17,21 @@
     .panel-widget-style.img {
         background-image: url({{asset('image/'.$chairman->img)}});
     }
-
+    .hidden-md.panel-widget-style.img {
+        margin-top: 600px;
+    }
     .slider {
         width: 80%;
         margin: 50px auto;
     }
-
     .slick-slide {
       margin: 0px 20px;
     }
-
     .slick-slide img {
       width: 100%;
       height: 196px;
       /*padding: 1px;*/
     }
-
     .slick-prev:before,
     .slick-next:before {
         color: black;
@@ -42,9 +41,22 @@
     	width: 180px !important;
     }
 
+.button {
+    color: #fff;
+    background-color: #51bf87;
+    border-bottom: 2px solid #41996c;
+    /*margin: 20px 0px;*/
+    padding: 5px 10px;
+    font-size: 30px;
+    line-height: 1.3333333;
+    margin-bottom:-150px;
+    border-radius: 6px;
+    text-transform: uppercase;
+}
+
+    
 </style>
     <head>
-    	
 		<title>PASA INTERNATIONAL</title>
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 
@@ -156,8 +168,6 @@
 				========================================================================= -->
 			<!-- SLIDER STARTS
 				========================================================================= -->
-			{{-- rijesh ko slider --}}
-			   
 			   <div class='carousel slide' id='featured'>				   
 				    <div class='carousel-inner'>
 						@php $i=1;@endphp
@@ -185,69 +195,14 @@
 				</div>
 				
 				<div class="container-fluid hidden-lg hidden-md  row btsld " style="display: block; margin-right: 0px; margin-left: 0px; 	background-color: rgba(0,0,0,1); padding: 6px;">
-							<div class="pull-left" data-animation="fadeInDown">
-								<h3>PASA: A Friend at Your Service</h2>
-							</div>
-							<div class="pull-right">
-								<a href="/online" class="button-small button-main"><i class="fa fa-envelope"></i>Apply Online</a>
-							</div>
+					<div class="pull-left" data-animation="fadeInDown">
+						<h3>PASA: A Friend at Your Service</h2>
+					</div>
+					<div class="pull-right">
+						<a href="/online" class="button-small button-main"><i class="fa fa-envelope"></i>Apply Online</a>
+					</div>
 				</div>
 				
-				
-
-
-			{{-- <section id="slider-main" class="carousel slide" data-ride="carousel" >
-				<div class="carousel-inner" style="position: relative;  ">
-                    @php $i=1;@endphp
-                    @foreach($carousels as $carousel)
-					<div class="item @if($i==1) {{' active'}} @endif" style="background-image:url({{asset('/image/'.$carousel->img)}}); ">
-						<div class="carousel-caption slider-item-center slider-item-v-center fx">
-							<h2 class="fx-start" data-animation="fadeInDown">
-								<span>Welcome to Pasa International</span>
-							</h2>
-							<p class="fx-start" data-animation="fadeInUp">
-								<span>We started our journey in this business from the year 1998. We are one of the Nepal's best Recruiting Agencies. The number of years of experience and knowledge gives us the confident to say that, "We outsource the best Human Resources".</span>
-							</p>
-							<a class="btn button-big button-main fx-start" href="/application_form/download" data-animation="fadeInDown"><i class="fa fa-download"></i>Application Form</a>
-							<a class="btn button-big button-main fx-start" href="/recruitment_procedure/download" data-animation="fadeInDown"><i class="fa fa-download"></i>Recruitment Process</a>
-							<!-- <a class="button-big button-dark fx-start black" href="#" data-animation="fadeInDown"><i class="fa fa-file-text-o"></i>Contact Us</a> -->
-						</div>
-					</div>
-                        @php $i++;@endphp
-                    @endforeach
-				    <a class="slider-main-prev slider-prev" href="#slider-main" data-slide="prev"><i class="fa fa-chevron-left"></i></a>
-				    <a class="slider-main-next slider-next" href="#slider-main" data-slide="next"><i class="fa fa-chevron-right"></i></a>
-	                <div class="container-fluid col-md-12 row" style="position: absolute;  background-color: red; bottom: 0px; margin-right: 0px; margin-left: 0px;">
-						<div class="col-md-7" data-animation="fadeInDown">
-							<h2>PASA: A Friend at Your Service</h2>
-						</div>
-						<div class="col-md-5 right">
-							<a href="/online" class="button-big button-main"><i class="fa fa-envelope"></i>Apply Online</a>
-						</div>
-					</div>
-	            </div>
-            </section> --}}
-			{{-- SLIDER ENDS
-				========================================================================= --}}
-		{{-- 	ICONS STARTS
-				========================================================================= --}}
-			{{-- CTA STARTS
-					========================================================================= --}}
-				{{-- <div class="container-fluid spadding cta">
-					<div class="row">
-						<div class="container">
-							<div class="col-md-7" data-animation="fadeInDown">
-								<h2>PASA: A Friend at Your Service</h2>
-							</div>
-							<div class="col-md-5 right">
-								<a href="/online" class="button-big button-main"><i class="fa fa-envelope"></i>Apply Online</a>
-							</div>
-						</div>
-					</div>
-				</div> --}}
-				<!-- CTA ENDS
-			<!-- ICONS ENDS
-				========================================================================= -->
 			<div id="content" class="site-content">
 				<!-- INTRO STARTS
 					========================================================================= -->
@@ -270,7 +225,7 @@
 				</div>
 
 				{{-- yeta rakhera heram --}}
-				<div class="icon-wrapper" id="intro">
+			<div class="icon-wrapper" id="intro">
 				<div class="container">
 					<div class="row">
 						<div class="icon triggerone col-xs-6 col-sm-4 col-lg-2">
@@ -369,13 +324,19 @@
 							<div class="row">
 								<div class="col-md-7">
 									<h1 class="header h1 purple">{{$chairman->title}}</h1>
-									<div class="quote-big clearfix">
+									<div class="col-md-5 hidden-lg hidden-md" style="margin-top: -100px; margin-bottom: -50px;">
+										<div class="panel-widget-style img">
+											<div class="text clearfix fx-start" data-animation="fadeInRight"></div>
+										</div>
+									</div>
+									<div class="quote-big clearfix sidebar-box">
 										<blockquote>
 											<p>{!!html_entity_decode($chairman->description)!!}</p>
 										</blockquote>
+										<p class="read-more hidden-lg hidden-md"><a href="#" class="button"><i class="fa fa-angle-double-down"></i></a></p>
 									</div>
 								</div>
-								<div class="col-md-5">
+								<div class="col-md-5 hidden-sm hidden-xs">
 									<div class="panel-widget-style img">
 										<div class="text clearfix fx-start" data-animation="fadeInRight"></div>
 									</div>
@@ -416,7 +377,8 @@
 				            </div>
 				        </div>
 				    </div>
-				</div>				<!-- CURRENT DEMANDS ENDS -->
+				</div>				
+				<!-- CURRENT DEMANDS ENDS -->
 
 				<!-- RECRUITMENT PROCEDURES
 					========================================================================= -->
@@ -451,7 +413,6 @@
 										{{ csrf_field() }}
 										<input type="hidden" value="{{$rp->title}}" id="sel" name="sel" />
 									</form>
-
 								</div>
 							</div>
 		                        @if($i%3==0) <div class="clearfix hidden-sm hidden-xs"></div> @endif 
@@ -517,8 +478,8 @@
 				<div class="container-fluids spadding testimonials" id="clients">
 					<div class="row">
 						<div class="container">
-							<div class="hidden-lg hidden-md col-sm-12 col-xs-12">
-				        		<h1 class="header h1 purple" align="left">Overseas Clients</h1>
+							<div class="hidden-lg hidden-md">
+				        		<h1 class="header h1 pull-left purple" align="left">Overseas Clients</h1>
 				        	</div>
 					        <div class="hidden-sm hidden-xs">
 								<div class="col-md-7 center-block">
@@ -721,6 +682,49 @@
 		      });
 		    });
   		</script>
+  		<script>
+		// DOM Ready
+		$(function() {
+		
+			var $el, $ps, $up, totalHeight;
+	    		
+			$(".sidebar-box .button").click(function() {
+			
+				// IE 7 doesn't even get this far. I didn't feel like dicking with it.
+						
+				totalHeight = 0
+			
+				$el = $(this);
+				$p  = $el.parent();
+				$up = $p.parent();
+				$ps = $up.find("p:not('.read-more')");
+				
+				// measure how tall inside should be by adding together heights of all inside paragraphs (except read-more paragraph)
+				$ps.each(function() {
+					totalHeight += $(this).outerHeight();
+					// FAIL totalHeight += $(this).css("margin-bottom");
+				});
+							
+				$up
+					.css({
+						// Set height to prevent instant jumpdown when max height is removed
+						"height": $up.height(),
+						"max-height": 9999
+					})
+					.animate({
+						"height": totalHeight + 150
+					});
+				
+				// fade out read-more
+				$p.fadeOut();
+				
+				// prevent jump-down
+				return false;
+					
+			});
+		
+		});
+	</script>
 
 
 	{{-- Modal Pop-Up Contact Form --}}

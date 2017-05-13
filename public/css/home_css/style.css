@@ -695,12 +695,26 @@ a {
     top:0px !important;
 	z-index: 9999999999999;
 	width: 100%;
-	/*max-height:80px;*/
+	max-height:70px;
 	-webkit-animation: slideInDown 1s both;
     animation: slideInDown 1s both;
 	background: #FFFFFF;
 }
-
+.menu-class.stickytop #primary-menu{
+	line-height: 15px;
+}
+.menu-class.stickytop .active{
+	max-height:70px;
+}
+.menu-class.stickytop a:hover{
+	max-height:70px;
+}
+#primary-menu>li>a {
+	color: #3C1450 !important;
+	/*height: 120px;*/
+	/*line-height: 50px;*/
+	vertical-align: middle !important;
+}
 
 .menu-class.stickytop img{
  /*width: px;*/
@@ -3385,6 +3399,7 @@ a.label-main:hover,
 	-o-transition: background-color 0.2s linear;
 	transition: background-color 0.2s linear;
 }
+
 #primary-menu{
 	line-height: 30px;
 }
@@ -3677,6 +3692,29 @@ form {
 	}
 }
 @media (max-width: 767px) {
+	/*Faded Readmore*/
+  
+		.sidebar-box {
+			max-height: 310px;
+			position: relative;
+			padding: 20px;
+			overflow: hidden;
+		}
+		.sidebar-box .read-more { 
+			position: absolute; 
+			bottom: 0; left: 0;
+			width: 100%; 
+			text-align: center; 
+			margin: 0; 
+			padding: 30px 20px 10px 20px; 
+			/*background-color: rgba(0,0,0,0.1);*/
+			
+			/* "transparent" only works here because == rgba(0,0,0,0) */ 
+			/*background-image: -moz-linear-gradient(top, transparent, black);*/
+				background-image: -webkit-gradient(linear,left top,left bottom,color-stop(0, transparent),color-stop(1,#f6f6f6));
+		}
+	
+
 	/*.testimonials{
 	text-align: left !important;
 	background: #f6f6f6;
