@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.6.5.2
--- https://www.phpmyadmin.net/
+-- version 4.5.1
+-- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 26, 2017 at 10:33 AM
--- Server version: 5.5.39
--- PHP Version: 7.1.1
+-- Generation Time: May 13, 2017 at 02:35 PM
+-- Server version: 10.1.16-MariaDB
+-- PHP Version: 7.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET time_zone = "+00:00";
@@ -41,7 +41,7 @@ CREATE TABLE `abouts` (
 --
 
 INSERT INTO `abouts` (`id`, `title`, `description`, `img`, `state`, `created_at`, `updated_at`) VALUES
-(1, 'Company Profile', '<p>We started our journey in this business from the year 1998; we are one of the Nepal&#39;s best Recruiting Agencies. The number of years of experience and knowledge gives us the confident to say that, &quot;we outsource the best human resources&quot;. We have been providing expert and unparalleled value added recruitment services to our clients across the world who are looking for professional and smart candidates to excel in their business. We are happy to have satisfied clients with us from a long time and we feel proud and honored to give the best to our precious clients.</p>\r\n\r\n<hr />\r\n<pre>\r\n<div class=\"row hidden-xs hidden-sm\">\r\n<div class=\"col-lg-5 col-md-5\">\r\n<strong>Name :</strong> Pasa International Pvt. Ltd.\r\n<strong>Address :</strong> Kupondole, Lalitpur, Nepal\r\n<strong>Established :</strong> 1998 September 24\r\n<strong>Govt, License No. :</strong> 116/055/056\r\n<strong>Registered No. :</strong> 9222/055/056\r\n<strong>Tel :</strong> +977-1-5554499, 55539331, 5553380, 5553342\r\n<strong>Fax :</strong> +977-1-5538440\r\n<strong>Email :</strong> <a href=\"mailto:pimt@pasainternational.com.np\" target=\"_blank\">pimt@pasainternational.com.np</a>\r\n      : <a href=\"mailto:pimt@pasa.wlink.com.np\" target=\"_blank\">pimt@pasa.wlink.com.np</a>\r\n<strong>Website :</strong> <a href=\"http://www.pasainternational.com.np/\" target=\"_blank\">http://www.pasainternational.com.np</a>\r\n</div>\r\n\r\n<div class=\"col-lg-6 col-md-6\">\r\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7065.947025855255!2d85.31182412935517!3d27.687213511414598!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdbfb56d2f462c0c9!2sPASA+INTERNATIONAL+PVT.+LTD!5e0!3m2!1sen!2snp!4v1491990754177\" width=\"600\" height=\"250\" frameborder=\"0\" style=\"border:0; margin-top:-50px\" allowfullscreen></iframe>\r\n</div>\r\n</div>\r\n\r\n<div class=\"row hidden-lg hidden-md\">\r\n<div class=\"col-sm-12 col-xs-12\">\r\n<strong>Name :</strong> Pasa International Pvt. Ltd.\r\n<strong>Address :</strong> Kupondole, Lalitpur, Nepal\r\n<strong>Established :</strong> 1998 September 24\r\n<strong>Govt, License No. :</strong> 116/055/056\r\n<strong>Registered No. :</strong> 9222/055/056\r\n<strong>Tel :</strong> +977-1-5554499, 55539331, 5553380, 5553342\r\n<strong>Fax :</strong> +977-1-5538440\r\n<strong>Email :</strong> <a href=\"mailto:pimt@pasainternational.com.np\" target=\"_blank\">pimt@pasainternational.com.np</a>\r\n      : <a href=\"mailto:pimt@pasa.wlink.com.np\" target=\"_blank\">pimt@pasa.wlink.com.np</a>\r\n<strong>Website :</strong> <a href=\"http://www.pasainternational.com.np/\" target=\"_blank\">http://www.pasainternational.com.np</a>\r\n</div>\r\n\r\n<div class=\"col-sm-12 col-xs-12\">\r\n<iframe src=\"https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7065.947025855255!2d85.31182412935517!3d27.687213511414598!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdbfb56d2f462c0c9!2sPASA+INTERNATIONAL+PVT.+LTD!5e0!3m2!1sen!2snp!4v1491990754177\" width=\"400\" height=\"250\" frameborder=\"0\" style=\"border:0\" allowfullscreen></iframe>\r\n</div>\r\n</div>\r\n</pre>', NULL, 'on', '2017-04-20 18:15:00', '2017-04-20 18:15:00'),
+(1, 'Company Profile', '<p>We started our journey in this business from the year 1998; we are one of the Nepal&#39;s best Recruiting Agencies. The number of years of experience and knowledge gives us the confident to say that, &quot;we outsource the best human resources&quot;. We have been providing expert and unparalleled value added recruitment services to our clients across the world who are looking for professional and smart candidates to excel in their business. We are happy to have satisfied clients with us from a long time and we feel proud and honored to give the best to our precious clients.</p>\r\n\r\n<hr />\r\n<pre>\r\n<div class="row hidden-xs hidden-sm">\r\n<div class="col-lg-5 col-md-5">\r\n<strong>Name :</strong> Pasa International Pvt. Ltd.\r\n<strong>Address :</strong> Kupondole, Lalitpur, Nepal\r\n<strong>Established :</strong> 1998 September 24\r\n<strong>Govt, License No. :</strong> 116/055/056\r\n<strong>Registered No. :</strong> 9222/055/056\r\n<strong>Tel :</strong> +977-1-5554499, 55539331, 5553380, 5553342\r\n<strong>Fax :</strong> +977-1-5538440\r\n<strong>Email :</strong> <a href="mailto:pimt@pasainternational.com.np" target="_blank">pimt@pasainternational.com.np</a>\r\n      : <a href="mailto:pimt@pasa.wlink.com.np" target="_blank">pimt@pasa.wlink.com.np</a>\r\n<strong>Website :</strong> <a href="http://www.pasainternational.com.np/" target="_blank">http://www.pasainternational.com.np</a>\r\n</div>\r\n\r\n<div class="col-lg-6 col-md-6">\r\n<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7065.947025855255!2d85.31182412935517!3d27.687213511414598!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdbfb56d2f462c0c9!2sPASA+INTERNATIONAL+PVT.+LTD!5e0!3m2!1sen!2snp!4v1491990754177" width="600" height="250" frameborder="0" style="border:0; margin-top:-50px" allowfullscreen></iframe>\r\n</div>\r\n</div>\r\n\r\n<div class="row hidden-lg hidden-md">\r\n<div class="col-sm-12 col-xs-12">\r\n<strong>Name :</strong> Pasa International Pvt. Ltd.\r\n<strong>Address :</strong> Kupondole, Lalitpur, Nepal\r\n<strong>Established :</strong> 1998 September 24\r\n<strong>Govt, License No. :</strong> 116/055/056\r\n<strong>Registered No. :</strong> 9222/055/056\r\n<strong>Tel :</strong> +977-1-5554499, 55539331, 5553380, 5553342\r\n<strong>Fax :</strong> +977-1-5538440\r\n<strong>Email :</strong> <a href="mailto:pimt@pasainternational.com.np" target="_blank">pimt@pasainternational.com.np</a>\r\n      : <a href="mailto:pimt@pasa.wlink.com.np" target="_blank">pimt@pasa.wlink.com.np</a>\r\n<strong>Website :</strong> <a href="http://www.pasainternational.com.np/" target="_blank">http://www.pasainternational.com.np</a>\r\n</div>\r\n\r\n<div class="col-sm-12 col-xs-12">\r\n<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d7065.947025855255!2d85.31182412935517!3d27.687213511414598!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xdbfb56d2f462c0c9!2sPASA+INTERNATIONAL+PVT.+LTD!5e0!3m2!1sen!2snp!4v1491990754177" width="400" height="250" frameborder="0" style="border:0" allowfullscreen></iframe>\r\n</div>\r\n</div>\r\n</pre>', NULL, 'on', '2017-04-20 18:15:00', '2017-04-20 18:15:00'),
 (2, 'Pasa Culture', '<p>During the past decades, we have developed our core foundation with the granular level of engineering approach in our system. Each and every nooks of our customized process is purely driven by the changing customer demands and the newer technological tools. The approach of system re-engineering is ever going process. Where the past activities information has been collected and their microscopic study are the key elements for our business strength.<br />\r\n<br />\r\nOur Client&#39;s and Candidate&#39;s satisfaction is our first preference, as per their needs and requirements. We are quick in response to the concerns and demands of our clients and act wisely on the requirements to fulfill the need which is the ethics of our recruitment process. We place the right candidates to get the right jobs for positive outcome.<br />\r\n<br />\r\nOur aim is directed by the value driven culture of our organization that adds value in our each services that contrast us among other competitors. Because we believe in serving the best to our clients requirements and finding best possible human resources for them from wide range of selections.<br />\r\n<br />\r\nWith the bricks of acknowledged faith in our potential and services, we have laid down the foundation for uncompromising quality in everything we deliver and have built a company where there is a promising bright future for everyone.</p>', NULL, 'on', '2017-04-20 18:15:00', '2017-04-20 18:15:00'),
 (3, 'Message from Chairman', '<p><em>Warm Greetings!</em><br />\r\n<br />\r\nI am glad to introduce our company&nbsp;PASA International Pvt. Ltd.&nbsp;We are one of the successful workforce agency of Nepal. The company has begun its operation more than a decade ago with the mission to reach the excellence of professionalism such as expertise, Integrity and Moral Values in human resources Globally. This working culture of PASA is based on bringing two key elements, resources and opportunities. With the numerous studies and research works, Pasa always comes forward as opportunities to those who really want to work hard in order to secure their future. Similarly, it has served as a reliable source for those organizations who need quality human resources. As a good catalyst, the company has been able to put its best possible effort on making a synergetic result to combine the listed two elements. Those results have been recognized as a business rewards for our success.</p>\r\n\r\n<p>The company always believes in corporate solutions. Therefore to broaden its scope, it has been associated with different organization like Vocational training Institutes, Travel Agencies, Community Development Organizations etc. For the continuous research and development of its business process, we are keen on collection of information and regular feedbacks from our concerned bodies. Thank you for your precious time, we are looking forward to hear from you.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Devendra N. Shrestha</strong><br />\r\nChairman&nbsp;</p>', 'about/rgzGuXN9DP24jEi5k0N2hYEj3J3X15b6GPrPP8t4.jpeg', 'on', '2017-04-20 18:15:00', '2017-04-20 18:15:00'),
 (4, 'Message from CEO', '<p>I am honored to introduce myself as the CEO of&nbsp;PASA International Pvt Ltd.&nbsp;We have walked a long way to reach the success with our efficient, dedicated, hardworking and responsible team with us.</p>\r\n\r\n<p>We always believe in client satisfaction, we don&rsquo;t just supply workforce but we believe in providing the best of the candidates with required filtration process. So that our valuable clients business shall run profitable and successful for a long run.</p>\r\n\r\n<p>Our joint efforts and sense of responsibility has given us an opportunity to be in this business successfully since a long period. We have friendly, professional and healthy working environment which give us zeal and boosts us to excel in providing the best of all.</p>\r\n\r\n<p>Our aim is to be the Nepal&#39;s No. 1 foreign recruitment agency in terms of quality services along with long term relationship with our valued clients.</p>\r\n\r\n<p>Thank you for your valuable time.</p>\r\n\r\n<p>&nbsp;</p>\r\n\r\n<p><strong>Binod Purush Neupane</strong><br />\r\nCEO&nbsp;</p>', NULL, 'on', '2017-04-20 18:15:00', '2017-04-20 18:15:00'),
@@ -110,11 +110,25 @@ CREATE TABLE `contacts` (
 
 CREATE TABLE `corporate_fields` (
   `id` int(10) UNSIGNED NOT NULL,
-  `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `title` varchar(150) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `description` text COLLATE utf8mb4_unicode_ci NOT NULL,
+  `state` enum('on','off') COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `corporate_fields`
+--
+
+INSERT INTO `corporate_fields` (`id`, `title`, `description`, `state`, `created_at`, `updated_at`) VALUES
+(1, 'Local Construction Companies', '<p>Construction companies in our process of recruitment deals with the onsite trade tests as well as one of the source of collection of potential skilled workers. The following are the companies those are currently existed in our association:</p>', 'on', '2017-05-09 00:15:32', '2017-05-09 00:15:32'),
+(2, 'Technical institutes (Welder, Plumber, Mason, Electrician, Scaffolders, Carpenters etc.)', '<p>These are the vocational training centres where the candidates are being tested and provided necessary trainings on their respective fields.</p>', 'on', '2017-05-09 00:16:28', '2017-05-09 00:16:28'),
+(3, 'Computer Institutes', '<p>Computer institutes are one of the associated partners which works on the field of generating administrative staffs with IT skills ranging from basic to advanced level.</p>', 'on', '2017-05-09 00:17:02', '2017-05-09 00:17:02'),
+(4, 'Electro Mechanical Engineering Centres', '<p>Likewise of Technical institutes the organization is dedicated in electro mechanical engineering fields to produce skills on the mentioned subject.&nbsp;<br />\r\n&nbsp;</p>', 'off', '2017-05-09 00:17:19', '2017-05-09 00:34:13'),
+(5, 'Medical Centres', '<p>The medical centres provide services on detail health examinations of the candidates whether they are medically fit or not as per the required job in demands.</p>', 'on', '2017-05-09 00:17:38', '2017-05-09 00:17:38'),
+(6, 'Ticketing and Travel Agencies', '<p>Ticketing and Travel Agencies looks after on providing best alternatives of air routes and the corresponding tickets to fly candidates in their corresponding destinations.</p>', 'on', '2017-05-09 00:17:57', '2017-05-09 00:17:57'),
+(7, 'Community Based Organizations', '<p>These are the rural based organizations which have been in the programme of skill exchange. These organizations are also the source of candidates.&nbsp;<br />\r\n&nbsp;</p>', 'on', '2017-05-09 00:18:24', '2017-05-09 00:18:24');
 
 -- --------------------------------------------------------
 
@@ -132,6 +146,22 @@ CREATE TABLE `corporate_members` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `corporate_members`
+--
+
+INSERT INTO `corporate_members` (`corporate_field_id`, `id`, `title`, `location`, `img`, `state`, `created_at`, `updated_at`) VALUES
+(1, 1, 'Atal Builders', 'Chakupat, Lalitpur, Nepal', 'corporate_member/o8NImnqIdh7CvWknkKSwS1qOfSbn28jUUdrM2UbU.png', 'on', '2017-05-09 00:26:36', '2017-05-09 00:26:36'),
+(1, 2, 'Sura Constructions', 'Nakabahil, Lalitpur, Nepal', 'corporate_member/mlHzaZDdPLHCvBGvJzS2jOpFz1BUAkUyx1qc6Mb2.gif', 'on', '2017-05-09 00:28:55', '2017-05-09 00:28:55'),
+(1, 3, 'Sea Links Travels and Tours P. Ltd.', 'Kamaladi, Kathmandu, Nepal', 'corporate_member/oyhOqYIBBVdUEuJkjVAc3Je65lPlRwk5vbcmlzGE.gif', 'on', '2017-05-09 01:21:28', '2017-05-09 01:21:28'),
+(2, 1, 'South Asian School of Technology', 'Kalanki, Kathmandu, Nepal', 'corporate_member/4xrSGjAMxoHFJuj8u5uBL2YQBSBdUnV5DwZlIKiY.gif', 'on', '2017-05-09 00:29:48', '2017-05-09 00:29:48'),
+(3, 1, 'Seven Educational Consultancy', NULL, 'corporate_member/ABZdvT4bDav12mka92r92ZqOTprmmLVe0jHYORhb.png', 'on', '2017-05-09 00:33:27', '2017-05-09 00:33:27'),
+(5, 1, 'J.M. Medical Center', NULL, 'corporate_member/FwL0Jlga7uf8a4Vm64E0ArGwssYZjAfPY65mMY5B.gif', 'on', '2017-05-09 01:18:51', '2017-05-09 01:18:51'),
+(5, 2, 'Purnima Medical & Research Centre', NULL, 'corporate_member/aqzWlqs3R9vCQK75YU0OxzgkqMz82NmXZkeyo1Zv.gif', 'on', '2017-05-09 01:19:48', '2017-05-09 01:19:48'),
+(5, 3, 'Universal Diagnostic Center', NULL, 'corporate_member/C1jTUL64lPq2lN020RaFxGo8beCHNb4fFZIw5jpS.gif', 'on', '2017-05-09 01:20:25', '2017-05-09 01:20:25'),
+(6, 1, 'Air Arabia', 'Nepal', 'corporate_member/E9PS9oAkSoc3Ifgyxg3KYRMeBboAkDyGVYBJjUFy.gif', 'on', '2017-05-09 01:20:57', '2017-05-09 01:20:57'),
+(7, 1, 'Small Farmers Cooperatives Ltd.', 'Nepal', 'corporate_member/VNrPgyYjrTzuNDUD7V99dejj1iGDby3FKsy9faMY.gif', 'on', '2017-05-09 01:21:58', '2017-05-09 01:21:58');
 
 -- --------------------------------------------------------
 
@@ -165,6 +195,20 @@ CREATE TABLE `curr_demand_imgs` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `curr_demand_imgs`
+--
+
+INSERT INTO `curr_demand_imgs` (`id`, `img_thumb`, `img_full`, `state`, `created_at`, `updated_at`) VALUES
+(1, 'current_demand/J3m02diadZ5Sw8iMjgf0nd0LmlqXANIwRiqUgzm5.jpeg', 'current_demand/J3m02diadZ5Sw8iMjgf0nd0LmlqXANIwRiqUgzm5.jpeg', 'on', '2017-04-27 01:55:06', '2017-04-27 01:55:06'),
+(2, 'current_demand/ofaJUGOzjjvoPQebLvCABzgsxSmB4GkgcWoTa793.jpeg', 'current_demand/ofaJUGOzjjvoPQebLvCABzgsxSmB4GkgcWoTa793.jpeg', 'on', '2017-04-27 01:55:14', '2017-04-27 01:55:14'),
+(3, 'current_demand/udBHN0wGDoPvRRa4CP7gMQb52PkDYQN9yDHfbjSr.jpeg', 'current_demand/udBHN0wGDoPvRRa4CP7gMQb52PkDYQN9yDHfbjSr.jpeg', 'on', '2017-04-27 01:55:22', '2017-04-27 01:55:22'),
+(4, 'current_demand/PfbBZmL3pa4oYUDvjsY91RNAnIJPG3uUV1Ngq05C.jpeg', 'current_demand/PfbBZmL3pa4oYUDvjsY91RNAnIJPG3uUV1Ngq05C.jpeg', 'on', '2017-04-27 01:55:34', '2017-04-27 01:55:34'),
+(5, 'current_demand/MjCaKdm6xxw7bNopkbice3ilVt5i0Y73fh3ZvbWo.jpeg', 'current_demand/MjCaKdm6xxw7bNopkbice3ilVt5i0Y73fh3ZvbWo.jpeg', 'on', '2017-04-27 01:55:58', '2017-04-27 01:55:58'),
+(6, 'current_demand/ZK70Xpfkdb0C4IhHv2bxFt2Kfw0M0be1GHBqd97x.jpeg', 'current_demand/ZK70Xpfkdb0C4IhHv2bxFt2Kfw0M0be1GHBqd97x.jpeg', 'on', '2017-04-28 04:11:16', '2017-04-28 04:11:16'),
+(7, 'current_demand/5UHidJEKjfrU295n2MO7mNjOf0rgzsQyRifAVbH3.jpeg', 'current_demand/5UHidJEKjfrU295n2MO7mNjOf0rgzsQyRifAVbH3.jpeg', 'on', '2017-04-28 04:11:28', '2017-04-28 04:11:28'),
+(8, 'current_demand/lcUmqIzb8CtyBZsM4hWNvxcurFxkkv6ckRlpZDAT.jpeg', 'current_demand/lcUmqIzb8CtyBZsM4hWNvxcurFxkkv6ckRlpZDAT.jpeg', 'on', '2017-04-28 04:11:49', '2017-04-28 04:11:49');
+
 -- --------------------------------------------------------
 
 --
@@ -193,7 +237,8 @@ INSERT INTO `feedback` (`id`, `name`, `email`, `phn_no`, `message`, `created_at`
 (5, 'c', 'c@gmail.com', 'c', 'c', '2017-04-26 02:10:07', '2017-04-26 02:10:07'),
 (6, 'c', 'c@gmail.com', 'c', 'c', '2017-04-26 02:10:26', '2017-04-26 02:10:26'),
 (7, 'a', 'a@gmail.com', '5', 'a', '2017-04-26 02:25:12', '2017-04-26 02:25:12'),
-(8, 'b', 'b@gmail.com', '123', 'asdf', '2017-04-26 02:27:14', '2017-04-26 02:27:14');
+(8, 'b', 'b@gmail.com', '123', 'asdf', '2017-04-26 02:27:14', '2017-04-26 02:27:14'),
+(9, 'kfjaslkdflk', 'klaksdfkjasdf@lfkasd.com', '5345345345345', 'hello pal', '2017-04-26 02:56:31', '2017-04-26 02:56:31');
 
 -- --------------------------------------------------------
 
@@ -210,6 +255,26 @@ CREATE TABLE `galleries` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
+
+--
+-- Dumping data for table `galleries`
+--
+
+INSERT INTO `galleries` (`id`, `title`, `img_thumb`, `img_full`, `state`, `created_at`, `updated_at`) VALUES
+(1, ' ', 'gallery/1asEfFbagWAUHdRz4d8c7RBHfJDN8R5etOr3C1gB.jpeg', 'gallery/1asEfFbagWAUHdRz4d8c7RBHfJDN8R5etOr3C1gB.jpeg', 'on', '2017-04-28 01:38:22', '2017-04-28 01:38:22'),
+(2, ' ', 'gallery/nfgmWg2DGrUcnKb5ZXinu7AZQFpsmdP0mZsOTCCj.jpeg', 'gallery/nfgmWg2DGrUcnKb5ZXinu7AZQFpsmdP0mZsOTCCj.jpeg', 'on', '2017-04-28 01:38:22', '2017-04-28 01:38:22'),
+(3, ' ', 'gallery/ziilzaWLBMvUEyPRwQI23dps8EK03GhONTcngAFz.jpeg', 'gallery/ziilzaWLBMvUEyPRwQI23dps8EK03GhONTcngAFz.jpeg', 'on', '2017-04-28 01:38:22', '2017-04-28 01:38:22'),
+(4, ' ', 'gallery/3q8mEYnwX2ZM4ORw1pwYE1zAB4GR1tamJCXrdTCd.jpeg', 'gallery/3q8mEYnwX2ZM4ORw1pwYE1zAB4GR1tamJCXrdTCd.jpeg', 'on', '2017-04-28 01:38:22', '2017-04-28 01:38:22'),
+(5, ' ', 'gallery/vCqlSBcIX0VR976hS7UT0F8MmUUbJcO2CrZFm9yp.jpeg', 'gallery/vCqlSBcIX0VR976hS7UT0F8MmUUbJcO2CrZFm9yp.jpeg', 'on', '2017-04-28 01:38:22', '2017-04-28 01:38:22'),
+(6, ' ', 'gallery/tIYwWsig4J2PL4NQIz44bnhbgydt2MFmi1hM3DGu.jpeg', 'gallery/tIYwWsig4J2PL4NQIz44bnhbgydt2MFmi1hM3DGu.jpeg', 'on', '2017-04-28 01:38:22', '2017-04-28 01:38:22'),
+(7, ' ', 'gallery/M3EbReydAQiawvD2qE8VvkteQVgMLhf7eG9YY2DX.jpeg', 'gallery/M3EbReydAQiawvD2qE8VvkteQVgMLhf7eG9YY2DX.jpeg', 'on', '2017-04-28 01:38:22', '2017-04-28 01:38:22'),
+(8, ' ', 'gallery/e3LQjF7td0SlnNpt6fPuH8CrBZDT4xe2cIg7eQcI.jpeg', 'gallery/e3LQjF7td0SlnNpt6fPuH8CrBZDT4xe2cIg7eQcI.jpeg', 'on', '2017-04-28 01:38:49', '2017-04-28 01:38:49'),
+(9, ' ', 'gallery/a3RQztqDgCZr51zVuqVL0OEPJOg2LGV3j7w8nJa3.jpeg', 'gallery/a3RQztqDgCZr51zVuqVL0OEPJOg2LGV3j7w8nJa3.jpeg', 'on', '2017-04-28 01:38:50', '2017-04-28 01:38:50'),
+(10, ' ', 'gallery/ANX6SAmB2vwforuSKCZTgXwL5T6BrW1davZsLISt.jpeg', 'gallery/ANX6SAmB2vwforuSKCZTgXwL5T6BrW1davZsLISt.jpeg', 'on', '2017-04-28 01:38:50', '2017-04-28 01:38:50'),
+(11, ' ', 'gallery/jGRQ5YRgIBr75v5QeCDzde8SmTOw9ZTRgfNISy2S.jpeg', 'gallery/jGRQ5YRgIBr75v5QeCDzde8SmTOw9ZTRgfNISy2S.jpeg', 'on', '2017-04-28 01:38:50', '2017-04-28 01:38:50'),
+(12, ' ', 'gallery/uAc4faow0u932B6yZXKfXRNds1q6WHBYUN4JWbTG.jpeg', 'gallery/uAc4faow0u932B6yZXKfXRNds1q6WHBYUN4JWbTG.jpeg', 'on', '2017-04-28 01:38:50', '2017-04-28 01:38:50'),
+(13, ' ', 'gallery/ZVhyM9ZQAGwt4BTIHMQXKnRkUIUPebDbTRkuytcD.jpeg', 'gallery/ZVhyM9ZQAGwt4BTIHMQXKnRkUIUPebDbTRkuytcD.jpeg', 'on', '2017-04-28 01:38:50', '2017-04-28 01:38:50'),
+(14, ' ', 'gallery/rEHLom3Qstmd5skihHPEV7f2PBymBPA0S7PFvOBL.jpeg', 'gallery/rEHLom3Qstmd5skihHPEV7f2PBymBPA0S7PFvOBL.jpeg', 'on', '2017-04-28 01:38:50', '2017-04-28 01:38:50');
 
 -- --------------------------------------------------------
 
@@ -323,11 +388,56 @@ CREATE TABLE `overseas_clients` (
   `id` int(10) UNSIGNED NOT NULL,
   `title` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
   `country` varchar(50) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `img` varchar(100) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `img` varchar(100) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `state` enum('on','off') COLLATE utf8mb4_unicode_ci NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `overseas_clients`
+--
+
+INSERT INTO `overseas_clients` (`id`, `title`, `country`, `img`, `state`, `created_at`, `updated_at`) VALUES
+(10, 'Ansar Gallery', 'Baharain', 'overseas_client/usTCQzWwFgBrnr61oxkzs0AiHCQwAl6sWFg5mvUe.jpeg', 'on', '2017-05-02 00:53:28', '2017-05-09 04:11:30'),
+(11, 'Power Point Electrical & Mechanical Works L.L.C.', 'UAE', 'overseas_client/vVhLLTPqgXuFD2sB1FUOYj4UuQOkp8j7ceQdbmTm.jpeg', 'on', '2017-05-02 00:53:54', '2017-05-09 04:17:05'),
+(12, 'Abu Dhabi Coating Enterprises W.L.L.', 'UAE', 'overseas_client/TZwXfyzg7YNC7QVcmWkRONdQSlcc9uPXJoJ9qEaw.jpeg', 'on', '2017-05-02 00:54:21', '2017-05-09 04:15:44'),
+(13, 'Can Gulf Technologies LLC', 'UAE', 'overseas_client/3Swzm55jUEGePrcf9Ev9nalplNMAIMfwsJfUwwgC.jpeg', 'on', '2017-05-02 00:54:38', '2017-05-09 04:15:57'),
+(14, 'Emirates Leisure Retail', 'UAE', 'overseas_client/8K8o3wBB0NOiMoUAF3Ihn4b4MInvd9OVv0zIuwyq.jpeg', 'on', '2017-05-02 00:54:57', '2017-05-09 04:16:37'),
+(15, 'Gyathi Construction LLC', 'UAE', 'overseas_client/a91LDgJ57y0sqCP5P1UHMVS2pFFQgThv11sq5peB.png', 'on', '2017-05-02 00:55:18', '2017-05-09 04:16:49'),
+(17, 'DOHA CITY', 'Qatar', 'overseas_client/dwpziD4PKfroMbDfPu4HeeBZhA8B9JYIzaGy4um3.png', 'on', '2017-05-02 00:56:08', '2017-05-09 04:15:14'),
+(18, 'ANSAR CITY', 'Qatar', 'overseas_client/6BpPbws7dHlsY4kQiWPgMNPwi9lUaVn1KOc4xYMT.png', 'on', '2017-05-02 00:56:26', '2017-05-09 04:11:44'),
+(19, 'NEW WORLD COMPANY', 'Qatar', 'overseas_client/ITKOSxU7p2W4Q29bCh0d2pJ7vlzJHwVKCEspyuIn.jpeg', 'on', '2017-05-02 00:56:53', '2017-05-09 04:15:31'),
+(20, 'Ansar Gallery', 'Qatar', 'overseas_client/bOhoFayzxOOPGmMIvBhG0heB83kJtRWn3PfFJVWg.jpeg', 'on', '2017-05-09 23:18:15', '2017-05-09 23:18:15'),
+(21, 'Ansar Gallery Center', 'Qatar', NULL, 'on', '2017-05-09 23:20:16', '2017-05-09 23:20:16'),
+(22, 'Ansar Real Estate Investment', 'Qatar', NULL, 'on', '2017-05-09 23:21:59', '2017-05-09 23:21:59'),
+(23, 'Impex Marketing & Distribution Co.', 'Qatar', NULL, 'on', '2017-05-09 23:22:43', '2017-05-09 23:22:43'),
+(24, 'Workshop New World Centre', 'Qatar', NULL, 'on', '2017-05-09 23:23:14', '2017-05-09 23:23:14'),
+(25, 'Al-Ansari Novelty', 'Qatar', NULL, 'on', '2017-05-09 23:23:39', '2017-05-09 23:23:39'),
+(26, 'New World Center', 'Qatar', 'overseas_client/Y1R0iREtM9fxmZGbokyfRcaGbVTePTcWZKDnLkj4.jpeg', 'on', '2017-05-09 23:24:22', '2017-05-09 23:24:22'),
+(27, 'Al Meera Holding Company L.L.C', 'Qatar', NULL, 'on', '2017-05-09 23:25:21', '2017-05-09 23:25:21'),
+(28, 'Al Meera Supermarkets Company S.P.C.', 'Qatar', NULL, 'on', '2017-05-09 23:25:52', '2017-05-09 23:25:52'),
+(29, 'Al Meera Development Company L.L.C.', 'Qatar', NULL, 'on', '2017-05-09 23:26:18', '2017-05-09 23:26:18'),
+(30, 'Qatar Market Company W.L.L.', 'Qatar', NULL, 'on', '2017-05-09 23:26:37', '2017-05-09 23:26:37'),
+(31, 'Al Meera Bookstore S.P.C', 'Qatar', NULL, 'on', '2017-05-09 23:27:06', '2017-05-09 23:27:06'),
+(32, 'Al Oumara Bakeries Company W.L.L', 'Qatar', 'overseas_client/Lonb5AFiejHFIbFXEfsCJelR5MccheUvskSUy6B8.jpeg', 'on', '2017-05-09 23:27:30', '2017-05-09 23:27:30'),
+(33, 'Al Meera Consumer Goods Company Q.S.C.', 'Qatar', 'overseas_client/OxRkWVF2lC6V6f2D3IsiwnoHTPqKHA39qxto75Qk.jpeg', 'on', '2017-05-09 23:28:20', '2017-05-09 23:28:20'),
+(34, 'Abdul Wahed Al-Ghanem Est. Decoration Br.', 'K.S.A', NULL, 'on', '2017-05-09 23:29:30', '2017-05-09 23:29:30'),
+(35, 'Abdullah A. Al-Rashid Con''t. Est.', 'K.S.A', NULL, 'on', '2017-05-09 23:29:52', '2017-05-09 23:29:52'),
+(36, 'Al-Ayuni Investment & Contracting Co.', 'K.S.A', 'overseas_client/6VEda57WSYKBL17tCAdDfuDzJrrEH5l738XcYUJd.png', 'on', '2017-05-09 23:30:09', '2017-05-09 23:30:09'),
+(37, 'Al Jazeera Factory for Paints Co.', 'K.S.A', 'overseas_client/ucwrOpaxZCS5VqxVDZWGl6s1GK8d24ES4JFQCxkB.png', 'on', '2017-05-09 23:30:38', '2017-05-09 23:30:38'),
+(38, 'Al-Shallal Center', 'K.S.A', NULL, 'on', '2017-05-09 23:31:04', '2017-05-09 23:31:04'),
+(39, 'Beauty of House Wares & Gifts', 'K.S.A', NULL, 'on', '2017-05-09 23:31:25', '2017-05-09 23:31:25'),
+(40, 'Heet Est. for Industry', 'K.S.A', NULL, 'on', '2017-05-09 23:31:50', '2017-05-09 23:31:50'),
+(41, 'Industrial Machinery Est.', 'K.S.A', NULL, 'on', '2017-05-09 23:32:10', '2017-05-09 23:32:10'),
+(42, 'Hayder M.S. Al-Jarash Contracting Est.', 'K.S.A', NULL, 'on', '2017-05-09 23:32:43', '2017-05-09 23:32:43'),
+(43, 'Al Mukadam Building Cleaning & Security LLC', 'U.A.E', NULL, 'on', '2017-05-09 23:34:10', '2017-05-09 23:34:10'),
+(44, 'International Market Group (For General Services)', 'U.A.E', 'overseas_client/L1AJ7ikhe6zpKgqsznafdMHF2rRoRu4wwZRrSk1U.jpeg', 'on', '2017-05-09 23:34:27', '2017-05-09 23:34:27'),
+(45, 'Lu Lu Hypermarket', 'U.A.E', 'overseas_client/xsqcAGjOiEG2nzOqv8JMw6Zu4aetagMopoyD1AtY.png', 'on', '2017-05-09 23:34:42', '2017-05-09 23:34:42'),
+(46, 'Marhaba Services', 'U.A.E', 'overseas_client/ZZUh1bbxjmHh5IcmkRVBUNtzo1lpX5M8s1qKyTDB.png', 'on', '2017-05-09 23:34:56', '2017-05-09 23:34:56'),
+(47, 'National Catering Company L.L.C.', 'U.A.E', 'overseas_client/9UwMSPTevQfFZY1vBTtkVsbikXbjb4tQatpmr5VJ.jpeg', 'on', '2017-05-09 23:35:11', '2017-05-09 23:35:11'),
+(48, 'Taisei Corporation', 'U.A.E', 'overseas_client/jre8PxE3wWrnSBP8aPxYNAkybf1jo52bBAP4DD6s.jpeg', 'on', '2017-05-09 23:35:26', '2017-05-09 23:35:26'),
+(49, 'Tarfana Services L.L.C.', 'U.A.E', 'overseas_client/T0sd1h38V2QvOWEHzLlgpfAAEGi3vuqd77MX6gcd.jpeg', 'on', '2017-05-09 23:35:40', '2017-05-09 23:35:40');
 
 -- --------------------------------------------------------
 
@@ -349,7 +459,9 @@ CREATE TABLE `pasa_carousels` (
 --
 
 INSERT INTO `pasa_carousels` (`id`, `title`, `img`, `state`, `created_at`, `updated_at`) VALUES
-(1, 'Pasa Team', 'carousel/kwfhoOMibSrbHJoqfYwbxC1Gu74AanJxVrhCLWst.jpeg', 'on', '2017-04-20 18:15:00', '2017-04-20 18:15:00');
+(4, 'kjfasfklasdf', 'carousel/1XbpG6hQKZJRJbAcZ5T97gs1ytVV2iaPSzC3BZxX.jpeg', 'on', '2017-05-10 01:24:04', '2017-05-10 01:24:04'),
+(5, 'fasdfasdf', 'carousel/qOgx8uEqNwgE4CYWM98BddKpXTDEGp9wkOlZMhJs.jpeg', 'on', '2017-05-10 01:24:24', '2017-05-10 01:24:24'),
+(6, 'fasdfasf', 'carousel/4qEkP1miiIVW8bzvE2Cb8xI33n4SIhO62vamV1Sc.jpeg', 'on', '2017-05-10 01:25:05', '2017-05-10 01:25:05');
 
 -- --------------------------------------------------------
 
@@ -511,7 +623,7 @@ ALTER TABLE `contacts`
 -- AUTO_INCREMENT for table `corporate_fields`
 --
 ALTER TABLE `corporate_fields`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT for table `curr_demands`
 --
@@ -521,17 +633,17 @@ ALTER TABLE `curr_demands`
 -- AUTO_INCREMENT for table `curr_demand_imgs`
 --
 ALTER TABLE `curr_demand_imgs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 --
 -- AUTO_INCREMENT for table `galleries`
 --
 ALTER TABLE `galleries`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `links`
 --
@@ -551,12 +663,12 @@ ALTER TABLE `online_forms`
 -- AUTO_INCREMENT for table `overseas_clients`
 --
 ALTER TABLE `overseas_clients`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=50;
 --
 -- AUTO_INCREMENT for table `pasa_carousels`
 --
 ALTER TABLE `pasa_carousels`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `recruitment_procedures`
 --

@@ -479,7 +479,7 @@
 					<div class="row">
 						<div class="container">
 							<div class="hidden-lg hidden-md">
-				        		<h1 class="header h1 pull-left purple" align="left">Overseas Clients</h1>
+				        		<h1 class="header h1 purple pull-left" align="left">Overseas Clients</h1>
 				        	</div>
 					        <div class="hidden-sm hidden-xs">
 								<div class="col-md-7 center-block">
