@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: May 13, 2017 at 02:35 PM
+-- Generation Time: May 15, 2017 at 12:45 PM
 -- Server version: 10.1.16-MariaDB
 -- PHP Version: 7.0.9
 
@@ -85,7 +85,7 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`id`, `name`, `email`, `password`, `remember_token`, `created_at`, `updated_at`) VALUES
-(1, 'Rijesh', 'craaabby@gmail.com', '$2y$10$Pz80pnjBhIFYpNzO6EabrOkcckALiSu5yA8mXxPsgtp7rIYQON74e', NULL, '2017-04-23 18:15:00', '2017-04-23 18:15:00');
+(1, 'Rijesh', 'craaabby@gmail.com', '$2y$10$Pz80pnjBhIFYpNzO6EabrOkcckALiSu5yA8mXxPsgtp7rIYQON74e', 'neDslzoKb0q1z9gPmf3nTGcWVQdR4kajAOiehZf4lEe9UHTiQrJOx0NaXmbA', '2017-04-23 18:15:00', '2017-04-23 18:15:00');
 
 -- --------------------------------------------------------
 
@@ -180,6 +180,23 @@ CREATE TABLE `curr_demands` (
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
+--
+-- Dumping data for table `curr_demands`
+--
+
+INSERT INTO `curr_demands` (`id`, `title`, `trade`, `quantity`, `country`, `state`, `created_at`, `updated_at`) VALUES
+(1, 'Advanced Construction Technology Service (ACTS)', 'Assistant Technician', 25, 'Qatar', 'on', '2017-05-15 02:27:03', '2017-05-15 02:27:03'),
+(2, 'Gulf Falcon', 'Assistant Stocker', 50, 'Qatar', 'on', '2017-05-15 02:27:27', '2017-05-15 02:27:27'),
+(3, 'Gulf Falcon', 'Loading / Unloading Helper', 25, 'Qatar', 'on', '2017-05-15 02:27:51', '2017-05-15 02:27:51'),
+(4, 'Gulf Falcon', 'Light Driver GCC', 10, 'Qatar', 'on', '2017-05-15 02:28:21', '2017-05-15 02:28:21'),
+(5, 'Quality Manpower', 'Heavy Driver GCC', 5, 'Qatar', 'on', '2017-05-15 02:28:43', '2017-05-15 02:28:43'),
+(6, 'Al Meera Super Market', 'Female Cashier', 50, 'Qatar', 'on', '2017-05-15 02:29:06', '2017-05-15 02:29:06'),
+(7, 'Al Meera Super Market', 'Supervisor with GCC Experience', 15, 'Qatar', 'on', '2017-05-15 02:29:27', '2017-05-15 02:29:27'),
+(8, 'Al Meera Super Market', 'Butcher GCC', 20, 'Qatar', 'on', '2017-05-15 02:30:05', '2017-05-15 02:30:05'),
+(9, 'Ansar Group', 'Male Cleaner', 80, 'Bahrain', 'on', '2017-05-15 02:30:46', '2017-05-15 02:30:46'),
+(10, 'Ansar Group', 'Security Lady', 10, 'U.A.E', 'on', '2017-05-15 02:31:20', '2017-05-15 02:31:20'),
+(11, 'Ansar Group', 'Butcher', 10, 'Qatar', 'on', '2017-05-15 02:31:40', '2017-05-15 02:31:40');
+
 -- --------------------------------------------------------
 
 --
@@ -200,14 +217,12 @@ CREATE TABLE `curr_demand_imgs` (
 --
 
 INSERT INTO `curr_demand_imgs` (`id`, `img_thumb`, `img_full`, `state`, `created_at`, `updated_at`) VALUES
-(1, 'current_demand/J3m02diadZ5Sw8iMjgf0nd0LmlqXANIwRiqUgzm5.jpeg', 'current_demand/J3m02diadZ5Sw8iMjgf0nd0LmlqXANIwRiqUgzm5.jpeg', 'on', '2017-04-27 01:55:06', '2017-04-27 01:55:06'),
-(2, 'current_demand/ofaJUGOzjjvoPQebLvCABzgsxSmB4GkgcWoTa793.jpeg', 'current_demand/ofaJUGOzjjvoPQebLvCABzgsxSmB4GkgcWoTa793.jpeg', 'on', '2017-04-27 01:55:14', '2017-04-27 01:55:14'),
-(3, 'current_demand/udBHN0wGDoPvRRa4CP7gMQb52PkDYQN9yDHfbjSr.jpeg', 'current_demand/udBHN0wGDoPvRRa4CP7gMQb52PkDYQN9yDHfbjSr.jpeg', 'on', '2017-04-27 01:55:22', '2017-04-27 01:55:22'),
-(4, 'current_demand/PfbBZmL3pa4oYUDvjsY91RNAnIJPG3uUV1Ngq05C.jpeg', 'current_demand/PfbBZmL3pa4oYUDvjsY91RNAnIJPG3uUV1Ngq05C.jpeg', 'on', '2017-04-27 01:55:34', '2017-04-27 01:55:34'),
-(5, 'current_demand/MjCaKdm6xxw7bNopkbice3ilVt5i0Y73fh3ZvbWo.jpeg', 'current_demand/MjCaKdm6xxw7bNopkbice3ilVt5i0Y73fh3ZvbWo.jpeg', 'on', '2017-04-27 01:55:58', '2017-04-27 01:55:58'),
-(6, 'current_demand/ZK70Xpfkdb0C4IhHv2bxFt2Kfw0M0be1GHBqd97x.jpeg', 'current_demand/ZK70Xpfkdb0C4IhHv2bxFt2Kfw0M0be1GHBqd97x.jpeg', 'on', '2017-04-28 04:11:16', '2017-04-28 04:11:16'),
-(7, 'current_demand/5UHidJEKjfrU295n2MO7mNjOf0rgzsQyRifAVbH3.jpeg', 'current_demand/5UHidJEKjfrU295n2MO7mNjOf0rgzsQyRifAVbH3.jpeg', 'on', '2017-04-28 04:11:28', '2017-04-28 04:11:28'),
-(8, 'current_demand/lcUmqIzb8CtyBZsM4hWNvxcurFxkkv6ckRlpZDAT.jpeg', 'current_demand/lcUmqIzb8CtyBZsM4hWNvxcurFxkkv6ckRlpZDAT.jpeg', 'on', '2017-04-28 04:11:49', '2017-04-28 04:11:49');
+(9, 'current_demand/FNqd6oD9VZvWMWmD2SbO24coCby8o1oJsAGEfPO1.jpeg', 'current_demand/FNqd6oD9VZvWMWmD2SbO24coCby8o1oJsAGEfPO1.jpeg', 'on', '2017-05-15 01:34:15', '2017-05-15 01:34:15'),
+(10, 'current_demand/aGEs9McFz7t9jIQLfVVEVSyJSZQGQAtvW8mS0pOk.jpeg', 'current_demand/aGEs9McFz7t9jIQLfVVEVSyJSZQGQAtvW8mS0pOk.jpeg', 'on', '2017-05-15 01:34:26', '2017-05-15 01:34:26'),
+(11, 'current_demand/TUVkev37XZA8j7nArxxQUopIoveDqMNsGWtckbVF.jpeg', 'current_demand/TUVkev37XZA8j7nArxxQUopIoveDqMNsGWtckbVF.jpeg', 'on', '2017-05-15 01:34:36', '2017-05-15 01:34:36'),
+(12, 'current_demand/rf3wKjg0prSJjM9E18V7wgJOshpsNoNMynPRDpUw.jpeg', 'current_demand/rf3wKjg0prSJjM9E18V7wgJOshpsNoNMynPRDpUw.jpeg', 'on', '2017-05-15 01:34:50', '2017-05-15 01:34:50'),
+(13, 'current_demand/fLkqqkdFx9KIzKjP5a6fN3nfGoOg8Hsppe8LpNjq.jpeg', 'current_demand/fLkqqkdFx9KIzKjP5a6fN3nfGoOg8Hsppe8LpNjq.jpeg', 'on', '2017-05-15 01:35:00', '2017-05-15 01:35:00'),
+(14, 'current_demand/WZq2ulrjN9oBD0kriWzNRh01iaxbEQOk8Eb036OZ.jpeg', 'current_demand/WZq2ulrjN9oBD0kriWzNRh01iaxbEQOk8Eb036OZ.jpeg', 'on', '2017-05-15 01:35:11', '2017-05-15 01:35:11');
 
 -- --------------------------------------------------------
 
@@ -238,7 +253,9 @@ INSERT INTO `feedback` (`id`, `name`, `email`, `phn_no`, `message`, `created_at`
 (6, 'c', 'c@gmail.com', 'c', 'c', '2017-04-26 02:10:26', '2017-04-26 02:10:26'),
 (7, 'a', 'a@gmail.com', '5', 'a', '2017-04-26 02:25:12', '2017-04-26 02:25:12'),
 (8, 'b', 'b@gmail.com', '123', 'asdf', '2017-04-26 02:27:14', '2017-04-26 02:27:14'),
-(9, 'kfjaslkdflk', 'klaksdfkjasdf@lfkasd.com', '5345345345345', 'hello pal', '2017-04-26 02:56:31', '2017-04-26 02:56:31');
+(9, 'kfjaslkdflk', 'klaksdfkjasdf@lfkasd.com', '5345345345345', 'hello pal', '2017-04-26 02:56:31', '2017-04-26 02:56:31'),
+(10, 'test', 'test@gmail.com', '1234', 'testtest', '2017-05-15 01:32:12', '2017-05-15 01:32:12'),
+(11, 'test2', 'test2@gmail.com', '9849454', 'asdasfasd', '2017-05-15 01:40:40', '2017-05-15 01:40:40');
 
 -- --------------------------------------------------------
 
@@ -255,26 +272,6 @@ CREATE TABLE `galleries` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci ROW_FORMAT=COMPACT;
-
---
--- Dumping data for table `galleries`
---
-
-INSERT INTO `galleries` (`id`, `title`, `img_thumb`, `img_full`, `state`, `created_at`, `updated_at`) VALUES
-(1, ' ', 'gallery/1asEfFbagWAUHdRz4d8c7RBHfJDN8R5etOr3C1gB.jpeg', 'gallery/1asEfFbagWAUHdRz4d8c7RBHfJDN8R5etOr3C1gB.jpeg', 'on', '2017-04-28 01:38:22', '2017-04-28 01:38:22'),
-(2, ' ', 'gallery/nfgmWg2DGrUcnKb5ZXinu7AZQFpsmdP0mZsOTCCj.jpeg', 'gallery/nfgmWg2DGrUcnKb5ZXinu7AZQFpsmdP0mZsOTCCj.jpeg', 'on', '2017-04-28 01:38:22', '2017-04-28 01:38:22'),
-(3, ' ', 'gallery/ziilzaWLBMvUEyPRwQI23dps8EK03GhONTcngAFz.jpeg', 'gallery/ziilzaWLBMvUEyPRwQI23dps8EK03GhONTcngAFz.jpeg', 'on', '2017-04-28 01:38:22', '2017-04-28 01:38:22'),
-(4, ' ', 'gallery/3q8mEYnwX2ZM4ORw1pwYE1zAB4GR1tamJCXrdTCd.jpeg', 'gallery/3q8mEYnwX2ZM4ORw1pwYE1zAB4GR1tamJCXrdTCd.jpeg', 'on', '2017-04-28 01:38:22', '2017-04-28 01:38:22'),
-(5, ' ', 'gallery/vCqlSBcIX0VR976hS7UT0F8MmUUbJcO2CrZFm9yp.jpeg', 'gallery/vCqlSBcIX0VR976hS7UT0F8MmUUbJcO2CrZFm9yp.jpeg', 'on', '2017-04-28 01:38:22', '2017-04-28 01:38:22'),
-(6, ' ', 'gallery/tIYwWsig4J2PL4NQIz44bnhbgydt2MFmi1hM3DGu.jpeg', 'gallery/tIYwWsig4J2PL4NQIz44bnhbgydt2MFmi1hM3DGu.jpeg', 'on', '2017-04-28 01:38:22', '2017-04-28 01:38:22'),
-(7, ' ', 'gallery/M3EbReydAQiawvD2qE8VvkteQVgMLhf7eG9YY2DX.jpeg', 'gallery/M3EbReydAQiawvD2qE8VvkteQVgMLhf7eG9YY2DX.jpeg', 'on', '2017-04-28 01:38:22', '2017-04-28 01:38:22'),
-(8, ' ', 'gallery/e3LQjF7td0SlnNpt6fPuH8CrBZDT4xe2cIg7eQcI.jpeg', 'gallery/e3LQjF7td0SlnNpt6fPuH8CrBZDT4xe2cIg7eQcI.jpeg', 'on', '2017-04-28 01:38:49', '2017-04-28 01:38:49'),
-(9, ' ', 'gallery/a3RQztqDgCZr51zVuqVL0OEPJOg2LGV3j7w8nJa3.jpeg', 'gallery/a3RQztqDgCZr51zVuqVL0OEPJOg2LGV3j7w8nJa3.jpeg', 'on', '2017-04-28 01:38:50', '2017-04-28 01:38:50'),
-(10, ' ', 'gallery/ANX6SAmB2vwforuSKCZTgXwL5T6BrW1davZsLISt.jpeg', 'gallery/ANX6SAmB2vwforuSKCZTgXwL5T6BrW1davZsLISt.jpeg', 'on', '2017-04-28 01:38:50', '2017-04-28 01:38:50'),
-(11, ' ', 'gallery/jGRQ5YRgIBr75v5QeCDzde8SmTOw9ZTRgfNISy2S.jpeg', 'gallery/jGRQ5YRgIBr75v5QeCDzde8SmTOw9ZTRgfNISy2S.jpeg', 'on', '2017-04-28 01:38:50', '2017-04-28 01:38:50'),
-(12, ' ', 'gallery/uAc4faow0u932B6yZXKfXRNds1q6WHBYUN4JWbTG.jpeg', 'gallery/uAc4faow0u932B6yZXKfXRNds1q6WHBYUN4JWbTG.jpeg', 'on', '2017-04-28 01:38:50', '2017-04-28 01:38:50'),
-(13, ' ', 'gallery/ZVhyM9ZQAGwt4BTIHMQXKnRkUIUPebDbTRkuytcD.jpeg', 'gallery/ZVhyM9ZQAGwt4BTIHMQXKnRkUIUPebDbTRkuytcD.jpeg', 'on', '2017-04-28 01:38:50', '2017-04-28 01:38:50'),
-(14, ' ', 'gallery/rEHLom3Qstmd5skihHPEV7f2PBymBPA0S7PFvOBL.jpeg', 'gallery/rEHLom3Qstmd5skihHPEV7f2PBymBPA0S7PFvOBL.jpeg', 'on', '2017-04-28 01:38:50', '2017-04-28 01:38:50');
 
 -- --------------------------------------------------------
 
@@ -459,9 +456,10 @@ CREATE TABLE `pasa_carousels` (
 --
 
 INSERT INTO `pasa_carousels` (`id`, `title`, `img`, `state`, `created_at`, `updated_at`) VALUES
-(4, 'kjfasfklasdf', 'carousel/1XbpG6hQKZJRJbAcZ5T97gs1ytVV2iaPSzC3BZxX.jpeg', 'on', '2017-05-10 01:24:04', '2017-05-10 01:24:04'),
-(5, 'fasdfasdf', 'carousel/qOgx8uEqNwgE4CYWM98BddKpXTDEGp9wkOlZMhJs.jpeg', 'on', '2017-05-10 01:24:24', '2017-05-10 01:24:24'),
-(6, 'fasdfasf', 'carousel/4qEkP1miiIVW8bzvE2Cb8xI33n4SIhO62vamV1Sc.jpeg', 'on', '2017-05-10 01:25:05', '2017-05-10 01:25:05');
+(10, 'a', 'carousel/sl8rIQ0cC1QJrbmxnoV1LgbMapCgzOw3lc9swgE2.jpeg', 'on', '2017-05-15 03:48:56', '2017-05-15 03:48:56'),
+(11, 'fasdf', 'carousel/YvRonjWjnOjR2B634UE8f2f1zSBE8Vsw05zHFweQ.jpeg', 'on', '2017-05-15 03:49:33', '2017-05-15 03:49:33'),
+(13, 'fasdf', 'carousel/LRRWB98Jg5rd5tlliPU1KvHhHpXdMBTL3Lhp6UM5.jpeg', 'on', '2017-05-15 03:57:03', '2017-05-15 03:57:03'),
+(14, 'asdfasfd', 'carousel/kS7WPZ8Kv0WgJTof6zZpqgGxrkzCnKBRaxmNRa2F.jpeg', 'on', '2017-05-15 03:57:14', '2017-05-15 03:57:14');
 
 -- --------------------------------------------------------
 
@@ -628,17 +626,17 @@ ALTER TABLE `corporate_fields`
 -- AUTO_INCREMENT for table `curr_demands`
 --
 ALTER TABLE `curr_demands`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `curr_demand_imgs`
 --
 ALTER TABLE `curr_demand_imgs`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `feedback`
 --
 ALTER TABLE `feedback`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 --
 -- AUTO_INCREMENT for table `galleries`
 --
@@ -668,7 +666,7 @@ ALTER TABLE `overseas_clients`
 -- AUTO_INCREMENT for table `pasa_carousels`
 --
 ALTER TABLE `pasa_carousels`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `recruitment_procedures`
 --

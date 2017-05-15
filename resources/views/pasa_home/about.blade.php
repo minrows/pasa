@@ -159,9 +159,9 @@
                                                                 @endif
                                                                 <br>
                                                                 <div class="center-block">
-                                                                    <h4 align="center">{{$cm->title}}</h4>
+                                                                    <span align="center">{{$cm->title}}</span>
                                                                     @if($cm->location!=null && $cm->location!="" && $cm!=" "  )
-                                                                        <h5 align="center">{{$cm->location}}</h5>
+                                                                        <p align="center">{{$cm->location}}</p>
                                                                     @endif
                                                                 </div>
                                                                 <br>

@@ -46,7 +46,7 @@
     background-color: #51bf87;
     border-bottom: 2px solid #41996c;
     /*margin: 20px 0px;*/
-    padding: 5px 10px;
+    padding: 1px 5px;
     font-size: 30px;
     line-height: 1.3333333;
     margin-bottom:-150px;
@@ -140,9 +140,9 @@
 										<li><a href="#message">Message</a></li>
 										<li><a href="#gallery">Gallery</a></li>
 									</ul>
+								<li><a href="#cd">Current Demands</a></li>
 								<li ><a href="#rp">Recruit Procedures</a></li>
 								<li ><a href="#gallery">Gallery</a></li>
-								<li><a href="#cd">Current Demands</a></li>
 								<li><a href="" data-toggle="modal" data-target="#contacts">Contact Us</a></li>
 							</ul>
 						</nav>
@@ -516,33 +516,28 @@
 								</div>
 							</aside>
 
-							<aside class="widget aio-widget-blogs col-xs-12 col-sm-4 col-md-4 ">
+							<aside class="widget aio-widget-blogs col-sm-4 col-md-4">
 								<h3 class="header h1">&nbsp;Overview</h3>
 								<ul style="list-style: none; line-height: 2em;">
 									<li><a href="/about" class="btn btn-link" style="color: #464646 !important;">About Us</a></li>
-
 									<li><a href="/rp" class="btn btn-link" style="color: #464646 !important;">Recruitment Process</a></li>
-
 									<li><a href="/curr_demand" class="btn btn-link" style="color: #464646 !important;">Current Demands</a></li>
-
 									<li><a href="/gallery" class="btn btn-link" style="color: #464646 !important;">Gallery</a></li>
-
 								</ul>
-
 							</aside>
-
-							<aside class="widget aio-widget-blogs col-xs-12 col-sm-4 col-md-4 ">
+							
+							<aside class="widget aio-widget-blogs col-sm-4 col-md-4">
 							    <h3 class="header h1">&nbsp;Keep In Touch</h3>
 							    <ul style="list-style: none; line-height: 2em;">
-							        <li class="footer-contact" style="padding: 2px;"><i class="fa fa-map-marker"></i><span style="padding: 17px;">&nbsp;Kupondole, Lalitpur, Nepal</span></li>
+							        <li class="footer-contact" style="padding: 2px;"><i class="fa fa-map-marker"></i><span style="padding: 0px;">&nbsp;Kupondole, Lalitpur, Nepal</span></li>
 
-							        <li class="footer-contact" ><i class="fa fa-phone"></i><span style="padding: 10px;">&nbsp;+977-1-5554499, +977-1-5553380 </span></li>
+							        <li class="footer-contact" ><i class="fa fa-phone"></i><span style="padding: 0px;">&nbsp;5554499,5553380 </span></li>
 
-							        <li class="footer-contact" ><i class="fa fa-fax"></i><span style="padding: 10px;">&nbsp;+977-1-5538440</span></li>
+							        <li class="footer-contact" ><i class="fa fa-fax"></i><span style="padding: 0px;">&nbsp;+977-1-5538440</span></li>
 
-							        <li class="footer-contact" ><i class="fa fa-envelope"></i><span style="padding: 10px;"><a href="mailto:info@pasainternational.com.np" class="btn btn-link" style="color: #464646 !important;">&nbsp;info@pasainternational.com.np</a></span></li>
+							        <li class="footer-contact" ><i class="fa fa-envelope"></i><span style="padding: 0px;"><a href="mailto:info@pasainternational.com.np" class="btn btn-link" style="color: #464646 !important;">info@pasainternational.com.np</a></span></li>
 
-							        <li class="footer-contact" ><i class="fa fa-globe"></i><span style="padding: 10px;"><a href="http://www.pasainternational.com.np" class="btn btn-link" style="color: #464646 !important;">&nbsp;www.pasainternational.com.np</a></span></li>
+							        <li class="footer-contact" ><i class="fa fa-globe"></i><span style="padding: 0px;"><a href="http://www.pasainternational.com.np" class="btn btn-link" style="color: #464646 !important;">www.pasainternational.com.np</a></span></li>
 							    </ul>
 							</aside>
 						</div>
@@ -580,7 +575,7 @@
 		{{-- slider js --}}
 		<script type="text/javascript">$(function(){
 		    $('.carousel').carousel({
-		        interval: 3000,
+		        interval: 10000,
 		        pause: false,
 		        keyboard: false
 		    });
